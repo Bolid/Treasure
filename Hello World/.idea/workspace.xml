@@ -16,7 +16,7 @@
     <ignored path="Hello World.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/res/values/strings.xml" changelist="7a0c70f1-5467-402b-8790-c73efebe44cd" time="1358543823023" ignored="false" />
-    <file path="/MyActivity.java" changelist="7a0c70f1-5467-402b-8790-c73efebe44cd" time="1358545142414" ignored="false" />
+    <file path="/MyActivity.java" changelist="7a0c70f1-5467-402b-8790-c73efebe44cd" time="1358547218440" ignored="false" />
     <file path="/fragment.java" changelist="7a0c70f1-5467-402b-8790-c73efebe44cd" time="1358545047305" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +92,7 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/Hello_World/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="8" selection-start="464" selection-end="464" vertical-scroll-proportion="0.66339064">
+            <state line="18" column="33" selection-start="497" selection-end="497" vertical-scroll-proportion="0.66339064">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -434,7 +434,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Hello_World/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="8" selection-start="464" selection-end="464" vertical-scroll-proportion="0.66339064">
+        <state line="18" column="33" selection-start="497" selection-end="497" vertical-scroll-proportion="0.66339064">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
