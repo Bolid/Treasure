@@ -20,7 +20,7 @@ public class MyActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText("Круть!!!");
+                textView.setText("Super Круть!!!");
             }
         });
     }
