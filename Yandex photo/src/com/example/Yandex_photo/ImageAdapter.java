@@ -17,7 +17,7 @@ public class ImageAdapter extends BaseAdapter {
 	//private Bitmap bitmap;
 	private final int mImage[] = new int[4];
 	public ImageAdapter(Context context){
-		//this.bitmap = bitmap; 
+		//this.bitmap = bitmap; d
 		mContext = context;
 		for (int i = 0; i < mImage.length; i++){ 
 			switch (i){

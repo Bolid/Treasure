@@ -367,7 +367,7 @@ implements OnClickListener, CompoundButton.OnCheckedChangeListener
 					}
 					catch (ArithmeticException e)
 					{
-						mED.setText("Деление на ноль!");
+						mED.setText("Ж’РµР»РµРЅРёРµ РЅР° РЅРѕР»СЊ!");
 						Div_zero = true;
 						break;
 					}
