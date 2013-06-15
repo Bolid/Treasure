@@ -20,12 +20,14 @@ public class MainForm extends Activity {
         final EditText termCredit = (EditText)findViewById(R.id.etTermCredit);
         final EditText percend = (EditText)findViewById(R.id.etPercend);
         final TextView textViewPlatej = (TextView)findViewById(R.id.tvPlatej);
+        final TextView textViewDelta = (TextView)findViewById(R.id.tvDelta);
         butStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Arithmetic arithmetic = new Arithmetic(Integer.valueOf(sumCredit.getText().toString()), Integer.valueOf(termCredit.getText().toString()), Integer.valueOf(percend.getText().toString()));
+                Arithmetic arithmetic = new Arithmetic(Integer.valueOf(sumCredit.getText().toString()), Integer.valueOf(termCredit.getText().toString()), Double.valueOf(percend.getText().toString()));
                 textViewPlatej.setText(String.valueOf(arithmetic.setPlatej()));
-                Log.d(TAG, "DELTA: " + arithmetic.setDelta().toString());
+                textViewDelta.setText(String.valueOf(arithmetic.setDelta()));
+                //Log.d(TAG, "DELTA: " + arithmetic.setDelta().toString());
             }
         });
     }

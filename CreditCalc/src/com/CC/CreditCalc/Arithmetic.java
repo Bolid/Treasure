@@ -9,7 +9,7 @@ public class Arithmetic {
     int sumCredit = 0;
     int termCredit = 0;
     Double percend = 0.0;
-    public Arithmetic(Integer sumCredit, Integer termCredit, Integer percend){
+    public Arithmetic(Integer sumCredit, Integer termCredit, Double percend){
         this.sumCredit = sumCredit;
         this.termCredit = termCredit;
         this.percend = Double.valueOf(percend);
