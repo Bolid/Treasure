@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#e7f4eb">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сумма кредита"
+            android:id="@+id/tvSumCr" android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical" android:textColor="#010366"
+            android:textStyle="bold" android:textSize="18dp" android:paddingLeft="10dp"
+            android:visibility="invisible"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edSumCr" android:layout_gravity="center_horizontal|bottom"
+            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/tvSumCr" android:singleLine="true"
+            android:maxLines="1" android:textAlignment="viewStart" android:inputType="numberDecimal"
+            android:textColor="#010366" android:hint="Сумма кредита" android:text="900000"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:id="@+id/textView" android:layout_centerHorizontal="true" android:layout_below="@+id/edSumCr"
+            android:background="#8f8f8f"/>
+    <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Срок кредита"
+                android:id="@+id/tvTermCredit"
+                android:layout_gravity="center_vertical" android:textColor="#010366"
+                android:textStyle="bold" android:textSize="18dp" android:paddingLeft="10dp"
+                android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/edSumCr"
+                android:visibility="invisible"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etTermCredit" android:layout_gravity="center_horizontal|bottom"
+                android:layout_centerHorizontal="true" android:layout_below="@+id/tvTermCredit"
+                android:singleLine="true" android:maxLines="1" android:inputType="numberDecimal"
+                android:textColor="#010366" android:hint="Срок кредита" android:text="120"/>
+    <TextView android:layout_width="fill_parent" android:layout_height="1dp" android:text="New Text"
+              android:id="@+id/textView1"
+              android:background="#8f8f8f" android:layout_centerHorizontal="true"
+              android:layout_below="@+id/etTermCredit"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Процентная ставка"
+            android:id="@+id/tvPercend"
+            android:layout_gravity="center_vertical" android:textColor="#010366"
+            android:textStyle="bold" android:textSize="18dp" android:paddingLeft="10dp"
+            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/etTermCredit"
+            android:visibility="invisible"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etPercend" android:layout_gravity="center_horizontal|bottom"
+            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/tvPercend"
+            android:singleLine="true" android:maxLines="1" android:inputType="numberDecimal"
+            android:textColor="#010366" android:hint="Процентная ставка" android:text="12"/>
+    <TextView android:layout_width="fill_parent" android:layout_height="1dp" android:text="New Text"
+              android:id="@+id/textView3" android:background="#8f8f8f"
+              android:layout_centerHorizontal="true" android:layout_centerVertical="true"
+              android:layout_below="@+id/etPercend"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Ежемесячный аннуитентный платеж:" android:textColor="#0a085c"
+            android:id="@+id/textView4"
+            android:textSize="16dp"
+            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/textView3"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPlatej"
+            android:textColor="#0a085c"
+            android:textSize="24dp" android:singleLine="false" android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView4" android:layout_alignLeft="@+id/tvSumCr"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Расчитать"
+            android:id="@+id/butStart" android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"/>
+</RelativeLayout>
