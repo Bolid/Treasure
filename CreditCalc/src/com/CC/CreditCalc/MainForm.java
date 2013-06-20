@@ -24,9 +24,9 @@ public class MainForm extends Activity {
         butStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Arithmetic arithmetic = new Arithmetic(Integer.valueOf(sumCredit.getText().toString()), Integer.valueOf(termCredit.getText().toString()), Double.valueOf(percend.getText().toString()));
-                textViewPlatej.setText(String.valueOf(arithmetic.setPlatej()));
-                textViewDelta.setText(String.valueOf(arithmetic.setDelta()));
+                Arithmetic arithmetic = new Arithmetic(Double.valueOf(sumCredit.getText().toString()), Integer.valueOf(termCredit.getText().toString()), Double.valueOf(percend.getText().toString()));
+                //textViewPlatej.setText(String.valueOf(arithmetic.setPlatej()));
+                //textViewDelta.setText(String.valueOf(arithmetic.setDelta(arithmetic.setPlatej())));
                 //Log.d(TAG, "DELTA: " + arithmetic.setDelta().toString());
             }
         });
