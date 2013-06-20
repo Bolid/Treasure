@@ -33,7 +33,7 @@
     <file path="/AndroidManifest.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371231981051" ignored="false" />
     <file path="/main.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371327794819" ignored="false" />
     <file path="/MainForm.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371645729016" ignored="false" />
-    <file path="/Arithmetic.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371757354337" ignored="false" />
+    <file path="/Arithmetic.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371758147073" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/Manifest.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371532858037" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/R.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371532858037" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/BuildConfig.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371534853095" ignored="false" />
@@ -124,7 +124,7 @@
       <file leaf-file-name="Arithmetic.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="16" selection-start="2020" selection-end="2020" vertical-scroll-proportion="0.3560606">
+            <state line="50" column="16" selection-start="1765" selection-end="1765" vertical-scroll-proportion="6.107143">
               <folding />
             </state>
           </provider>
@@ -450,7 +450,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="204" y="100" width="1026" height="577" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -461,7 +461,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.845977" sideWeight="0.6441718" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.845977" sideWeight="0.6441718" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -650,7 +650,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="16" selection-start="2020" selection-end="2020" vertical-scroll-proportion="0.3560606">
+        <state line="50" column="16" selection-start="1765" selection-end="1765" vertical-scroll-proportion="6.107143">
           <folding />
         </state>
       </provider>

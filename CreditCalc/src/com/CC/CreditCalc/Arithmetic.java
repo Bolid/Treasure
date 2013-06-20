@@ -46,18 +46,21 @@ public class Arithmetic {
         deltaPlatej = constPlat - deltaMounth;
         while (sumCredit > 0){
             deltaMounth = sumCredit * (percend/100.) / 12;
-            if (sumCredit < deltaPlatej)
+            if (sumCredit < deltaPlatej){
                 deltaPlatej = sumCredit;
-            else
+                sumCredit = sumCredit - deltaPlatej;
+            }
+            else{
                 //deltaPlatej = (1 + percend/100./12) * deltaPlatej;
                 deltaPlatej = constPlat - deltaMounth;
+                sumCredit = sumCredit - deltaPlatej - 20000;
+            }
             i++;
-            sumCredit = sumCredit - deltaPlatej;
             termCredit--;
             if (i==4){
-                sumCredit = sumCredit - 20000;
+                //sumCredit = sumCredit - 20000;
                 Log.d(TAG, "Доп. платеж: " + 20000);
-                constPlat = setPlatej();
+                //constPlat = setPlatej(); в счет погашения срока
             }
             allPer = allPer + deltaMounth;
             Log.d(TAG, "Месяц: " + i);
