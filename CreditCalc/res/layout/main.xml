@@ -60,18 +60,26 @@
             android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/tvPercend"
             android:singleLine="true" android:maxLines="1" android:inputType="numberDecimal"
             android:textColor="#010366" android:hint="Процентная ставка" android:text="12" android:maxLength="20"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="1dp" android:text="New Text"
-              android:id="@+id/textView3" android:background="#8f8f8f"
-              android:layout_centerHorizontal="true" android:layout_centerVertical="true"
-              android:layout_below="@+id/etPercend"/>
     <TextView
+            android:id="@+id/tvDopPlatej"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent" android:layout_gravity="center_horizontal|bottom"
+            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/textView3"
+            android:text="Дополнительный платеж" android:textColor="#010366"
+            android:textStyle="bold" android:textSize="18dp" android:paddingLeft="10dp"/>
+    <TextView
+            android:layout_width="fill_parent" android:layout_height="1dp"
+            android:id="@+id/textView3" android:background="#8f8f8f"
+            android:layout_centerHorizontal="true" android:layout_centerVertical="true"
+            android:layout_below="@+id/etPercend"/>
+    <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Ежемесячный аннуитентный платеж:" android:textColor="#0a085c"
-            android:id="@+id/textView4"
-            android:textSize="16dp"
-            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/textView3"/>
-    <TextView
+            android:id="@+id/etDopPlatej" android:layout_gravity="center_horizontal|bottom"
+            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/tvDopPlatej"
+            android:singleLine="true" android:maxLines="1" android:inputType="numberDecimal"
+            android:textColor="#010366" android:hint="Дополнительный платеж" android:maxLength="20"/>
+   <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvPlatej"
@@ -82,21 +90,6 @@
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Расчитать"
+            android:text="Рассчитать"
             android:id="@+id/butStart" android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"/>
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Переплата:"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/tvPlatej" android:textColor="#0a085c" android:id="@+id/TextView5"
-            android:layout_alignLeft="@+id/tvSumCr"/>
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvDelta"
-            android:textColor="#0a085c"
-            android:textSize="24dp" android:textStyle="bold"
-            android:layout_alignLeft="@+id/tvSumCr" android:layout_below="@+id/TextView5"
-            />
 </RelativeLayout>

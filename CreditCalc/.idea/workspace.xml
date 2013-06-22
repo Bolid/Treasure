@@ -23,21 +23,26 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.CC.CreditCalc.Arithmetic" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="com.CC.CreditCalc" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5c071e5-c063-4425-80db-5d478c528207" name="Default" comment="" />
     <ignored path="CreditCalc.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/strings.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371231960954" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371231981051" ignored="false" />
-    <file path="/main.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371327794819" ignored="false" />
-    <file path="/MainForm.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371645729016" ignored="false" />
-    <file path="/Arithmetic.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371758147073" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/Manifest.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371532858037" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/R.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371532858037" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/BuildConfig.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371534853095" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371813657828" ignored="false" />
+    <file path="/main.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371815253116" ignored="false" />
+    <file path="/MainForm.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371816083910" ignored="false" />
+    <file path="/Arithmetic.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371817409905" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/Manifest.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371815598851" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/R.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371815598851" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/CC/CreditCalc/BuildConfig.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371815707111" ignored="false" />
     <file path="/fragment.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371498481332" ignored="false" />
+    <file path="/DummyFile.xpath" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371807770972" ignored="false" />
+    <file path="/Dummy.txt" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371809537715" ignored="false" />
+    <file path="/context_window.xml" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371819283139" ignored="false" />
+    <file path="/ContextWindow.java" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371818464625" ignored="false" />
+    <file path="/color" changelist="f5c071e5-c063-4425-80db-5d478c528207" time="1371815636356" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +99,38 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/CC/CreditCalc/ContextWindow.java" line="26" class="com.CC.CreditCalc.ContextWindow" package="com.CC.CreditCalc">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/CC/CreditCalc/ContextWindow.java" line="27" class="com.CC.CreditCalc.ContextWindow" package="com.CC.CreditCalc">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -106,7 +143,7 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="72" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.0">
+            <state line="51" column="52" selection-start="3125" selection-end="3215" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -115,16 +152,38 @@
       <file leaf-file-name="MainForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="18" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.0">
+            <state line="35" column="20" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arithmetic.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Arithmetic.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="16" selection-start="1765" selection-end="1765" vertical-scroll-proportion="6.107143">
+            <state line="96" column="23" selection-start="3718" selection-end="3718" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContextWindow.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/ContextWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="32" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#796#804#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="context_window.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/context_window.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="38" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.7819905">
               <folding />
             </state>
           </provider>
@@ -133,7 +192,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="39" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+            <state line="1" column="68" selection-start="49" selection-end="107" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,9 +219,12 @@
       <list>
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/values/color" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/CC/CreditCalc/MainForm.java" />
         <option value="$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java" />
+        <option value="$PROJECT_DIR$/src/com/CC/CreditCalc/ContextWindow.java" />
+        <option value="$PROJECT_DIR$/res/layout/context_window.xml" />
       </list>
     </option>
   </component>
@@ -170,8 +232,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="204" />
-    <option name="y" value="100" />
+    <option name="x" value="-1" />
+    <option name="y" value="24" />
     <option name="width" value="1026" />
     <option name="height" value="577" />
   </component>
@@ -248,7 +310,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CreditCalc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,7 +332,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CreditCalc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CreditCalc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -449,29 +529,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="204" y="100" width="1026" height="577" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="24" width="1026" height="577" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25717214" sideWeight="0.67126435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.61149424" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.845977" sideWeight="0.35582823" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.845977" sideWeight="0.6441718" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.845977" sideWeight="0.35582823" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5011494" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.845977" sideWeight="0.6441718" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49885058" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991803" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24744377" sideWeight="0.67126435" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24692623" sideWeight="0.67126435" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32873562" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.67126435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32617587" sideWeight="0.67126435" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889345" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -538,32 +618,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="50" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state line="96" column="29" selection-start="5739" selection-end="5739" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="8" selection-start="508" selection-end="519" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="75" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0">
@@ -602,7 +665,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="61" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -629,28 +694,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="39" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+        <state line="1" column="68" selection-start="49" selection-end="107" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="72" selection-start="2551" selection-end="2551" vertical-scroll-proportion="0.0">
+        <state line="51" column="52" selection-start="3125" selection-end="3215" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.0">
+        <state line="35" column="20" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/Arithmetic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="16" selection-start="1765" selection-end="1765" vertical-scroll-proportion="6.107143">
+        <state line="96" column="23" selection-start="3718" selection-end="3718" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/CC/CreditCalc/ContextWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="32" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#796#804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/context_window.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="38" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.7819905">
           <folding />
         </state>
       </provider>
