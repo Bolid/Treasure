@@ -21,8 +21,11 @@ public class Arithmetic {
         this.termCredit = termCredit;
         this.percend = Double.valueOf(percend);
         allResult = new ArrayList<String>();
-        allResult.add(0, String.valueOf(getPlatej()));
-        allResult.add(1, String.valueOf(getDelta(getPlatej())));
+        allResult.add(0, String.valueOf(sumCredit)); //исходные данные
+        allResult.add(1, String.valueOf(termCredit)); //исходные данные
+        allResult.add(2, String.valueOf(percend)); //исходные данные
+        allResult.add(3, String.valueOf(getPlatej()));
+        allResult.add(4, String.valueOf(getDelta(getPlatej())));
         Log.d(TAG, "List_0: " + allResult.get(0));
         Log.d(TAG, "List_1: " + allResult.get(1));
 //        Log.d(TAG, "Срок: " + getTest());
@@ -34,8 +37,8 @@ public class Arithmetic {
         this.percend = percend;
         this.dopPlatej = dopPlatej;
         allResult = new ArrayList<String>();
-        allResult.add(0, String.valueOf(getPlatej()));
-        allResult.add(1, String.valueOf(getDelta(getPlatej())));
+        allResult.add(3, String.valueOf(getPlatej()));
+        allResult.add(4, String.valueOf(getDelta(getPlatej())));
         getTerm();
     }
 
@@ -93,8 +96,8 @@ public class Arithmetic {
         BigDecimal roundValue = BigDecimal.valueOf(allPer);
         roundValue = roundValue.setScale(2, BigDecimal.ROUND_HALF_DOWN);
         allPer = Double.valueOf(roundValue.toString());
-        allResult.add(2, String.valueOf(allPer));
-        allResult.add(3, String.valueOf(i));
+        allResult.add(5, String.valueOf(allPer));
+        allResult.add(6, String.valueOf(i));
         //Log.d(TAG, "Срок: " + i);
         //Log.d(TAG, "Общая переплата: " + allPer);
         //return newTerm;
