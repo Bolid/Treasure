@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<RelativeLayout   xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="fill_parent"
         android:background="#e7f4eb"
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
@@ -10,68 +10,61 @@
             android:id="@+id/lalelTitleMain"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Параметры кредита"
-            android:textColor="#010366"
+            android:text="@string/main_layout_label_credit_param"
+            android:textColor="#1f4261"
             android:textStyle="bold"
             android:textSize="18dp"
             android:paddingLeft="10dp"/>
     <TextView
             android:layout_width="fill_parent" android:layout_height="1dp"
             android:id="@+id/line_1Main" android:layout_centerHorizontal="true"
-            android:layout_below="@id/lalelTitleMain" android:background="#8f8f8f"/>
+            android:layout_below="@id/lalelTitleMain" android:background="#1f4261"/>
     <EditText
-            android:layout_width="fill_parent" android:layout_height="wrap_content"
-            android:id="@+id/edSumCr" android:layout_gravity="center_horizontal|bottom"
-            android:layout_below="@id/line_1Main" android:singleLine="true"
-            android:maxLines="1" android:inputType="numberDecimal"
-            android:textColor="#010366" android:hint="Сумма (нажми для ввода)"
-            android:padding="5dp"
-            android:maxLength="20" android:text="900000"/>
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:id="@+id/textView" android:layout_below="@+id/edSumCr"
-            android:background="#8f8f8f"/>
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:id="@+id/etCreditSum" android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:textColor="#010366" android:focusable="true"
+            android:padding="10dp"
+            android:maxLength="20" android:text="@string/main_layout_defaultValue_credit_sum"
+            android:layout_below="@+id/labelCreditSum"
+            android:layout_toLeftOf="@+id/etTermCredit"
+            android:layout_alignParentLeft="true"/>
     <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etTermCredit" android:layout_gravity="center_horizontal|bottom"
-            android:layout_centerHorizontal="true" android:layout_below="@id/textView"
-            android:singleLine="true" android:maxLines="1" android:inputType="number"
-            android:textColor="#010366" android:hint="Срок (нажми для ввода)"
-            android:padding="5dp"
-            android:maxLength="5" android:text="120"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="1dp"
-              android:id="@+id/textView1"
-              android:background="#8f8f8f" android:layout_centerHorizontal="true"
-              android:layout_below="@+id/etTermCredit"/>
+            android:layout_width="96dp" android:layout_height="wrap_content"
+            android:id="@+id/etTermCredit"
+            android:singleLine="true" android:inputType="number"
+            android:textColor="#010366" android:focusable="true"
+            android:padding="10dp"
+            android:maxLength="5" android:text="@string/main_layout_defaultValue_credit_term"
+            android:layout_below="@+id/labelCreditSum"
+            android:layout_alignParentRight="true"/>
     <EditText
-            android:layout_width="fill_parent"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:id="@+id/edPercend"
-            android:layout_below="@id/textView1"
-            android:singleLine="true" android:maxLines="1" android:inputType="numberDecimal"
+            android:singleLine="true" android:inputType="numberDecimal"
             android:textColor="#010366" android:hint="Процент (нажми для ввода)"
-            android:padding="5dp"
-            android:maxLength="20" android:text="12"/>
-    <TextView
-            android:layout_width="fill_parent" android:layout_height="1dp"
-            android:id="@+id/textView3" android:background="#8f8f8f"
-            android:layout_below="@id/edPercend"/>
+            android:padding="10dp"
+            android:maxLength="20" android:text="12"
+            android:layout_below="@id/labelDopPlatej"
+            android:layout_alignParentRight="true"/>
     <EditText
-            android:layout_width="fill_parent" android:layout_height="wrap_content"
-            android:id="@+id/etDopPlatej" android:layout_below="@id/textView3"
-            android:singleLine="true" android:maxLines="1" android:inputType="numberDecimal"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:id="@+id/etDopPlatej"
+            android:singleLine="true" android:inputType="numberDecimal"
             android:textColor="#010366" android:hint="Переплата (нажми для ввода)"
-            android:padding="5dp"
-            android:maxLength="20" android:text="20000"/>
+            android:padding="10dp"
+            android:maxLength="20" android:text="20000"
+            android:layout_below="@id/labelDopPlatej"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/edPercend"/>
     <CheckBox
             android:id="@+id/cbIndexDopPlatej"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/etDopPlatej"
             android:textColor="#010366"
-            android:text="Пересчитывать доп. платеж"/>
+            android:text="Пересчитывать доп. платеж" android:layout_alignLeft="@+id/lalelTitleMain"
+            android:layout_above="@+id/butStart"/>
     <TextView
             android:id="@+id/dateStart"
             android:visibility="invisible"
@@ -100,6 +93,53 @@
             android:textSize="24dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/main_layout_label_credit_sum"
+            android:id="@+id/labelCreditSum"
+            android:textColor="#ff9d0a" android:textStyle="bold"
+            android:textSize="16dp" android:paddingLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/labelTermCredit"
+            android:layout_below="@+id/line_1Main"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_layout_label_credit_term"
+            android:textColor="#ff9d0a" android:textStyle="bold"
+            android:textSize="16dp" android:paddingRight="10dp"
+            android:id="@+id/labelTermCredit" android:layout_below="@id/line_1Main"
+            android:layout_alignParentRight="true"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/main_layout_label_credit_dopPlatej"
+            android:textColor="#ff9d0a" android:textStyle="bold"
+            android:textSize="16dp" android:paddingLeft="10dp"
+            android:id="@+id/labelDopPlatej"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/labelPercendCredit"
+            android:layout_below="@+id/etCreditSum"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_layout_label_credit_percend"
+            android:textColor="#ff9d0a" android:textStyle="bold"
+            android:textSize="16dp" android:paddingRight="10dp"
+            android:id="@+id/labelPercendCredit"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/etCreditSum"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvShowResult"
+            android:layout_centerInParent="true"
+            android:textSize="42dp"
+            android:textColor="#2bc707"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="55dp"/>
 
     <!--<ImageView
             android:layout_width="fill_parent"

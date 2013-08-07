@@ -4,4 +4,12 @@
     <string name="labelName">Кредитный калькулятор</string>
     <string name="action_menu_rasch">Расчет</string>
     <string name="action_menu_analitic">Аналитика</string>
+    <string name="main_layout_label_credit_param">Параметры кредита</string>
+    <string name="main_layout_label_credit_sum">Сумма</string>
+    <string name="main_layout_label_credit_term">Срок (год)</string>
+    <string name="main_layout_label_credit_dopPlatej">Досрочное погашение</string>
+    <string name="main_layout_label_credit_percend">Процент</string>
+    <string name="main_layout_defaultValue_credit_sum">900000</string>
+    <string name="main_layout_defaultValue_credit_term">10</string>
+    <string name="showToastText">Для показа потробностей кликните по результату</string>
 </resources>

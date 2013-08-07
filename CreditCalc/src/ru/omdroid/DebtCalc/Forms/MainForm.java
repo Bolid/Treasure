@@ -19,6 +19,8 @@ import ru.omdroid.DebtCalc.Arithmetic;
 import ru.omdroid.DebtCalc.DatePickerFragment;
 import ru.omdroid.DebtCalc.R;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -30,17 +32,20 @@ public class MainForm extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         Button butStart = (Button)findViewById(R.id.butStart);
-        final EditText etSumCredit = (EditText)findViewById(R.id.edSumCr);
+
+        final EditText etSumCredit = (EditText)findViewById(R.id.etCreditSum);
         final EditText etTermCredit = (EditText)findViewById(R.id.etTermCredit);
         final EditText etPercend = (EditText)findViewById(R.id.edPercend);
         final EditText etDopPlatej = (EditText)findViewById(R.id.etDopPlatej);
+
         final CheckBox overallDopPlatej = (CheckBox)findViewById(R.id.cbIndexDopPlatej);
+
         final TextView dateStart = (TextView)findViewById(R.id.dateStart);
+        final TextView tvShowResult = (TextView)findViewById(R.id.tvShowResult);
 
         final DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
-        Log.v("Размер экрана: ", displayMetrics.widthPixels + " на " + displayMetrics.heightPixels);
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         Calendar calendar = Calendar.getInstance();
         dateStart.setText(calendar.get(Calendar.DATE)+"."+calendar.get(Calendar.MONTH)+"."+calendar.get(Calendar.YEAR));
@@ -61,13 +66,19 @@ public class MainForm extends Activity {
                     Toast.makeText(getBaseContext(), notify, Toast.LENGTH_LONG).show();
                 else {
                     if (etDopPlatej.getText().toString().equals("") || Double.valueOf(etDopPlatej.getText().toString()) == 0)
-                        arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()), Double.valueOf(etPercend.getText().toString()));
+                        arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()) * 12, Double.valueOf(etPercend.getText().toString()));
                     else
-                        arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()), Double.valueOf(etPercend.getText().toString()), Double.valueOf(etDopPlatej.getText().toString()), overallDopPlatej.isChecked());
-                    Intent intent = new Intent(getBaseContext(), ContextWindow.class);
+                        arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()) * 12, Double.valueOf(etPercend.getText().toString()), Double.valueOf(etDopPlatej.getText().toString()), overallDopPlatej.isChecked());
+
+                    NumberFormat patternMoney = new DecimalFormat("###,###,###,###,###,###,##0.00");
+                    tvShowResult.setText("Платеж: \n" + patternMoney.format(Double.valueOf(arithmetic.allResult.get(4))) + " руб");
+
+
+
+                    /*Intent intent = new Intent(getBaseContext(), ContextWindow.class);
                     intent.putStringArrayListExtra(TAG, (ArrayList<String>) arithmetic.allResult);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    startActivity(intent);*/
                 }
             }
         });
