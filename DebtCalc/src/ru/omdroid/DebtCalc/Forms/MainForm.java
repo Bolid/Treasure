@@ -64,8 +64,8 @@ public class MainForm extends Activity {
                         arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()), Double.valueOf(etPercend.getText().toString()));
                     else
                         arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()), Double.valueOf(etPercend.getText().toString()), Double.valueOf(etDopPlatej.getText().toString()), overallDopPlatej.isChecked());
-                    Intent intent = new Intent(getBaseContext(), ContextWindow.class);
-                    intent.putStringArrayListExtra(TAG, (ArrayList<String>) arithmetic.allResult);
+                    Intent intent = new Intent(getBaseContext(), TestActivity.class/*ContextWindow.class*/);
+                   // intent.putStringArrayListExtra(TAG, (ArrayList<String>) arithmetic.allResult);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }

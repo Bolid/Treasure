@@ -26,7 +26,7 @@
             android:textColor="#010366" android:hint="Сумма (нажми для ввода)"
             android:padding="10dp"
             android:maxLength="20" android:text="900000"
-            android:layout_below="@id/labelCreditSum"
+            android:layout_below="@+id/labelCreditSum"
             android:layout_toLeftOf="@+id/etTermCredit"
             android:layout_alignParentLeft="true"/>
     <TextView
@@ -41,7 +41,7 @@
             android:textColor="#010366" android:hint="Срок (нажми для ввода)"
             android:padding="10dp"
             android:maxLength="5" android:text="120"
-            android:layout_below="@id/labelCreditSum"
+            android:layout_below="@+id/labelCreditSum"
             android:layout_alignParentRight="true"/>
     <EditText
             android:layout_width="96dp"
@@ -106,7 +106,7 @@
             android:textColor="#ff9d0a" android:textStyle="bold"
             android:textSize="16dp" android:paddingLeft="10dp"
             android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@id/labelTermCredit"
+            android:layout_toLeftOf="@+id/labelTermCredit"
             android:layout_below="@id/line_1Main"/>
     <TextView
             android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
             android:textSize="16dp" android:paddingLeft="10dp"
             android:id="@+id/labelDopPlatej"
             android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@id/labelPercendCredit"
+            android:layout_toLeftOf="@+id/labelPercendCredit"
             android:layout_below="@+id/etCreditSum"/>
     <TextView
             android:layout_width="wrap_content"
