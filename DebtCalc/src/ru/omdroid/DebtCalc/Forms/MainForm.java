@@ -2,7 +2,6 @@ package ru.omdroid.DebtCalc.Forms;
 
 import android.app.Activity;
 
-import android.app.DialogFragment;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -15,15 +14,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.*;
-import ru.omdroid.DebtCalc.Arithmetic;
-import ru.omdroid.DebtCalc.DatePickerFragment;
+import ru.omdroid.DebtCalc.Listener.InControlFieldPercendCredit;
+import ru.omdroid.DebtCalc.Listener.InControlFieldSumCredit;
+import ru.omdroid.DebtCalc.Listener.InControlFieldTermCredit;
 import ru.omdroid.DebtCalc.R;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
 public class MainForm extends Activity {
-    public static final String TAG = "MainForm";
+    public static final String TAG = "ru.omdroid.DebtCalc.MainForm";
 
     @Override
     public void onCreate(Bundle savedInstanceState)  {
@@ -32,24 +29,21 @@ public class MainForm extends Activity {
         Button butStart = (Button)findViewById(R.id.butStart);
         final EditText etSumCredit = (EditText)findViewById(R.id.etCreditSum);
         final EditText etTermCredit = (EditText)findViewById(R.id.etTermCredit);
-        final EditText etPercend = (EditText)findViewById(R.id.edPercend);
-        final EditText etDopPlatej = (EditText)findViewById(R.id.etDopPlatej);
-        final CheckBox overallDopPlatej = (CheckBox)findViewById(R.id.cbIndexDopPlatej);
-        final TextView dateStart = (TextView)findViewById(R.id.dateStart);
-
+        final EditText etPercend = (EditText)findViewById(R.id.etPercentCredit);
         final DisplayMetrics displayMetrics = new DisplayMetrics();
+        final String[] param = new String[3];
+
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         Log.v("Размер экрана: ", displayMetrics.widthPixels + " на " + displayMetrics.heightPixels);
 
-        Calendar calendar = Calendar.getInstance();
-        dateStart.setText(calendar.get(Calendar.DATE)+"."+calendar.get(Calendar.MONTH)+"."+calendar.get(Calendar.YEAR));
-        //etSumCredit.addTextChangedListener(new InputMask());
+        etSumCredit.addTextChangedListener(new InControlFieldSumCredit((ImageView)findViewById(R.id.markerSumCredit)));
+        etPercend.addTextChangedListener(new InControlFieldPercendCredit((ImageView)findViewById(R.id.markerPercentCredit)));
+        etTermCredit.addTextChangedListener(new InControlFieldTermCredit((ImageView)findViewById(R.id.markerTermCredit)));
 
         butStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Arithmetic arithmetic = null;
                 String notify = "Пожалуйста, введите следующие параметры для кредита:";
                 if (etSumCredit.getText().toString().equals("") || etSumCredit.getText().toString().equals("0"))
                     notify = notify + "\nСумму кредита.";
@@ -60,28 +54,16 @@ public class MainForm extends Activity {
                 if (notify.length() > 55)
                     Toast.makeText(getBaseContext(), notify, Toast.LENGTH_LONG).show();
                 else {
-                    if (etDopPlatej.getText().toString().equals("") || Double.valueOf(etDopPlatej.getText().toString()) == 0)
-                        arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()), Double.valueOf(etPercend.getText().toString()));
-                    else
-                        arithmetic = new Arithmetic(Double.valueOf(etSumCredit.getText().toString()), Integer.valueOf(etTermCredit.getText().toString()), Double.valueOf(etPercend.getText().toString()), Double.valueOf(etDopPlatej.getText().toString()), overallDopPlatej.isChecked());
-                    Intent intent = new Intent(getBaseContext(), TestActivity.class/*ContextWindow.class*/);
-                   // intent.putStringArrayListExtra(TAG, (ArrayList<String>) arithmetic.allResult);
+                    param[0] = etSumCredit.getText().toString();
+                    param[1] = etTermCredit.getText().toString();
+                    param[2] = etPercend.getText().toString();
+                    Intent intent = new Intent(getBaseContext(), ResultForm.class);
+                    intent.putExtra(TAG, param);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
             }
         });
-
-        final DialogFragment dialogFragment = new DatePickerFragment(dateStart);
-        dateStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogFragment.show(getFragmentManager(), "date");
-            }
-        });
-
-
-
     }
 
     @Override

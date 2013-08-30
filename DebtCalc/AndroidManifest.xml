@@ -3,7 +3,7 @@
           package="ru.omdroid.DebtCalc"
           android:versionCode="1"
           android:versionName="1.0"
-        android:installLocation="preferExternal">
+        android:installLocation="auto">
     <uses-sdk android:minSdkVersion="14"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
@@ -13,7 +13,6 @@
             >
         <activity
                 android:name="ru.omdroid.DebtCalc.Forms.MainForm"
-                android:label="@string/labelName"
                 android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +29,7 @@
         <activity
                 android:name="ru.omdroid.DebtCalc.Forms.AnaliticForm"
                 android:screenOrientation="portrait"/>
-        <activity android:name=".Forms.TestActivity"
+        <activity android:name=".Forms.ResultForm"
                   android:screenOrientation="portrait"/>
     </application>
 </manifest>
