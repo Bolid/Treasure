@@ -31,5 +31,18 @@
                 android:screenOrientation="portrait"/>
         <activity android:name=".Forms.ResultForm"
                   android:screenOrientation="portrait"/>
+        <activity
+                android:name=".Forms.ListResultForm"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".Forms.TabActivityResult"
+                android:screenOrientation="portrait"/>
+        <receiver
+                android:name=".Receiver.ReceiverArithmetic">
+            <intent-filter>
+                <action android:name="GO"/>
+                <action android:name="START"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

@@ -4,4 +4,6 @@
     <color name="buttonNextStroke">#ffbecac2</color>
     <color name="transparent">#e7f4eb</color>
     <color name="substrate">#eafdf4</color>
+    <color name="coloLabel">#fc9c14</color>
+    <color name="colorValue">#021460</color>
 </resources>

@@ -11,10 +11,12 @@
     <string name="main_layout_label_credit_dopPayment">Досрочное погашение</string>
     <string name="main_layout_label_credit_percend">Процент</string>
     <string name="result_layout_label_payment">Если платить по:</string>
+    <string name="list_dialog_label_dopPaymentMouth">Если в этом месяце заплатить:</string>
     <!--Value-->
-    <string name="main_layout_value_credit_sum">900000</string>
+    <string name="main_layout_value_credit_sum">900 000</string>
     <string name="main_layout_value_credit_percend">12</string>
     <string name="main_layout_value_credit_term">120</string>
     <!--Button-->
-    <string name="buttonNext">Далее</string>
+    <string name="buttonNextMainLayout">Далее</string>
+    <string name="buttonNextListDialog">Далее</string>
 </resources>

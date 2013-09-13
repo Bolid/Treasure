@@ -8,10 +8,7 @@ import android.os.Bundle;
 
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 
 import android.widget.*;
 import ru.omdroid.DebtCalc.Listener.InControlFieldPercendCredit;
@@ -19,12 +16,16 @@ import ru.omdroid.DebtCalc.Listener.InControlFieldSumCredit;
 import ru.omdroid.DebtCalc.Listener.InControlFieldTermCredit;
 import ru.omdroid.DebtCalc.R;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class MainForm extends Activity {
     public static final String TAG = "ru.omdroid.DebtCalc.MainForm";
 
     @Override
     public void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
         Button butStart = (Button)findViewById(R.id.butStart);
         final EditText etSumCredit = (EditText)findViewById(R.id.etCreditSum);
@@ -37,7 +38,7 @@ public class MainForm extends Activity {
 
         Log.v("Размер экрана: ", displayMetrics.widthPixels + " на " + displayMetrics.heightPixels);
 
-        etSumCredit.addTextChangedListener(new InControlFieldSumCredit((ImageView)findViewById(R.id.markerSumCredit)));
+        etSumCredit.addTextChangedListener(new InControlFieldSumCredit((ImageView)findViewById(R.id.markerSumCredit), etSumCredit));
         etPercend.addTextChangedListener(new InControlFieldPercendCredit((ImageView)findViewById(R.id.markerPercentCredit)));
         etTermCredit.addTextChangedListener(new InControlFieldTermCredit((ImageView)findViewById(R.id.markerTermCredit)));
 
@@ -54,11 +55,16 @@ public class MainForm extends Activity {
                 if (notify.length() > 55)
                     Toast.makeText(getBaseContext(), notify, Toast.LENGTH_LONG).show();
                 else {
-                    param[0] = etSumCredit.getText().toString();
+                    param[0] = "";
+                    for (int j = etSumCredit.getText().length(); j > 0; j--) {
+                        if ("1234567890".contains(String.valueOf(etSumCredit.getText().toString().charAt(j-1))))
+                            param[0] = etSumCredit.getText().toString().charAt(j-1) + param[0];
+                    }
                     param[1] = etTermCredit.getText().toString();
                     param[2] = etPercend.getText().toString();
-                    Intent intent = new Intent(getBaseContext(), ResultForm.class);
-                    intent.putExtra(TAG, param);
+                    new AppDate(param);
+                    Intent intent = new Intent(getBaseContext(), TabActivityResult.class);
+                    //intent.putExtra(TAG, param);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -84,5 +90,12 @@ public class MainForm extends Activity {
             default:
                 return  super.onOptionsItemSelected(item);
         }
+    }
+}
+
+class AppDate{
+    static String[] param;
+    AppDate(String[] param){
+        this.param = param;
     }
 }

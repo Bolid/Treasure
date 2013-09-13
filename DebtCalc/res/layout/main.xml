@@ -25,23 +25,23 @@
             android:id="@+id/markerSumCredit" android:layout_alignLeft="@+id/lalelTitleMain" android:layout_below="@+id/line_1Main"
             android:src="@drawable/marker_green_one" android:layout_marginLeft="25dp" android:layout_marginTop="25dp"/>
     <TextView
+            style="@style/styleLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_layout_label_credit_sum"
             android:id="@+id/labelCreditSum"
-            android:textStyle="bold" android:textColor="#fc9c14"
-            android:textSize="18sp"
             android:gravity="right"
             android:layout_alignParentRight="true"
             android:layout_alignBottom="@+id/markerSumCredit"
             android:layout_marginRight="25dp"/>
     <EditText
+            style="@style/styleValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_layout_value_credit_sum"
             android:id="@+id/etCreditSum" android:layout_alignRight="@+id/labelCreditSum"
-            android:layout_below="@+id/markerSumCredit" android:textColor="#021460" android:textStyle="bold"
-            android:textSize="20sp" android:layout_alignLeft="@+id/labelCreditSum" android:gravity="center_vertical|right"
+            android:layout_below="@+id/markerSumCredit"
+            android:layout_alignLeft="@+id/labelCreditSum" android:gravity="center_vertical|right"
             android:inputType="numberDecimal" android:maxLength="10"/>
     <ImageView
             android:layout_width="wrap_content"
@@ -49,21 +49,22 @@
             android:id="@+id/markerPercentCredit" android:layout_alignLeft="@+id/textView" android:layout_below="@+id/etCreditSum"
             android:src="@drawable/marker_green_two" android:layout_marginLeft="25dp" android:layout_marginTop="25dp"/>
     <TextView
+            style="@style/styleLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_layout_label_credit_percend"
             android:id="@+id/labelPercendCredit"
-            android:textStyle="bold" android:textColor="#fc9c14"
-            android:textSize="18sp" android:layout_alignRight="@+id/labelCreditSum"
+            android:layout_alignRight="@+id/labelCreditSum"
             android:layout_alignBottom="@+id/markerPercentCredit"/>
     <EditText
+            style="@style/styleValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_layout_value_credit_percend"
             android:id="@+id/etPercentCredit" android:layout_alignRight="@+id/labelCreditSum"
             android:layout_below="@+id/markerPercentCredit" android:layout_alignLeft="@+id/labelPercendCredit"
-            android:textColor="#021460" android:textStyle="bold" android:textSize="20sp" android:gravity="center_vertical|right"
-            android:inputType="numberDecimal" android:maxLength="3"/>
+            android:gravity="center_vertical|right"
+            android:inputType="numberDecimal" android:maxLength="4"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,25 +72,25 @@
             android:layout_below="@+id/etPercentCredit" android:layout_marginLeft="25dp"
             android:layout_marginTop="25dp" android:src="@drawable/marker_green_three"/>
     <TextView
+            style="@style/styleLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_layout_label_credit_term"
             android:id="@+id/labelTermCredit"
-            android:textStyle="bold" android:textColor="#fc9c14"
-            android:textSize="18sp"
             android:layout_alignRight="@+id/labelCreditSum" android:layout_alignBottom="@+id/markerTermCredit"/>
     <EditText
+            style="@style/styleValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_layout_value_credit_term"
             android:id="@+id/etTermCredit" android:layout_alignRight="@+id/labelCreditSum"
             android:layout_below="@+id/markerTermCredit"
-            android:textColor="#021460" android:textStyle="bold" android:textSize="20sp" android:gravity="center_vertical|right"
+            android:gravity="center_vertical|right"
             android:inputType="number" android:maxLength="3"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="75dp"
-            android:text="@string/buttonNext"
+            android:text="@string/buttonNextMainLayout"
             android:textColor="@color/color_style"
             android:textSize="25sp"
             android:id="@+id/butStart"

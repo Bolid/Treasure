@@ -2,53 +2,64 @@ package ru.omdroid.DebtCalc.Listener;
 
 import android.text.*;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import ru.omdroid.DebtCalc.R;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.regex.Pattern;
 
 
 public class InControlFieldSumCredit implements TextWatcher{
-    Pattern pattern = Pattern.compile("[0-9\\s]*");
-    NumberFormat numberFormat = new DecimalFormat("###,###,###,###");
-    Boolean mEditing;
+    NumberFormat numberFormat = new DecimalFormat("###,###,###,###.##");
     ImageView markerCreditSum;
     EditText etSumCredit;
-    String form = "";
-    boolean run = true;
-    int i = 0;
-    public InControlFieldSumCredit(ImageView markerCreditSum){
+    String beforeText;
+    int position;
+    public InControlFieldSumCredit(ImageView markerCreditSum, EditText etSumCredit){
         this.markerCreditSum = markerCreditSum;
         this.etSumCredit = etSumCredit;
-        mEditing = false;
     }
 
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        Log.v("Позиция i i2 i3: ", charSequence.toString());
+        beforeText = charSequence.toString();
+
     }
 
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        Log.v("Позиция i i2 i3: ", charSequence.toString());
+        String s = "";
+        position = etSumCredit.getSelectionStart();
+        for (int j = etSumCredit.getText().length(); j > 0; j--) {
+            if ("1234567890".contains(String.valueOf(etSumCredit.getText().toString().charAt(j-1))))
+                s = etSumCredit.getText().toString().charAt(j-1) + s;
+        }
 
-        if (i == 0)
+        if (!s.equals("")){
+            Log.v("Позиция курсора: ", String.valueOf(position));
+            s = String.valueOf(numberFormat.format(Double.valueOf(s)));
+            etSumCredit.removeTextChangedListener(this);
+            etSumCredit.setText(s);
+            etSumCredit.addTextChangedListener(this);
+                if (((beforeText.length() - s.length()) > 1 & position != 0) || (position > s.length()))
+                    etSumCredit.setSelection(position - 1);
+                else if ((s.length() - beforeText.length()) > 1 & position != s.length())
+                    etSumCredit.setSelection(position + 1);
+                else
+                    etSumCredit.setSelection(position);
+        }
+
+        if (charSequence.toString().length() == 0)
             markerCreditSum.setImageResource(R.drawable.marker_red_one);
-        if (i3 != 0)
+        if (charSequence.toString().length() != 0)
             markerCreditSum.setImageResource(R.drawable.marker_green_one);
-        Log.v("onTextChanged ", charSequence.toString()+" "+i+" "+i2+" "+i3);
     }
 
     @Override
     public synchronized void afterTextChanged(Editable s) {
-        /*if (run)
-        {
-            run = false;
-            form = numberFormat.format(Double.valueOf(s.toString()));
-            Log.v("Values ", form);
-            s.clear();
-        }
-        s.append(form, 0, form.length());*/
     }
 }
