@@ -25,6 +25,7 @@ public class ResultForm extends Activity {
     static Double newPayment;
     public static Arithmetic arithmetic;
     static boolean paymentUpdate;
+    static boolean overPayment;
     @Override
     public void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,8 @@ public class ResultForm extends Activity {
         final TextView textView = (TextView)findViewById(R.id.valuePayment);
 
         paymentUpdate = true;
+        overPayment = false;
+
         arithmetic = new Arithmetic(Double.valueOf(params[0]), Integer.valueOf(params[1]), Double.valueOf(params[2]));
         newPayment = Double.valueOf(Arithmetic.allResult.get(4));
         SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar);
@@ -46,6 +49,10 @@ public class ResultForm extends Activity {
                 seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                        if (i != 0)
+                            overPayment = true;
+                        else
+                            overPayment = false;
                         newPayment = Double.valueOf(Arithmetic.allResult.get(4)) + 100 * i;
                         textView.setText(String.valueOf(numberFormat.format(newPayment)));
                         sizeWightBar = view.getWidth() / ((Double.valueOf(Arithmetic.allResult.get(1)) + arithmetic.getDeltaNew(newPayment))) / Double.valueOf(Arithmetic.allResult.get(1));

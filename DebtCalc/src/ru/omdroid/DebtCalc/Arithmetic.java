@@ -1,7 +1,6 @@
 package ru.omdroid.DebtCalc;
 
 
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.math.BigDecimal;
@@ -17,7 +16,7 @@ public class Arithmetic {
     Double percend = 0.0;
     Double dopPlatej;
     Boolean indexDopPlatej;
-    private HashMap<Integer, Double> allPaymentMonth;
+    private HashMap<Integer, Double> hmPaymentMonth;
     public static ArrayList <String> allResult;
     public static ArrayList <HashMap<String, String>> listResult = null;
 
@@ -25,7 +24,10 @@ public class Arithmetic {
         this.sumCredit = sumCredit;
         this.termCredit = termCredit;
         this.percend = Double.valueOf(percend);
+
+        hmPaymentMonth = new HashMap<Integer, Double>();
         allResult = new ArrayList<String>();
+
         allResult.add(0, String.valueOf(dopPlatej)); //исходные данные Дополнительный платеж
         allResult.add(1, String.valueOf(sumCredit)); //исходные данные Сумма кредита
         allResult.add(2, String.valueOf(termCredit)); //исходные данные Срок кредита
@@ -83,8 +85,7 @@ public class Arithmetic {
             initializationInParameter();
         BigDecimal delta = BigDecimal.valueOf(Double.valueOf(platej.toString()) * termCredit - sumCredit);
         delta = delta.setScale(2, BigDecimal.ROUND_HALF_DOWN);
-        Double result = Double.valueOf(delta.toString());
-        return result;
+        return Double.valueOf(delta.toString());
     }
 
     public Double getDeltaNew(Double platej){
@@ -105,7 +106,7 @@ public class Arithmetic {
         return n;
     }
 
-   public void getOverpaymentAllMonth(Double dopPlatej, Boolean indexDopPlatej, int j){
+   public void getOverpaymentAllMonth(Double dopPlatej, boolean overPayment){
         Double sumCredit = Double.valueOf(allResult.get(1));
         int termCredit = Integer.valueOf(allResult.get(2));
         listResult = new ArrayList<HashMap<String, String>>();
@@ -114,16 +115,14 @@ public class Arithmetic {
         int i = 0;
         Double constPlat = 0.0;
         Double allPer = 0.0;
-        BigDecimal roundValue;
         NumberFormat numberFormat = new DecimalFormat("###,###,###,###.00");
         while (sumCredit > 0.0){
             i++;
             constPlat = getPlatej(sumCredit, termCredit);
             Log.d(TAG, "Месяц: " + i + ". Платеж: " +getPlatej(sumCredit, termCredit));
 
-
             hm = new HashMap<String, String>();
-            if (dopPlatej > Double.valueOf(allResult.get(4)))
+            if (overPayment)
                 hm.put(from[2], String.valueOf(1));
             else
                 hm.put(from[2], String.valueOf(0));
@@ -157,13 +156,7 @@ public class Arithmetic {
             Log.d(TAG, "________");
         }
         Log.d(TAG, "Общая переплата: " + allPer);
-        roundValue = BigDecimal.valueOf(allPer);
-        roundValue = roundValue.setScale(2, BigDecimal.ROUND_HALF_DOWN);
-        allPer = Double.valueOf(roundValue.toString());/*
-        if (indexDopPlatej)
-            allResult.set(7, String.valueOf(constPlat + dopPlatej)); //Ежемесячный платеж с учетом доп. платежа
-        else
-            allResult.set(7, "Плавающий платеж"); //Ежемесячный платеж с учетом доп. платежа*/
+        allPer = Rounding(allPer);
         allResult.set(8, String.valueOf(allPer)); //Общая переплата
         allResult.set(9, String.valueOf(i)); //Срок погашения
 
@@ -176,7 +169,60 @@ public class Arithmetic {
         listResult.add(hm);
     }
 
-   public void initializationInParameter(){
+    public void getOverpaymentSomeMonth(Double dopPlatejSomeMonth, Double dopPlatej, int j){
+        Double sumCredit = Double.valueOf(allResult.get(1));
+        int termCredit = Integer.valueOf(allResult.get(9));
+        int i = 0;
+        Double allPer = 0.0;
+        if (j != 0 & !hmPaymentMonth.containsKey(j))
+            hmPaymentMonth.put(j, dopPlatejSomeMonth);
+
+        listResult = new ArrayList<HashMap<String, String>>();
+        HashMap<String, String> hm = null;
+        String[] from = new String[]{"Number", "Payment", "Image", "Dolg", "Delta"};
+
+        NumberFormat numberFormat = new DecimalFormat("###,###,###,###.00");
+        while (sumCredit > 0.0){
+            i++;
+            hm = new HashMap<String, String>();
+            if (i < 10)
+                hm.put(from[0], " "+String.valueOf(i)+" ");
+            else if (i > 9 & i < 100)
+                hm.put(from[0], String.valueOf(i)+" ");
+            else
+                hm.put(from[0], String.valueOf(i));
+            if (!hmPaymentMonth.containsKey(i)){
+                if (sumCredit < dopPlatej)
+                    dopPlatej = sumCredit + (sumCredit * (percend/100.) / 12);
+                hm.put(from[1], numberFormat.format(dopPlatej));
+                Log.v(TAG, "Платеж: " + getPlatej(sumCredit, termCredit));
+                hm.put(from[3], numberFormat.format(Rounding(dopPlatej - (sumCredit * (percend/100.) / 12))));
+                hm.put(from[4], numberFormat.format(Rounding((sumCredit * (percend/100.) / 12))));
+                sumCredit = sumCredit - (dopPlatej - (sumCredit * (percend/100.) / 12));
+            }
+            else{
+                hm.put(from[1], numberFormat.format(Rounding(hmPaymentMonth.get(i))));
+                hm.put(from[2], String.valueOf(1));
+                hm.put(from[3], numberFormat.format(Rounding(dopPlatej - (sumCredit * (percend/100.) / 12))));
+                hm.put(from[4], numberFormat.format(Rounding((sumCredit * (percend/100.) / 12))));
+                sumCredit = sumCredit - (hmPaymentMonth.get(i) - (sumCredit * (percend/100.) / 12));
+                dopPlatej = getPlatej(sumCredit, termCredit - 1);
+            }
+            allPer = allPer + (sumCredit * (percend/100.) / 12);
+            termCredit--;
+            listResult.add(hm);
+            Log.v(TAG, "Сумма: " + sumCredit);
+        }
+
+        hm = new HashMap<String, String>();
+        hm.put(from[0], "Всего");
+        hm.put(from[1], numberFormat.format(Double.valueOf(allResult.get(1)) + Double.valueOf(allResult.get(5))));
+        hm.put(from[3], numberFormat.format(Double.valueOf(allResult.get(1))));
+        hm.put(from[4], numberFormat.format(Double.valueOf(allResult.get(5))));
+        listResult.add(hm);
+
+    }
+    public void initializationInParameter(){
        sumCredit = Double.valueOf(allResult.get(1));
        termCredit = Integer.valueOf(allResult.get(2));
    }
