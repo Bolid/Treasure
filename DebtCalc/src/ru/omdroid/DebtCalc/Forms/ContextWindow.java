@@ -54,7 +54,7 @@ public class ContextWindow extends Activity {
                 if (etDopPlatej.getText().toString().equals("") || Double.valueOf(etDopPlatej.getText().toString()) == 0)
                     arithmetic = new Arithmetic(Double.valueOf(result.get(1)), Integer.valueOf(result.get(2)), Double.valueOf(result.get(3)));
                 else
-                    arithmetic = new Arithmetic(Double.valueOf(result.get(1)), Integer.valueOf(result.get(2)), Double.valueOf(result.get(3)), Double.valueOf(etDopPlatej.getText().toString()), false);
+                    arithmetic = new Arithmetic(Double.valueOf(result.get(1)), Integer.valueOf(result.get(2)), Double.valueOf(result.get(3)));
                             resultShow(arithmetic.allResult);
             }
         });

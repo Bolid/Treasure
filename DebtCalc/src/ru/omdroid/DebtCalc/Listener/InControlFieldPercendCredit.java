@@ -18,9 +18,9 @@ public class InControlFieldPercendCredit implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (i == 0)
+        if (charSequence.toString().length() == 0)
             markerCreditPercent.setImageResource(R.drawable.marker_red_two);
-        if (i3 != 0)
+        else
             markerCreditPercent.setImageResource(R.drawable.marker_green_two);
     }
 

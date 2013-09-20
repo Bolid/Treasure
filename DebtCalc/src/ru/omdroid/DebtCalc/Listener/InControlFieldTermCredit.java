@@ -17,9 +17,9 @@ public class InControlFieldTermCredit implements TextWatcher{
 
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (i == 0)
+        if (charSequence.toString().length() == 0)
             markerCreditTerm.setImageResource(R.drawable.marker_red_three);
-        if (i3 != 0)
+        else
             markerCreditTerm.setImageResource(R.drawable.marker_green_three);
     }
 

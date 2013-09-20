@@ -1,13 +1,11 @@
 package ru.omdroid.DebtCalc.Forms;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.View;
 import ru.omdroid.DebtCalc.Arithmetic;
+import ru.omdroid.DebtCalc.R;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -159,7 +157,7 @@ class GraphView extends View {
             paint.setColor(Color.GREEN);
             paint.setStrokeWidth(10);
             paint.setShadowLayer(15, 0, 0, Color.rgb(95, 112, 95));
-            canvas.drawLine((float) (sizeWightBar/2) + 7, 115, 100, 115, paint);
+            canvas.drawLine((float) paddingBar, 115, 100, 115, paint);
 
             paint.setColor(Color.WHITE);
             paint.setTextSize(25);

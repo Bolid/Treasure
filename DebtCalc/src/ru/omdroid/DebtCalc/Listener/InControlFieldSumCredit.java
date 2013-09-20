@@ -55,7 +55,7 @@ public class InControlFieldSumCredit implements TextWatcher{
 
         if (charSequence.toString().length() == 0)
             markerCreditSum.setImageResource(R.drawable.marker_red_one);
-        if (charSequence.toString().length() != 0)
+        else
             markerCreditSum.setImageResource(R.drawable.marker_green_one);
     }
 
