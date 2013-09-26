@@ -52,11 +52,11 @@ public class InControlFieldSumCredit implements TextWatcher{
                 else
                     etSumCredit.setSelection(position);
         }
-
-        if (charSequence.toString().length() == 0)
-            markerCreditSum.setImageResource(R.drawable.marker_red_one);
-        else
-            markerCreditSum.setImageResource(R.drawable.marker_green_one);
+        if (markerCreditSum != null)
+            if (charSequence.toString().length() == 0)
+                markerCreditSum.setImageResource(R.drawable.marker_red_one);
+            else
+                markerCreditSum.setImageResource(R.drawable.marker_green_one);
     }
 
     @Override

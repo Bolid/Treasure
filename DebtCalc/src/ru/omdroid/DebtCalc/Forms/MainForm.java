@@ -42,6 +42,8 @@ public class MainForm extends Activity {
         etPercend.addTextChangedListener(new InControlFieldPercendCredit((ImageView)findViewById(R.id.markerPercentCredit)));
         etTermCredit.addTextChangedListener(new InControlFieldTermCredit((ImageView)findViewById(R.id.markerTermCredit)));
 
+        etSumCredit.setText(new DecimalFormat("###,###,###,###").format(Double.valueOf(etSumCredit.getText().toString())));
+
         butStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){

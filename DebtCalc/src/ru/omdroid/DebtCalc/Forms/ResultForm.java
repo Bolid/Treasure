@@ -1,12 +1,7 @@
 package ru.omdroid.DebtCalc.Forms;
 
 import android.app.Activity;
-import android.app.TabActivity;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.*;
@@ -15,8 +10,6 @@ import ru.omdroid.DebtCalc.R;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class ResultForm extends Activity {
@@ -55,11 +48,11 @@ public class ResultForm extends Activity {
                             overPayment = false;
                         if (i == seekBar.getMax())
                             i--;
-                        newPayment = arithmetic.getPlatej(Double.valueOf(params[0]), Integer.valueOf(params[1]) - i);
-                        textView.setText(arithmetic.setMask(arithmetic.getPlatej(Double.valueOf(params[0]), Integer.valueOf(params[1]) - i)));
+                        newPayment = arithmetic.getPayment(Double.valueOf(params[0]), Integer.valueOf(params[1]) - i);
+                        textView.setText(arithmetic.setMask(arithmetic.getPayment(Double.valueOf(params[0]), Integer.valueOf(params[1]) - i)));
                        // sizeWightBar = view.getWidth() / ((Double.valueOf(Arithmetic.allResult.get(1)) + arithmetic.getDeltaNew(newPayment))) / Double.valueOf(Arithmetic.allResult.get(1));
                         //arithmetic.getDeltaNew(newPayment);
-                        arithmetic.getDeltaDefault(arithmetic.getPlatej(Double.valueOf(params[0]), Integer.valueOf(params[1]) - i), Integer.valueOf(params[1]) - i);
+                        arithmetic.getDeltaDefault(arithmetic.getPayment(Double.valueOf(params[0]), Integer.valueOf(params[1]) - i), Integer.valueOf(params[1]) - i);
                         Arithmetic.allResult.set(6, String.valueOf(Integer.valueOf(params[1]) - i));
                         view.invalidate();
                         paymentUpdate = true;
