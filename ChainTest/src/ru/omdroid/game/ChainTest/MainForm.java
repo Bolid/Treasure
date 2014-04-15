@@ -213,7 +213,7 @@ public class MainForm extends Activity implements View.OnClickListener {
 
 
 
-        findWord = getPartLikeRequestForFastChain(word1, wordOut);
+        findWord = getPartLikeRequest(word1);
 
         cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + findWord + ") AND " + localIgnore);
         Log.i(TAG, "Новое слово: " + a +"   "+ findWord);
@@ -221,7 +221,7 @@ public class MainForm extends Activity implements View.OnClickListener {
 
         while (cursor.moveToNext()){
             word1 = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
-            Log.i(TAG, "Найденное слово: " + a +"   "+ word1);
+            Log.i(TAG, "hhhhhhНайденное слово: " + a +"   "+ word1);
             localIgnore = localIgnore + " AND " + WorkDB.F_WORD + " <> '" + word1 + "'";
             fastChain = fastChain + word1 + "\n";
             Log.i(TAG, "Новая цепочка: " + a +"   " + fastChain);
@@ -236,6 +236,16 @@ public class MainForm extends Activity implements View.OnClickListener {
         }
         cursor.close();
         return fastChain;
+    }
+
+    private void checkValidWord(String s, String requestIgnoreWord, Integer countWordDeltaWordValid){
+    Cursor cursorNextWordValid = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + getPartLikeRequest(s) + ") AND " + requestIgnoreWord );
+        if (cursorNextWordValid.getCount() > countWordDeltaWordValid){
+            countWordDeltaWordValid = cursorNextWordValid.getCount();
+            wordValid = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
+        }
+        cursorNextWordValid.close();
+
     }
 }
 
