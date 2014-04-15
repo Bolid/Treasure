@@ -110,6 +110,9 @@ public class MainForm extends Activity implements View.OnClickListener {
         String localIgnore;
         String chain =  fastFindChain(word1, word2, requestIgnoreWord, "", 1);
 
+        if (chain.equals(""))
+            chain = findChain(word1, word2, requestIgnoreWord, "", 1);
+
         tv.setText(word1 + "\n" + chain);
         /*
         while (selectSymbol < word1.length()){
@@ -170,6 +173,39 @@ public class MainForm extends Activity implements View.OnClickListener {
     }
 
     private String fastFindChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, Integer a){
+
+        String localIgnore = requestIgnoreWord, findWord;
+        Cursor cursor;
+        String word1 = wordIn, fastChain = chain;
+
+
+
+        findWord = getPartLikeRequestForFastChain(word1, wordOut);
+
+        cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + findWord + ") AND " + localIgnore);
+        Log.i(TAG, "Новое слово: " + a +"   "+ findWord);
+        Log.i(TAG, "Игнорируем: " + a +"   "+ localIgnore);
+
+        while (cursor.moveToNext()){
+            word1 = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
+            Log.i(TAG, "Найденное слово: " + a +"   "+ word1);
+            localIgnore = localIgnore + " AND " + WorkDB.F_WORD + " <> '" + word1 + "'";
+            fastChain = fastChain + word1 + "\n";
+            Log.i(TAG, "Новая цепочка: " + a +"   " + fastChain);
+            fastChain = fastFindChain(word1, wordOut, localIgnore, fastChain, a + 1);
+            if (fastChain.contains(wordOut))
+                return fastChain;
+        }
+
+        if (cursor.getCount() == 0 & !word1.equals(wordOut)){
+            Log.i(TAG,  + a + "Ничего не найдено. Очищаем ");
+            fastChain = "";
+        }
+        cursor.close();
+        return fastChain;
+    }
+
+    private String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, Integer a){
 
         String localIgnore = requestIgnoreWord, findWord;
         Cursor cursor;
