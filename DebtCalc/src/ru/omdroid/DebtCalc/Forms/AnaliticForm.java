@@ -67,7 +67,7 @@ public class AnaliticForm extends Activity{
                 if (!controlEdittext()){
                     for (int j = 0; j < i; j++){
                         ArrayList<String> inData = new ArrayList<String>(descriptionCredits.getParamCredit(String.valueOf(j)));
-                        Arithmetic arithmetic = new Arithmetic(Double.valueOf(inData.get(0)), Integer.valueOf(inData.get(1)), Double.valueOf(inData.get(2)), Double.valueOf(inData.get(3)), false);
+                        Arithmetic arithmetic = new Arithmetic(Double.valueOf(inData.get(0)), Integer.valueOf(inData.get(1)), Double.valueOf(inData.get(2)));
                         allResultAnalitic.add(listIndex++, "Кредит");
                         allResultAnalitic.add(listIndex++, String.valueOf(j+1));
                         allResultAnalitic.add(listIndex++, "_______");
