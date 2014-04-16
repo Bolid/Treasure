@@ -207,8 +207,8 @@ public class MainForm extends Activity implements View.OnClickListener {
 
     private String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, Integer a){
 
-        String localIgnore = requestIgnoreWord, findWord, validWord;
-        int countWordDeltaWordValid = 0;
+        String localIgnore = requestIgnoreWord, findWord, nextWord = "";
+        int countWordDeltaWordNext = 0, countWordForCompare;
         Cursor cursor;
         String word1 = wordIn, fastChain = chain;
 
@@ -222,6 +222,11 @@ public class MainForm extends Activity implements View.OnClickListener {
 
         while (cursor.moveToNext()){
             word1 = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
+            if (countWordDeltaWordNext < (countWordForCompare = checkValidWord(word1, requestIgnoreWord))){
+                nextWord = word1;
+                Log.i(TAG, "Следующее слово: " + a +"   "+ nextWord);
+                countWordDeltaWordNext = countWordForCompare;
+            }
             Log.i(TAG, "hhhhhhНайденное слово: " + a +"   "+ word1);
             localIgnore = localIgnore + " AND " + WorkDB.F_WORD + " <> '" + word1 + "'";
             fastChain = fastChain + word1 + "\n";
@@ -236,27 +241,17 @@ public class MainForm extends Activity implements View.OnClickListener {
             fastChain = "";
         }
         cursor.close();
+        fastChain = findChain(nextWord, wordOut, requestIgnoreWord, fastChain, 1);
         return fastChain;
     }
 
-    private ValidWord checkValidWord(String s, String wordDefault, String requestIgnoreWord, Integer countWordDeltaWordValid){
+    private int checkValidWord(String s, String requestIgnoreWord){
+        int countNextWord;
         Cursor cursorNextWordValid = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + getPartLikeRequest(s) + ") AND " + requestIgnoreWord );
-
-        ValidWord validWord = new ValidWord();
-        validWord.wordValid = wordDefault;
-        validWord.countWordDeltaWordValid = countWordDeltaWordValid;
-        if (cursorNextWordValid.getCount() > countWordDeltaWordValid){
-            validWord.wordValid = s;
-            validWord.countWordDeltaWordValid = cursorNextWordValid.getCount();
-        }
+        countNextWord = cursorNextWordValid.getCount();
         cursorNextWordValid.close();
-        return validWord;
+        return countNextWord;
     }
-}
-
-class ValidWord{
-    String wordValid = "";
-    int countWordDeltaWordValid = 0;
 }
 
 
