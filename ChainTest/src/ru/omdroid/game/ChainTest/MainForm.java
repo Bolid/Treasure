@@ -207,7 +207,8 @@ public class MainForm extends Activity implements View.OnClickListener {
 
     private String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, Integer a){
 
-        String localIgnore = requestIgnoreWord, findWord;
+        String localIgnore = requestIgnoreWord, findWord, validWord;
+        int countWordDeltaWordValid = 0;
         Cursor cursor;
         String word1 = wordIn, fastChain = chain;
 
@@ -238,15 +239,24 @@ public class MainForm extends Activity implements View.OnClickListener {
         return fastChain;
     }
 
-    private void checkValidWord(String s, String requestIgnoreWord, Integer countWordDeltaWordValid){
-    Cursor cursorNextWordValid = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + getPartLikeRequest(s) + ") AND " + requestIgnoreWord );
+    private ValidWord checkValidWord(String s, String wordDefault, String requestIgnoreWord, Integer countWordDeltaWordValid){
+        Cursor cursorNextWordValid = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + getPartLikeRequest(s) + ") AND " + requestIgnoreWord );
+
+        ValidWord validWord = new ValidWord();
+        validWord.wordValid = wordDefault;
+        validWord.countWordDeltaWordValid = countWordDeltaWordValid;
         if (cursorNextWordValid.getCount() > countWordDeltaWordValid){
-            countWordDeltaWordValid = cursorNextWordValid.getCount();
-            wordValid = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
+            validWord.wordValid = s;
+            validWord.countWordDeltaWordValid = cursorNextWordValid.getCount();
         }
         cursorNextWordValid.close();
-
+        return validWord;
     }
+}
+
+class ValidWord{
+    String wordValid = "";
+    int countWordDeltaWordValid = 0;
 }
 
 
