@@ -75,6 +75,8 @@ public class MainForm extends Activity implements View.OnClickListener {
             if (i < s.length() - 1)
                 result = result + " OR ";
         }
+        if (!result.equals(""))
+            result = "(" + result + ") AND ";
         Log.i(TAG, "Часть like запроса: " + result);
         return result;
     }
@@ -91,6 +93,7 @@ public class MainForm extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        tv.setText("");
         Cursor cursor;
         String word1 = etWord1.getText().toString();
         String word2 = etWord2.getText().toString();
@@ -104,7 +107,6 @@ public class MainForm extends Activity implements View.OnClickListener {
         }
         String requestIgnoreWord = WorkDB.F_WORD + " <> '" + word1 + "'";
         String findWord;
-        tv.setText("Цепочка\n");
         int selectSymbol = 0;
         String contChain;
         String localIgnore;
@@ -113,7 +115,7 @@ public class MainForm extends Activity implements View.OnClickListener {
         if (chain.equals(""))
             chain = findChain(word1, word2, requestIgnoreWord, "", 1);
 
-        tv.setText(word1 + "\n" + chain);
+        tv.setText(word1 + "\n" + tv.getText() + chain);
         /*
         while (selectSymbol < word1.length()){
 
@@ -216,13 +218,14 @@ public class MainForm extends Activity implements View.OnClickListener {
 
         findWord = getPartLikeRequest(word1);
 
-        cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + findWord + ") AND " + localIgnore);
+        cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE " + findWord + localIgnore);
         Log.i(TAG, "Новое слово: " + a +"   "+ findWord);
         Log.i(TAG, "Игнорируем: " + a +"   "+ localIgnore);
 
         while (cursor.moveToNext()){
             word1 = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
             if (countWordDeltaWordNext < (countWordForCompare = checkValidWord(word1, requestIgnoreWord))){
+
                 nextWord = word1;
                 Log.i(TAG, "Следующее слово: " + a +"   "+ nextWord);
                 countWordDeltaWordNext = countWordForCompare;
@@ -241,13 +244,15 @@ public class MainForm extends Activity implements View.OnClickListener {
             fastChain = "";
         }
         cursor.close();
-        fastChain = findChain(nextWord, wordOut, requestIgnoreWord, fastChain, 1);
+        tv.setText(tv.getText() + nextWord + "\n");
+        Log.i(TAG,  + a + "Продолжаем с нового слова " + nextWord);
+        fastChain = findChain(nextWord, wordOut, localIgnore, fastChain, 1);
         return fastChain;
     }
 
     private int checkValidWord(String s, String requestIgnoreWord){
         int countNextWord;
-        Cursor cursorNextWordValid = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + getPartLikeRequest(s) + ") AND " + requestIgnoreWord );
+        Cursor cursorNextWordValid = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE " + getPartLikeRequest(s) + requestIgnoreWord );
         countNextWord = cursorNextWordValid.getCount();
         cursorNextWordValid.close();
         return countNextWord;
