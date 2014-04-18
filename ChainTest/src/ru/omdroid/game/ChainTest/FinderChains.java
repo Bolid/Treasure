@@ -45,10 +45,10 @@ public class FinderChains {
         return fastChain;
     }
 
-    public String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, Integer a, String nextWordOut){
+    public String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, String nextWordOut, Integer a, Integer countIterationProcess){
 
         String localIgnore = requestIgnoreWord, findWord, nextWord = nextWordOut;
-        int countWordDeltaWordNext = a, countWordForCompare;
+        int countWordDeltaWordNext = a, countWordForCompare, currentIteration = countIterationProcess;
         Cursor cursor;
         String word1 = wordIn, fastChain = chain;
 
@@ -81,10 +81,16 @@ public class FinderChains {
             Log.i(TAG, "findChain Выходим из процесса ");
             return fastChain;
         }
+
         cursor.close();
         fastChain = fastChain + nextWord + "\n";
         Log.i(TAG, "findChain Продолжаем с нового слова " + nextWord);
-        fastChain = findChain(nextWord, wordOut, localIgnore, fastChain, countWordDeltaWordNext, nextWord);
+        currentIteration++;
+
+        if (currentIteration > 3)
+            return fastChain;
+
+        fastChain = findChain(nextWord, wordOut, localIgnore, fastChain, nextWord, countWordDeltaWordNext, currentIteration);
         return fastChain;
     }
 

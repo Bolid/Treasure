@@ -24,6 +24,16 @@
             android:layout_height="wrap_content"
             android:text="Построить"
             android:id="@+id/button" android:onClick="onClick"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etAddMyWord" android:layout_gravity="center" android:hint="Ваше слово"
+            android:gravity="center_vertical|center_horizontal" android:layout_marginTop="25dp"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить"
+            android:id="@+id/butAddMyWord"/>
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
