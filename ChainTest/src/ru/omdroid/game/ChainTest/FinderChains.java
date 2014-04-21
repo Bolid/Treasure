@@ -39,7 +39,7 @@ public class FinderChains {
 
         if (cursor.getCount() == 0 & !word1.equals(wordOut)){
             Log.i(TAG,  + a + "Ничего не найдено. Очищаем ");
-            fastChain = "";
+            fastChain = chain;
         }
         cursor.close();
         return fastChain;
