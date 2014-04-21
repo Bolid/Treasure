@@ -4,11 +4,7 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Следующее слово" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3e540e6-8b3b-4079-a723-34e0e378a9c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c3e540e6-8b3b-4079-a723-34e0e378a9c7" name="Default" comment="" />
     <ignored path="ChainTest.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="c3e540e6-8b3b-4079-a723-34e0e378a9c7" time="1397678494009" ignored="false" />
@@ -95,7 +91,7 @@
       <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="226" column="67" selection-start="9140" selection-end="9140" vertical-scroll-proportion="0.26005748">
+            <state line="222" column="4" selection-start="8822" selection-end="8822" vertical-scroll-proportion="0.17385058">
               <folding />
             </state>
           </provider>
@@ -507,7 +503,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="67" selection-start="9140" selection-end="9140" vertical-scroll-proportion="0.26005748">
+        <state line="222" column="4" selection-start="8822" selection-end="8822" vertical-scroll-proportion="0.17385058">
           <folding />
         </state>
       </provider>
