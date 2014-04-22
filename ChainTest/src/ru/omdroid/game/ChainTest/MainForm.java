@@ -18,6 +18,7 @@ public class MainForm extends Activity implements View.OnClickListener {
     EditText etWord1, etWord2, etAddMyWord;
 
     String word1, word2;
+    Boolean startGame = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,6 @@ public class MainForm extends Activity implements View.OnClickListener {
         Log.i(TAG, "Начало метода");
         switch (view.getId()){
             case R.id.button:
-                tv.setText("");
                 processStart();
                 break;
             case R.id.butAddMyWord:
@@ -60,29 +60,46 @@ public class MainForm extends Activity implements View.OnClickListener {
     }
 
     private void processStart(){
-        word1 = etWord1.getText().toString();
+        String chain;
+
+        if (startGame){
+            word1 = etWord1.getText().toString();
+            tv.setText(word1 + "\n");
+            chain = word1 + "\n";
+            startGame = !startGame;
+        }
+        else {
+            chain = tv.getText().toString();
+            String[] chainArray = convertChainStringToList(chain);
+            word1 = chainArray[chainArray.length - 1];
+        }
+
         word2 = etWord2.getText().toString();
         if (wordControl(word1))
             return;
-        String chain = word1 + "\n";
+
+        String requestIgnoreWord = getRequestIgnoreWord(chain);
+
+        chain =  finderChains.fastFindChain(word1, word2, requestIgnoreWord, chain, chain, 1);
+
+        if (chain.equals(tv.getText().toString()))
+            chain = finderChains.findChain(word1, word2, requestIgnoreWord, chain,  chain, "", 0, 0);
 
         tv.setText(chain);
-        String requestIgnoreWord = WorkDB.F_WORD + " <> '" + word1 + "'";
-
-        chain =  finderChains.fastFindChain(word1, word2, requestIgnoreWord, chain, 1);
-
-        if (chain.equals(word1 + "\n"))
-            chain = finderChains.findChain(word1, word2, requestIgnoreWord, chain, "", 0, 0);
-
-        tv.setText(chain);
+        if (chain.contains(word2)){
+            Toast.makeText(getBaseContext(), "Игра завершена", Toast.LENGTH_LONG).show();
+            startGame = !startGame;
+        }
     }
 
     private void writeMyWord(String str){
 
-        if (wordControl(etAddMyWord.getText().toString()) & wordControlUser(etAddMyWord.getText().toString(), str))
+        if (wordControl(etAddMyWord.getText().toString()))
+            return;
+        if (wordControlUser(etAddMyWord.getText().toString(), str))
             return;
 
-        tv.setText(tv.getText() + etAddMyWord.getText().toString());
+        tv.setText(tv.getText() + etAddMyWord.getText().toString() + "\n");
         Log.i(TAG, getRegExForControlMyWord(str));
         Log.i(TAG, String.valueOf(etAddMyWord.getText().toString().matches(getRegExForControlMyWord(str)) & !str.contains(etAddMyWord.getText().toString())));
 
@@ -105,11 +122,13 @@ public class MainForm extends Activity implements View.OnClickListener {
 
     private String getRequestIgnoreWord(String chain){
         String requestIgnoreWord = "";
-        for (String word : convertChainStringToList(chain)){
-            requestIgnoreWord = requestIgnoreWord + WorkDB.F_WORD + " <> '" + word + "'";
+        String[] chainArray = convertChainStringToList(chain);
+        for (int i =0; i < chainArray.length; i++){
+            requestIgnoreWord = requestIgnoreWord + WorkDB.F_WORD + " <> '" + chainArray[i] + "'";
+            if (i < chainArray.length - 1)
+                requestIgnoreWord = requestIgnoreWord + " AND ";
         }
-
-        return "";
+        return requestIgnoreWord;
     }
 
 

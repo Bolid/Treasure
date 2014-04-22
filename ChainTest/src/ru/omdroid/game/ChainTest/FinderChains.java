@@ -12,18 +12,19 @@ public class FinderChains {
         this.workDB = workDB;
     }
 
-    public String fastFindChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, Integer a){
+    public String fastFindChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, final String chainDefault, Integer a){
 
-        String localIgnore = requestIgnoreWord, findWord;
+        String localIgnore = requestIgnoreWord, requestForFindWord;
         Cursor cursor;
         String word1 = wordIn, fastChain = chain;
 
+        Log.i(TAG, "Строим по слову: " + a +"   "+ word1);
 
 
-        findWord = getPartLikeRequestForFastChain(word1, wordOut);
+        requestForFindWord = getPartLikeRequestForFastChain(word1, wordOut);
 
-        cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + findWord + ") AND " + localIgnore);
-        Log.i(TAG, "Новое слово: " + a + "   " + findWord);
+        cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE (" + requestForFindWord + ") AND " + localIgnore);
+        Log.i(TAG, "Новое слово: " + a + "   " + requestForFindWord);
         Log.i(TAG, "Игнорируем: " + a +"   "+ localIgnore);
 
         while (cursor.moveToNext()){
@@ -32,20 +33,20 @@ public class FinderChains {
             localIgnore = localIgnore + " AND " + WorkDB.F_WORD + " <> '" + word1 + "'";
             fastChain = fastChain + word1 + "\n";
             Log.i(TAG, "Новая цепочка: " + a +"   " + fastChain);
-            fastChain = fastFindChain(word1, wordOut, localIgnore, fastChain, a + 1);
+            fastChain = fastFindChain(word1, wordOut, localIgnore, fastChain, chainDefault, a + 1);
             if (fastChain.contains(wordOut))
                 return fastChain;
         }
 
         if (cursor.getCount() == 0 & !word1.equals(wordOut)){
             Log.i(TAG,  + a + "Ничего не найдено. Очищаем ");
-            fastChain = chain;
+            fastChain = chainDefault;
         }
         cursor.close();
         return fastChain;
     }
 
-    public String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, String nextWordOut, Integer a, Integer countIterationProcess){
+    public String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chainDefault, String chain, String nextWordOut, Integer a, Integer countIterationProcess){
 
         String localIgnore = requestIgnoreWord, findWord, nextWord = nextWordOut;
         int countWordDeltaWordNext = a, countWordForCompare, currentIteration = countIterationProcess;
@@ -72,7 +73,7 @@ public class FinderChains {
             localIgnore = localIgnore + " AND " + WorkDB.F_WORD + " <> '" + word1 + "'";
             fastChain = fastChain + word1 + "\n";
             Log.i(TAG, "findChain Новая цепочка: " + fastChain);
-            fastChain = fastFindChain(word1, wordOut, localIgnore, fastChain, a + 1);
+            fastChain = fastFindChain(word1, wordOut, localIgnore, fastChain, chainDefault, a + 1);
             if (fastChain.contains(wordOut))
                 return fastChain;
         }
@@ -90,7 +91,7 @@ public class FinderChains {
         if (currentIteration > 3)
             return fastChain;
 
-        fastChain = findChain(nextWord, wordOut, localIgnore, fastChain, nextWord, countWordDeltaWordNext, currentIteration);
+        fastChain = findChain(nextWord, wordOut, localIgnore, chainDefault, fastChain, nextWord, countWordDeltaWordNext, currentIteration);
         return fastChain;
     }
 
