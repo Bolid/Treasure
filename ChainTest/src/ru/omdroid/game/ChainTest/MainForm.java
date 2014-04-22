@@ -9,8 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class MainForm extends Activity implements View.OnClickListener {
 
     final String TAG = App.getInstance().getPackageName() + ".MainForm";
@@ -66,25 +64,31 @@ public class MainForm extends Activity implements View.OnClickListener {
         word2 = etWord2.getText().toString();
         if (wordControl(word1))
             return;
+        String chain = word1 + "\n";
 
+        tv.setText(chain);
         String requestIgnoreWord = WorkDB.F_WORD + " <> '" + word1 + "'";
-        String chain =  finderChains.fastFindChain(word1, word2, requestIgnoreWord, "", 1);
 
-        if (chain.equals(""))
-            chain = finderChains.findChain(word1, word2, requestIgnoreWord, "", "", 0, 0);
+        chain =  finderChains.fastFindChain(word1, word2, requestIgnoreWord, chain, 1);
 
-        tv.setText(word1 + "\n" + tv.getText() + chain);
+        if (chain.equals(word1 + "\n"))
+            chain = finderChains.findChain(word1, word2, requestIgnoreWord, chain, "", 0, 0);
+
+        tv.setText(chain);
     }
 
     private void writeMyWord(String str){
 
-        if (wordControl(etAddMyWord.getText().toString()))
+        if (wordControl(etAddMyWord.getText().toString()) & wordControlUser(etAddMyWord.getText().toString(), str))
             return;
-        getRegExForControlMyWord(str);
+
+        tv.setText(tv.getText() + etAddMyWord.getText().toString());
+        Log.i(TAG, getRegExForControlMyWord(str));
+        Log.i(TAG, String.valueOf(etAddMyWord.getText().toString().matches(getRegExForControlMyWord(str)) & !str.contains(etAddMyWord.getText().toString())));
 
     }
 
-    private void getRegExForControlMyWord(String word1){
+    private String getRegExForControlMyWord(String word1){
         String latestWord = convertChainStringToList(word1)[convertChainStringToList(word1).length-1];
         String regEx = "";
         for (int i = 0; i < latestWord.length(); i++){
@@ -92,11 +96,22 @@ public class MainForm extends Activity implements View.OnClickListener {
             if (i < latestWord.length() - 1)
                 regEx = regEx + "|";
         }
+        return regEx;
     }
 
     private String[] convertChainStringToList(String chain){
         return chain.split("\n");
         }
+
+    private String getRequestIgnoreWord(String chain){
+        String requestIgnoreWord = "";
+        for (String word : convertChainStringToList(chain)){
+            requestIgnoreWord = requestIgnoreWord + WorkDB.F_WORD + " <> '" + word + "'";
+        }
+
+        return "";
+    }
+
 
     private boolean wordControl(String word1){
         if (word1.length() != word2.length()){
@@ -105,6 +120,19 @@ public class MainForm extends Activity implements View.OnClickListener {
         }
         if (word1.equals("") || word2.equals("")){
             Toast.makeText(getBaseContext(), "Введите слова", Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean wordControlUser(String wordUser, String chain){
+        if (!wordUser.matches(getRegExForControlMyWord(chain))){
+            Toast.makeText(getBaseContext(), "В слове заменено более одной буквы", Toast.LENGTH_LONG).show();
+            return true;
+        }
+
+        if (chain.contains(wordUser)){
+            Toast.makeText(getBaseContext(), "Слово \"" + wordUser + "\" уже присутствует в цепочке", Toast.LENGTH_LONG).show();
             return true;
         }
         return false;

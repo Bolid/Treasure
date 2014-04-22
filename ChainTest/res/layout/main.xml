@@ -11,13 +11,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/word1" android:hint="***" android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal" android:maxLength="4" android:text="СОМ"/>
+                android:gravity="center_vertical|center_horizontal" android:maxLength="4" android:text="СЛОН"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/word2" android:hint="***" android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal" android:maxLength="4"
-                android:text="МИР"/>
+                android:text="КОРМ"/>
     </LinearLayout>
     <Button
             android:layout_width="fill_parent"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/etAddMyWord" android:layout_gravity="center" android:hint="Ваше слово"
-            android:gravity="center_vertical|center_horizontal" android:layout_marginTop="25dp"/>
+            android:gravity="center_vertical|center_horizontal" android:layout_marginTop="25dp" android:text="СЛОГ"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
