@@ -34,10 +34,15 @@
             android:layout_height="wrap_content"
             android:text="Добавить"
             android:id="@+id/butAddMyWord"/>
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvChain"
-            />
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvChain"
+                />
+    </ScrollView>
 </LinearLayout>
 

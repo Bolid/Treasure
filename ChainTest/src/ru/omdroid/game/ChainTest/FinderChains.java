@@ -13,7 +13,7 @@ public class FinderChains {
     }
 
     public String fastFindChain(String wordIn, String wordOut, String requestIgnoreWord, String chain, final String chainDefault, Integer a){
-
+        Log.i(TAG, "Сцепочка по умолчанию: " + chainDefault);
         String localIgnore = requestIgnoreWord, requestForFindWord;
         Cursor cursor;
         String word1 = wordIn, fastChain = chain;
@@ -48,6 +48,7 @@ public class FinderChains {
 
     public String findChain(String wordIn, String wordOut, String requestIgnoreWord, String chainDefault, String chain, String nextWordOut, Integer a, Integer countIterationProcess){
 
+        Log.i(TAG, "findChain Сцепочка по умолчанию: " + chainDefault);
         String localIgnore = requestIgnoreWord, findWord, nextWord = nextWordOut;
         int countWordDeltaWordNext = a, countWordForCompare, currentIteration = countIterationProcess;
         Cursor cursor;
@@ -58,18 +59,15 @@ public class FinderChains {
         findWord = getPartLikeRequest(word1);
 
         cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE " + findWord + localIgnore);
-        Log.i(TAG, "findChain Новое слово: " + findWord);
-        Log.i(TAG, "findChain Игнорируем: " + localIgnore);
 
         while (cursor.moveToNext()){
             word1 = cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD));
             if (countWordDeltaWordNext < (countWordForCompare = getCountDerivativeWordForNextWord(word1, requestIgnoreWord))){
 
                 nextWord = word1;
-                Log.i(TAG, "findChain Следующее слово: " + nextWord);
                 countWordDeltaWordNext = countWordForCompare;
             }
-            Log.i(TAG, "findChain hhhhhhНайденное слово: " + word1);
+            Log.i(TAG, "findChain Следующее слово: " + word1);
             localIgnore = localIgnore + " AND " + WorkDB.F_WORD + " <> '" + word1 + "'";
             fastChain = fastChain + word1 + "\n";
             Log.i(TAG, "findChain Новая цепочка: " + fastChain);
@@ -84,14 +82,16 @@ public class FinderChains {
         }
 
         cursor.close();
-        fastChain = fastChain + nextWord + "\n";
+        if (!fastChain.contains(nextWord))
+            fastChain = fastChain + nextWord + "\n";
         Log.i(TAG, "findChain Продолжаем с нового слова " + nextWord);
         currentIteration++;
 
         if (currentIteration > 3)
             return fastChain;
+        localIgnore = getLocalIgnoreWord(nextWord, localIgnore);
 
-        fastChain = findChain(nextWord, wordOut, localIgnore, chainDefault, fastChain, nextWord, countWordDeltaWordNext, currentIteration);
+        fastChain = findChain(nextWord, wordOut, localIgnore, chainDefault + nextWord + "\n", fastChain, nextWord, countWordDeltaWordNext, currentIteration);
         return fastChain;
     }
 
@@ -122,7 +122,10 @@ public class FinderChains {
         }
         if (!result.equals(""))
             result = "(" + result + ") AND ";
-        Log.i(TAG, "Часть like запроса: " + result);
         return result;
+    }
+
+    private String getLocalIgnoreWord(String word, String localIgnoreWord){
+        return localIgnoreWord += " AND " + WorkDB.F_WORD + " <> '" + word + "'";
     }
 }

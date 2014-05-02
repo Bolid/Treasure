@@ -11,25 +11,46 @@
     </option>
     <option name="selection" value="[Full]" />
   </component>
+  <component name="AndroidLayoutPreviewToolWindow">
+    <option name="state">
+      <GlobalState>
+        <option name="device" value="2.7in QVGA" />
+        <option name="dockMode" value="" />
+        <option name="nightMode" value="notnight" />
+        <option name="targetHashString" value="android-17" />
+        <option name="theme" value="Theme" />
+        <option name="visible" value="false" />
+      </GlobalState>
+    </option>
+  </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ru.omdroid.game.ChainTest." />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ru.omdroid.game.ChaosWord.MainForm" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67a204c8-9b94-441c-9586-ead95bffaadc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="007b8e60-d3fa-4b73-b4db-0f8e98772b62" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.apk" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.unaligned.apk" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/FinderChains.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/FinderChains.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/MainForm.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/MainForm.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$attr.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$drawable.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$id.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$layout.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$string.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/FinderChains.java" afterPath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/FinderChains.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/MainForm.java" afterPath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/MainForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/res/layout/main.xml" afterPath="$PROJECT_DIR$/../ChainTest/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" />
     </list>
-    <ignored path="ChainTest.iws" />
+    <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1399058855765" ignored="false" />
-    <file path="/FinderChains.java" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1398281063116" ignored="false" />
-    <file path="/MainForm.java" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1398429447449" ignored="false" />
-    <file path="/fragment.java" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1398151454057" ignored="false" />
-    <file path="/a.dummy" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1398170094272" ignored="false" />
-    <file path="/ThreadProcess.java" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1398364467163" ignored="false" />
-    <file path="/WorkDB.java" changelist="67a204c8-9b94-441c-9586-ead95bffaadc" time="1398423549647" ignored="false" />
+    <file path="/MainForm.java" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398859047149" ignored="false" />
+    <file path="/main.xml" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398845636556" ignored="false" />
+    <file path="/Dummy.txt" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1399059025534" ignored="false" />
+    <file path="/color.xml" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398847013024" ignored="false" />
+    <file path="/a.dummy" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398858407934" ignored="false" />
+    <file path="/fragment.java" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398855213113" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,61 +102,42 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="ChainTest" />
+    <favorites_list name="ChaosWord" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="29" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.03768844">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkDB.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/WorkDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="27" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="132" column="41" selection-start="10745" selection-end="10745" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadProcess.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/ThreadProcess.java">
+      <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.65770173">
+              <folding>
+                <element signature="method#emptyCage#0;class#MainForm#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinderChains.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
+      <file leaf-file-name="color.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/color.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="13" selection-start="3517" selection-end="3517" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -159,11 +161,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java" />
-        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/ThreadProcess.java" />
+        <option value="$PROJECT_DIR$/res/layout/symbol.xml" />
+        <option value="$PROJECT_DIR$/res/values/color.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/WorkDB.java" />
-        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
       </list>
     </option>
   </component>
@@ -173,7 +174,7 @@
     <option name="width" value="1026" />
     <option name="height" value="577" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -202,39 +203,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="OverrideImplement.combined" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Android Application.ChainTest">
+  <component name="RunManager" selected="Android Application.ChaosWord">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -335,10 +322,10 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="ChainTest" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="ChainTest" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
+    <configuration default="false" name="ChaosWord" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ChaosWord" />
+      <option name="ACTIVITY_CLASS" value="ru.omdroid.game.ChaosWord.MainForm" />
+      <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
       <option name="PREFERRED_AVD" value="" />
@@ -354,7 +341,7 @@
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Android Application.ChainTest" />
+      <item index="0" class="java.lang.String" itemvalue="Android Application.ChaosWord" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -362,11 +349,28 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="67a204c8-9b94-441c-9586-ead95bffaadc" name="Default" comment="" />
-      <created>1398149076735</created>
-      <updated>1398149076735</updated>
+      <changelist id="007b8e60-d3fa-4b73-b4db-0f8e98772b62" name="Default" comment="" />
+      <created>1398840619177</created>
+      <updated>1398840619177</updated>
     </task>
     <servers />
   </component>
@@ -378,20 +382,21 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56551725" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.86206895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.87586206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.43448275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67126435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67126435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -474,101 +479,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/ThreadProcess.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="13" selection-start="3517" selection-end="3517" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#emptyCage#0;class#MainForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
+    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="13" selection-start="3517" selection-end="3517" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
+    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="19" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="38" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/ThreadProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/FinderChains.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="13" selection-start="3517" selection-end="3517" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/WorkDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -578,16 +507,16 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="132" column="41" selection-start="10745" selection-end="10745" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChainTest/MainForm.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="29" selection-start="1625" selection-end="1625" vertical-scroll-proportion="0.03768844">
+        <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.65770173">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#emptyCage#0;class#MainForm#0" expanded="false" />
           </folding>
         </state>
       </provider>

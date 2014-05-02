@@ -1,6 +1,7 @@
 package ru.omdroid.game.ChainTest;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,7 +51,10 @@ public class MainForm extends Activity implements View.OnClickListener {
         Log.i(TAG, "Начало метода");
         switch (view.getId()){
             case R.id.button:
-                processStart();
+                Cursor cursor = workDB.readDataFromDatabase("SELECT * FROM " + WorkDB.T_WORDS + " WHERE " + WorkDB.F_WORD + " REGEXP '[ПР]ИР'");
+                while (cursor.moveToNext())
+                    Log.i(TAG, "ПРОВЕРКА ВЫБОРКИ " + cursor.getString(cursor.getColumnIndex(WorkDB.F_WORD)));
+                //processStart();
                 break;
             case R.id.butAddMyWord:
                 writeMyWord(tv.getText().toString());
@@ -86,10 +90,8 @@ public class MainForm extends Activity implements View.OnClickListener {
             chain = finderChains.findChain(word1, word2, requestIgnoreWord, chain,  chain, "", 0, 0);
 
         tv.setText(chain);
-        if (chain.contains(word2)){
-            Toast.makeText(getBaseContext(), "Игра завершена", Toast.LENGTH_LONG).show();
-            startGame = !startGame;
-        }
+
+        controlFinishGame(chain, "Android");
     }
 
     private void writeMyWord(String str){
@@ -100,6 +102,8 @@ public class MainForm extends Activity implements View.OnClickListener {
             return;
 
         tv.setText(tv.getText() + etAddMyWord.getText().toString() + "\n");
+
+        controlFinishGame(tv.getText().toString(), "User");
         Log.i(TAG, getRegExForControlMyWord(str));
         Log.i(TAG, String.valueOf(etAddMyWord.getText().toString().matches(getRegExForControlMyWord(str)) & !str.contains(etAddMyWord.getText().toString())));
 
@@ -155,6 +159,18 @@ public class MainForm extends Activity implements View.OnClickListener {
             return true;
         }
         return false;
+    }
+    private void controlFinishGame(String chain, String winner){
+        if (chain.contains(word2)){
+            Toast.makeText(getBaseContext(), "Игра завершена. Победил " + winner + ".", Toast.LENGTH_LONG).show();
+            startGame = !startGame;
+            etWord1.setEnabled(true);
+            etWord2.setEnabled(true);
+        }
+        else{
+            etWord1.setEnabled(false);
+            etWord2.setEnabled(false);
+        }
     }
 }
 
