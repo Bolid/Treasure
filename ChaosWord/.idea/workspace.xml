@@ -28,26 +28,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="007b8e60-d3fa-4b73-b4db-0f8e98772b62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.apk" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.unaligned.apk" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ChainTest.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/FinderChains.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/FinderChains.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/MainForm.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/MainForm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$attr.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$drawable.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$id.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$layout.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$string.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R.class" afterPath="$PROJECT_DIR$/../ChainTest/out/production/ChainTest/ru/omdroid/game/ChainTest/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/FinderChains.java" afterPath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/FinderChains.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/MainForm.java" afterPath="$PROJECT_DIR$/../ChainTest/src/ru/omdroid/game/ChainTest/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/res/layout/main.xml" afterPath="$PROJECT_DIR$/../ChainTest/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/MainForm.java" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398859047149" ignored="false" />
+    <file path="/MainForm.java" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1399069171294" ignored="false" />
     <file path="/main.xml" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398845636556" ignored="false" />
-    <file path="/Dummy.txt" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1399059025534" ignored="false" />
+    <file path="/Dummy.txt" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1399065301613" ignored="false" />
     <file path="/color.xml" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398847013024" ignored="false" />
     <file path="/a.dummy" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398858407934" ignored="false" />
     <file path="/fragment.java" changelist="007b8e60-d3fa-4b73-b4db-0f8e98772b62" time="1398855213113" ignored="false" />
@@ -66,6 +56,203 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="58" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="59" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="60" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="61" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="62" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="63" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="89" class="ru.omdroid.game.ChaosWord.MainForm" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="66" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="67" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="68" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="69" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="70" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" line="71" class="ru.omdroid.game.ChaosWord.MainForm$1" package="ru.omdroid.game.ChaosWord">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -126,10 +313,8 @@
       <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.65770173">
-              <folding>
-                <element signature="method#emptyCage#0;class#MainForm#0" expanded="false" />
-              </folding>
+            <state line="58" column="0" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.3325301">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,8 +356,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1026" />
-    <option name="height" value="577" />
+    <option name="width" value="1442" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -207,7 +392,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -375,31 +560,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1026" height="577" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="24" width="1442" height="877" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.87586206" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.87482995" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789117" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67126435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67126435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -481,10 +666,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#emptyCage#0;class#MainForm#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -514,10 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="80" selection-start="3183" selection-end="3183" vertical-scroll-proportion="0.65770173">
-          <folding>
-            <element signature="method#emptyCage#0;class#MainForm#0" expanded="false" />
-          </folding>
+        <state line="58" column="0" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.3325301">
+          <folding />
         </state>
       </provider>
     </entry>
