@@ -22,8 +22,8 @@ public class MainForm extends Activity {
         setContentView(R.layout.main);
         tableLayout = (GridLayout)findViewById(R.id.container);
         heightScreen = getHeightScreen();
-        Log.i(TAG, "Пустая клетка: " + emptyCage);
         addViewInContainer(tableLayout);
+        Log.i(TAG, "ПУстая клетка. " + emptyCage);
     }
 
     private void addViewInContainer(GridLayout frameLayout){
@@ -38,9 +38,9 @@ public class MainForm extends Activity {
 
     private TextView createTextView(final int positionInCell, final int positionInRow, final int position){
         final TextView textView = new TextView(getBaseContext());
-        GridLayout.Spec row = GridLayout.spec(positionInRow);
         GridLayout.Spec cell = GridLayout.spec(positionInCell);
-        final GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(row, cell);
+        GridLayout.Spec row = GridLayout.spec(positionInRow);
+        final GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(cell, row);
         layoutParams.setMargins(1, 1, 1, 1);
         textView.setLayoutParams(layoutParams);
         textView.setText("A");
@@ -52,14 +52,23 @@ public class MainForm extends Activity {
 
         textView.setOnClickListener(new View.OnClickListener() {
             int positionView = position;
+            int posCell = positionInCell;
+            int posRow = positionInRow;
             @Override
             public void onClick(View view) {
-                Log.i(TAG, "Клик сработал. " + positionView + "  "+ emptyCage);
+                Log.i(TAG, " __________\nКлик сработал. " + position + "  "+ emptyCage);
                 if (positionView - 5 == emptyCage){
-                    textView.setLayoutParams(changeLayoutParams(layoutParams.columnSpec, positionInRow));
+                    textView.setLayoutParams(changeLayoutParamsLeft(positionInCell, positionInRow));
                     Log.i(TAG, "Условие  сработало. ");
                     emptyCage = positionView;
                     positionView = positionView - 5;
+                    return;
+                }
+                if (positionView + 5 == emptyCage){
+                    textView.setLayoutParams(changeLayoutParamsRight(positionInCell, positionInRow));
+                    Log.i(TAG, "Условие  сработало. ");
+                    emptyCage = positionView;
+                    positionView = positionView + 5;
                 }
             }
         });
@@ -77,9 +86,16 @@ public class MainForm extends Activity {
         return random.nextInt(24) + 1;
     }
 
-    private GridLayout.LayoutParams changeLayoutParams(GridLayout.Spec cell, int row){
-        Log.i(TAG, "Метод сработал  " + String.valueOf(cell) + "  " + row);
-        GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(cell, GridLayout.spec(row - 1));
+    private GridLayout.LayoutParams changeLayoutParamsLeft(int cell, int row){
+        Log.i(TAG, "Проверка координат " + cell + "  " + row);
+        GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(cell), GridLayout.spec(row - 1));
+        layoutParams.setMargins(1, 1, 1, 1);
+        return layoutParams;
+    }
+
+    private GridLayout.LayoutParams changeLayoutParamsRight(int cell, int row){
+        Log.i(TAG, "Проверка координат " + cell + "  " + row);
+        GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(cell), GridLayout.spec(row + 1));
         layoutParams.setMargins(1, 1, 1, 1);
         return layoutParams;
     }
