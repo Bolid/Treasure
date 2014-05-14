@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
@@ -26,7 +28,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
     HashMap<Integer, TextView> hm = new HashMap<Integer, TextView>();
     ArrayList<TextView> selectedTV = new ArrayList<TextView>();
 
-    int heightScreen = 0,  emptyCage, rowEmptyGate, cellEmptyGate, deltaSwipe, sizeGameField = 6, countSelectedTV = 0;
+    int heightScreen = 0,  emptyCage, rowEmptyGate, cellEmptyGate, deltaSwipe, sizeGameField = 4, countSelectedTV = 0;
     float touchDownX = 0, touchUpX = 0, touchDownY = 0, touchUpY = 0;
     boolean editWord = false;
 
@@ -103,10 +105,17 @@ public class MainForm extends Activity implements View.OnTouchListener {
     }
 
     private GridLayout.LayoutParams changeLayoutParamsToTop(int cell, int row){
+
+        Animation animation = new TranslateAnimation(hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getY(), hm.get(emptyCage+sizeGameField).getY() - heightScreen / sizeGameField);
+        animation.setDuration(300);
+
+        hm.get(emptyCage+sizeGameField).setAnimation(animation);
         Log.i(TAG, "Проверка координат вверх. Старые координаты " + cell + "  " + row + ". Новые координаты " + cell + "  " + String.valueOf(row));
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(cell));
         layoutParams.setMargins(1, 1, 1, 1);
-        hm.get(emptyCage+sizeGameField).setLayoutParams(layoutParams);
+        layoutParams.layoutAnimationParameters
+        //hm.get(emptyCage+sizeGameField).setLayoutParams(layoutParams);
+        hm.get(emptyCage+sizeGameField).setY(hm.get(emptyCage+sizeGameField).getY() - heightScreen / sizeGameField);
         hm.put(emptyCage, hm.get(emptyCage+sizeGameField));
         hm.remove(emptyCage+sizeGameField);
         emptyCage += sizeGameField;
@@ -115,9 +124,15 @@ public class MainForm extends Activity implements View.OnTouchListener {
     }
 
     private GridLayout.LayoutParams changeLayoutParamsToBottom(int cell, int row){
+
+        Animation animation = new TranslateAnimation(hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getY(), hm.get(emptyCage+sizeGameField).getY() + heightScreen / sizeGameField - 20);
+        animation.setDuration(100);
+
+        hm.get(emptyCage+sizeGameField).setAnimation(animation);
         Log.i(TAG, "Проверка координат вниз. Старые координаты " + cell + "  " + row + ". Новые координаты " + cell + "  " + String.valueOf(row));
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(cell));
         layoutParams.setMargins(1, 1, 1, 1);
+        hm.get(emptyCage+sizeGameField).clearAnimation();
         hm.get(emptyCage-sizeGameField).setLayoutParams(layoutParams);
         hm.put(emptyCage, hm.get(emptyCage-sizeGameField));
         hm.remove(emptyCage-sizeGameField);
@@ -188,7 +203,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     }
 
                     if (!editWord){
-                        if (Math.abs(touchUpY - touchDownY) <= (deltaSwipe / sizeGameField - 20) / 2)
+                        if (directionMove(touchDownX, touchUpX, touchDownY, touchUpY)){
                             if ((touchDownX < touchUpX) & (cellEmptyGate != 0)){
                                 Log.i(TAG, "Движение вправо  " + touchDownX + "   " + touchUpX);
                                 changeLayoutParamsToRight(cellEmptyGate, rowEmptyGate);
@@ -201,8 +216,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
                                 changeLayoutParamsToLeft(cellEmptyGate, rowEmptyGate);
                                 return true;
                             }
-
-                        if (Math.abs(touchUpX - touchDownX) <= (deltaSwipe / sizeGameField - 20) / 2)
+                        }
+                        else{
                             if (touchDownY > touchUpY & (rowEmptyGate != sizeGameField - 1)) {
                                 Log.i(TAG, "Движение вверх  " + touchDownY + "   " + touchUpY);
                                 changeLayoutParamsToTop(cellEmptyGate, rowEmptyGate);
@@ -214,10 +229,11 @@ public class MainForm extends Activity implements View.OnTouchListener {
                                 changeLayoutParamsToBottom(cellEmptyGate, rowEmptyGate);
                                 return true;
                             }
+                        }
                     }
                     break;
-                default:
-                    break;
+            default:
+                break;
             }
         return true;
     }
@@ -241,5 +257,9 @@ public class MainForm extends Activity implements View.OnTouchListener {
         }
         selectedTV.clear();
         countSelectedTV = 0;
+    }
+
+    private boolean directionMove(float touchDownX, float touchUpX, float touchDownY, float touchUpY){
+        return Math.abs(touchDownX - touchUpX) > Math.abs(touchDownY - touchUpY);
     }
 }

@@ -3,9 +3,7 @@
   <component name="AndroidDesignerProfile">
     <option name="fullProfile">
       <profile>
-        <option name="device" value="2.7in QVGA" />
-        <option name="deviceConfiguration" value="Portrait" />
-        <option name="targetHashString" value="android-17" />
+        <option name="device" value="[None]" />
         <option name="theme" value="Theme" />
       </profile>
     </option>
@@ -28,19 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChaosWord.apk" afterPath="$PROJECT_DIR$/ChaosWord.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/color.xml" afterPath="$PROJECT_DIR$/res/values/color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/.idea/misc.xml" afterPath="$PROJECT_DIR$/../ChainTest/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400044863624" ignored="false" />
+    <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400098069494" ignored="false" />
     <file path="/fragment.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400070354422" ignored="false" />
-    <file path="/MainForm.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400071704062" ignored="false" />
+    <file path="/MainForm.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400101648739" ignored="false" />
     <file path="/strings.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400071919865" ignored="false" />
     <file path="/GateClickListener.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400062453101" ignored="false" />
     <file path="/main.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400069278585" ignored="false" />
@@ -106,13 +102,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainForm.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="242" column="28" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0">
+            <state line="115" column="21" selection-start="4501" selection-end="4526" vertical-scroll-proportion="0.4420131">
               <folding>
-                <element signature="e#680#699#0" expanded="true" />
-                <element signature="e#753#763#0" expanded="true" />
+                <element signature="e#771#790#0" expanded="true" />
+                <element signature="e#844#854#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,16 +117,16 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+            <state line="37" column="42" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.2247191">
+            <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,7 +135,7 @@
       <file leaf-file-name="color.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/color.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="44" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+            <state line="4" column="12" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,7 +144,7 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider editor-type-id="text-editor">
-            <state line="8" column="26" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
+            <state line="30" column="26" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -182,17 +178,17 @@
         <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/Listener/GateClickListener.java" />
         <option value="$PROJECT_DIR$/res/values/color.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1026" />
-    <option name="height" value="577" />
+    <option name="width" value="1442" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -220,6 +216,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,7 +328,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,6 +387,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -416,19 +425,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -517,14 +513,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1026" height="577" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="24" width="1442" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67356324" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33231083" sideWeight="0.67356324" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21839081" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -532,17 +525,20 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9172414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9170068" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24948876" sideWeight="0.67356324" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3264368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892396" sideWeight="0.082993194" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32517007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67356324" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33231083" sideWeight="0.67356324" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -613,10 +609,51 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="242" column="28" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#771#790#0" expanded="true" />
+            <element signature="e#844#854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="44" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#680#699#0" expanded="true" />
-            <element signature="e#753#763#0" expanded="true" />
+            <element signature="e#771#790#0" expanded="true" />
+            <element signature="e#844#854#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -632,45 +669,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#680#699#0" expanded="true" />
-            <element signature="e#753#763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Developing/Android/sdk/platforms/android-17/android.jar!/android/view/ViewGroup.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="16" selection-start="7680" selection-end="7680" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Developing/Android/sdk/platforms/android-17/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1078" column="28" selection-start="48946" selection-end="48946" vertical-scroll-proportion="40.795456">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/Listener/GateClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="178" selection-end="178" vertical-scroll-proportion="0.2567237">
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#771#790#0" expanded="true" />
+            <element signature="e#844#854#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/color.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="44" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+        <state line="4" column="12" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="text-editor">
-        <state line="8" column="26" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0">
+        <state line="30" column="26" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -678,27 +692,27 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="28" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#680#699#0" expanded="true" />
-            <element signature="e#753#763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+        <state line="37" column="42" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.2247191">
+        <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="21" selection-start="4501" selection-end="4526" vertical-scroll-proportion="0.4420131">
+          <folding>
+            <element signature="e#771#790#0" expanded="true" />
+            <element signature="e#844#854#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
