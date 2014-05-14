@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -17,22 +19,37 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
     final String TAG = "ru.omdroid.game.ChaosWord.MainForm";
 
-    GridLayout tableLayout;
+    GridLayout gridLayout;
+    Button btnOk, btnNo;
+    TextView tvEditedWord;
+
     HashMap<Integer, TextView> hm = new HashMap<Integer, TextView>();
-    int heightScreen = 0,  emptyCage, rowEmptyGate, cellEmptyGate, deltaSwipe, sizeGameField = 6;
+    ArrayList<TextView> selectedTV = new ArrayList<TextView>();
+
+    int heightScreen = 0,  emptyCage, rowEmptyGate, cellEmptyGate, deltaSwipe, sizeGameField = 6, countSelectedTV = 0;
     float touchDownX = 0, touchUpX = 0, touchDownY = 0, touchUpY = 0;
+    boolean editWord = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        tableLayout = (GridLayout)findViewById(R.id.container);
-        tableLayout.setRowCount(sizeGameField);
-        tableLayout.setColumnCount(sizeGameField);
-        tableLayout.setOnTouchListener(this);
+
+        gridLayout = (GridLayout)findViewById(R.id.container);
+        btnOk = (Button)findViewById(R.id.btnWordOk);
+        btnNo = (Button)findViewById(R.id.btnWordNo);
+        tvEditedWord = (TextView)findViewById(R.id.tvWord);
+
+        gridLayout.setRowCount(sizeGameField);
+        gridLayout.setColumnCount(sizeGameField);
+
+        gridLayout.setOnTouchListener(this);
+
         deltaSwipe = heightScreen = getHeightScreen();
         emptyCage = emptyCage();
         Log.i(TAG, "Пустая клетка " + emptyCage);
-        addViewInContainer(tableLayout);
+        addViewInContainer(gridLayout);
+
     }
 
     private void addViewInContainer(GridLayout frameLayout){
@@ -58,47 +75,13 @@ public class MainForm extends Activity implements View.OnTouchListener {
         textView.setLayoutParams(layoutParams);
         textView.setText(getSymbol());
         textView.setGravity(Gravity.CENTER);
-        textView.setBackgroundColor(getResources().getColor(R.color.red));
+        textView.setBackgroundColor(getResources().getColor(R.color.background_gate));
         textView.setTextSize(16);
         textView.setHeight(heightScreen / sizeGameField - 20);
         textView.setWidth(heightScreen / sizeGameField - 20);
 
-        /*textView.setOnClickListener(new View.OnClickListener() {
-            int positionView = position;
-            int posCell = positionInCell;
-            int posRow = positionInRow;
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, " __________\nКлик сработал. " + position + "  "+ emptyCage);
-                if (positionView - sizeGameField == emptyCage){
-                    textView.setLayoutParams(changeLayoutParamsToTop(posCell, posRow));
-                    posRow--;
-                    emptyCage = positionView;
-                    positionView = positionView - sizeGameField;
-                    return;
-                }
-                if (positionView + sizeGameField == emptyCage){
-                    textView.setLayoutParams(changeLayoutParamsToBottom(posCell, posRow));
-                    posRow++;
-                    emptyCage = positionView;
-                    positionView = positionView + sizeGameField;
-                    return;
-                }
-                if (positionView + 1 == emptyCage){
-                    textView.setLayoutParams(changeLayoutParamsToRight(posCell, posRow));
-                    posCell++;
-                    emptyCage = positionView;
-                    positionView = positionView + 1;
-                    return;
-                }
-                if (positionView - 1 == emptyCage){
-                    textView.setLayoutParams(changeLayoutParamsToLeft(posCell, posRow));
-                    posCell--;
-                    emptyCage = positionView;
-                    positionView = positionView - 1;
-                }
-            }
-        });*/
+        textView.setOnTouchListener(this);
+
         hm.put(position, textView);
         return textView;
     }
@@ -169,6 +152,9 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
+
+        TextView tv;
+
         switch (motionEvent.getAction()) {
 
                 case MotionEvent.ACTION_DOWN:
@@ -181,37 +167,79 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     touchUpY = motionEvent.getY();
                     Log.i(TAG, "Вторая координата" + motionEvent.getX());
 
+                    if (touchDownX == touchUpX & touchDownY == touchUpY){
+                        try{
+                            btnOk.setEnabled(true);
+                            btnNo.setEnabled(true);
 
-                    if (Math.abs(touchUpY - touchDownY) <= (deltaSwipe / sizeGameField - 20) / 2)
-                        if ((touchDownX < touchUpX) & (cellEmptyGate != 0)){
-                            Log.i(TAG, "Движение вправо  " + touchDownX + "   " + touchUpX);
-                            changeLayoutParamsToRight(cellEmptyGate, rowEmptyGate);
-                            return true;
-                    }
-                        else
-                        if ((touchDownX > touchUpX) & cellEmptyGate != sizeGameField - 1)
-                    {
-                        Log.i(TAG, "Движение влево  " + touchDownX + "   " + touchUpX);
-                        changeLayoutParamsToLeft(cellEmptyGate, rowEmptyGate);
-                        return true;
+                            editWord = true;
+                            tv = (TextView) view;
+                            tv.setBackgroundColor(getResources().getColor(R.color.background_select_gate));
+
+                            tvEditedWord.append(tv.getText().toString());
+                            selectedTV.add(countSelectedTV, tv);
+                            Log.i(TAG, "Буква " + tv.getText().toString());
+                            countSelectedTV++;
+                        }
+                        catch (ClassCastException e){
+                            Log.e(TAG, "Ошибка класса:  ", e);
+                        }
+                        return false;
                     }
 
-                    if (Math.abs(touchUpX - touchDownX) <= (deltaSwipe / sizeGameField - 20) / 2)
-                        if (touchDownY > touchUpY & (rowEmptyGate != sizeGameField - 1)) {
-                            Log.i(TAG, "Движение вверх  " + touchDownY + "   " + touchUpY);
-                            changeLayoutParamsToTop(cellEmptyGate, rowEmptyGate);
-                            return true;
-                        }
-                        else
-                        if (touchDownY < touchUpY &rowEmptyGate != 0){
-                            Log.i(TAG, "Движение вниз  " + touchDownY + "   " + touchUpY);
-                            changeLayoutParamsToBottom(cellEmptyGate, rowEmptyGate);
-                            return true;
-                        }
+                    if (!editWord){
+                        if (Math.abs(touchUpY - touchDownY) <= (deltaSwipe / sizeGameField - 20) / 2)
+                            if ((touchDownX < touchUpX) & (cellEmptyGate != 0)){
+                                Log.i(TAG, "Движение вправо  " + touchDownX + "   " + touchUpX);
+                                changeLayoutParamsToRight(cellEmptyGate, rowEmptyGate);
+                                return true;
+                            }
+                            else
+                            if ((touchDownX > touchUpX) & cellEmptyGate != sizeGameField - 1)
+                            {
+                                Log.i(TAG, "Движение влево  " + touchDownX + "   " + touchUpX);
+                                changeLayoutParamsToLeft(cellEmptyGate, rowEmptyGate);
+                                return true;
+                            }
+
+                        if (Math.abs(touchUpX - touchDownX) <= (deltaSwipe / sizeGameField - 20) / 2)
+                            if (touchDownY > touchUpY & (rowEmptyGate != sizeGameField - 1)) {
+                                Log.i(TAG, "Движение вверх  " + touchDownY + "   " + touchUpY);
+                                changeLayoutParamsToTop(cellEmptyGate, rowEmptyGate);
+                                return true;
+                            }
+                            else
+                            if (touchDownY < touchUpY &rowEmptyGate != 0){
+                                Log.i(TAG, "Движение вниз  " + touchDownY + "   " + touchUpY);
+                                changeLayoutParamsToBottom(cellEmptyGate, rowEmptyGate);
+                                return true;
+                            }
+                    }
                     break;
                 default:
                     break;
             }
         return true;
+    }
+
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.btnWordNo:
+                dontSelectedTV();
+                tvEditedWord.setText("");
+                editWord = !editWord;
+                btnOk.setEnabled(false);
+                btnNo.setEnabled(false);
+        }
+    }
+
+    private void dontSelectedTV(){
+        for (TextView tv : selectedTV){
+            tv.setBackgroundColor(getResources().getColor(R.color.background_gate));
+        }
+        selectedTV.clear();
+        countSelectedTV = 0;
     }
 }

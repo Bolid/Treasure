@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ChaosWord</string>
+    <string name="app_name">Chaos of Words</string>
     <string-array name="symbol">
         <item>А</item>
         <item>Б</item>

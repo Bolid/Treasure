@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="red">#fffbf9ff</color>
+    <color name="background_gate">#fffbf9ff</color>
+    <color name="background_select_gate">#50ff4300</color>
 </resources>
