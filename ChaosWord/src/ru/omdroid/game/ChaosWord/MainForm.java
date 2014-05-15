@@ -1,6 +1,7 @@
 package ru.omdroid.game.ChaosWord;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -147,8 +148,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
         layoutParams.setMargins(1, 1, 1, 1);
         hm.get(emptyCage+1).setLayoutParams(layoutParams);
         hm.get(emptyCage+1).startAnimation(anim);
-        hm.put(emptyCage, hm.get(emptyCage+1));
-        hm.remove(emptyCage+1);
+        hm.put(emptyCage, hm.get(emptyCage + 1));
+        hm.remove(emptyCage + 1);
         emptyCage++;
         cellEmptyGate++;
         return layoutParams;
@@ -186,11 +187,9 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
                     if ((touchDownX == touchUpX & touchDownY == touchUpY) || editWord){
                         try{
-                            btnOk.setEnabled(true);
-                            btnNo.setEnabled(true);
 
-                            editWord = true;
-                            tv = convertViewToTextView(view);
+                            tv = (TextView) view;
+                            selectedTExtView(tv);
 
                             if (controlPreSelectedTextView(tv.hashCode())) {
                                 tvEditedWord.setText(tvEditedWord.getText().toString().replace(tv.getText().toString(), ""));
@@ -203,6 +202,10 @@ public class MainForm extends Activity implements View.OnTouchListener {
                             //listSelectedTV.add(countSelectedTV, tv);
                             Log.i(TAG, "Буква " + tv.getText().toString());
                             countSelectedTV++;
+
+                            editWord = true;
+                            btnOk.setEnabled(true);
+                            btnNo.setEnabled(true);
                         }
                         catch (ClassCastException e){
                             Log.e(TAG, "Ошибка класса:  ", e);
@@ -264,6 +267,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
             tv.setBackgroundColor(getResources().getColor(R.color.background_gate));
             tv.setScaleX(1.0f);
             tv.setScaleY(1.0f);
+            tv.setTypeface(Typeface.DEFAULT);
         }
         listSelectedTV.clear();
         countSelectedTV = 0;
@@ -282,11 +286,11 @@ public class MainForm extends Activity implements View.OnTouchListener {
         return AnimationUtils.loadAnimation(getBaseContext(), R.anim.not_selected_textview_anim);
     }
 
-    private TextView convertViewToTextView(View view){
+    private void selectedTExtView(TextView view){
         view.setBackgroundColor(getResources().getColor(R.color.background_select_gate));
         view.setScaleX(1.0f);
         view.setScaleY(1.0f);
-        return (TextView) view;
+        view.setTypeface(Typeface.DEFAULT_BOLD);
     }
 
     private void changeNotActiveTextView(TextView activeTV){
@@ -297,7 +301,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     tv.setScaleX(0.8f);
                     tv.setScaleY(0.8f);
                     tv.setBackgroundColor(getResources().getColor(R.color.background_not_active_gate));
-                    tv.startAnimation(animNotSelectTextView);
+                    if (!editWord)
+                        tv.startAnimation(animNotSelectTextView);
                 }
             }
             else
