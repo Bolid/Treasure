@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background_gate">#fffbf9ff</color>
-    <color name="background_select_gate">#50ff4300</color>
+    <color name="background_not_active_gate">#85fbf9ff</color>
+    <color name="background_select_gate">#5016d106</color>
 </resources>

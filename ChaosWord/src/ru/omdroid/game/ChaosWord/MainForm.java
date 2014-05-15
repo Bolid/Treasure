@@ -7,8 +7,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+import android.view.animation.*;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
@@ -26,16 +25,23 @@ public class MainForm extends Activity implements View.OnTouchListener {
     TextView tvEditedWord;
 
     HashMap<Integer, TextView> hm = new HashMap<Integer, TextView>();
-    ArrayList<TextView> selectedTV = new ArrayList<TextView>();
+    ArrayList<TextView> listSelectedTV = new ArrayList<TextView>();
+    ArrayList<TextView> listCreatedTV = new ArrayList<TextView>();
+    Animation anim;
+    Animation animNotSelectTextView;
 
-    int heightScreen = 0,  emptyCage, rowEmptyGate, cellEmptyGate, deltaSwipe, sizeGameField = 4, countSelectedTV = 0;
+    int heightScreen = 0,  emptyCage, rowEmptyGate, cellEmptyGate, deltaSwipe, sizeGameField = 5, countSelectedTV = 0;
     float touchDownX = 0, touchUpX = 0, touchDownY = 0, touchUpY = 0;
     boolean editWord = false;
+    String hashCodeActiveTextView = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        anim = createAnimation();
+        animNotSelectTextView = createAnimationForNotSelectTextView();
+
 
         gridLayout = (GridLayout)findViewById(R.id.container);
         btnOk = (Button)findViewById(R.id.btnWordOk);
@@ -45,22 +51,27 @@ public class MainForm extends Activity implements View.OnTouchListener {
         gridLayout.setRowCount(sizeGameField);
         gridLayout.setColumnCount(sizeGameField);
 
+        LayoutAnimationController glAnimController = AnimationUtils.loadLayoutAnimation(this, R.anim.grid_animation);
+        gridLayout.setLayoutAnimation(glAnimController);
+        gridLayout.startLayoutAnimation();
         gridLayout.setOnTouchListener(this);
 
         deltaSwipe = heightScreen = getHeightScreen();
         emptyCage = emptyCage();
-        Log.i(TAG, "Пустая клетка " + emptyCage);
         addViewInContainer(gridLayout);
 
     }
 
     private void addViewInContainer(GridLayout frameLayout){
         int countCage = 0;
+        int numberTV = 0;
         for (int rows = 0; rows < sizeGameField; rows++)
             for (int cells = 0; cells < sizeGameField; cells++){
                 countCage++;
-                if (countCage != emptyCage)
-                    frameLayout.addView(createTextView(rows, cells, countCage));
+                if (countCage != emptyCage){
+                    frameLayout.addView(createTextView(rows, cells, countCage, numberTV));
+                    numberTV++;
+                }
                 else {
                     rowEmptyGate = rows;
                     cellEmptyGate = cells;
@@ -68,7 +79,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
             }
     }
 
-    private TextView createTextView(final int positionInRow, final int positionInCell, final int position){
+    private TextView createTextView(final int positionInRow, final int positionInCell, final int position, int numberTV){
         final TextView textView = new TextView(getBaseContext());
         GridLayout.Spec cell = GridLayout.spec(positionInCell);
         GridLayout.Spec row = GridLayout.spec(positionInRow);
@@ -85,6 +96,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
         textView.setOnTouchListener(this);
 
         hm.put(position, textView);
+        listCreatedTV.add(numberTV, textView);
+
         return textView;
     }
 
@@ -105,17 +118,10 @@ public class MainForm extends Activity implements View.OnTouchListener {
     }
 
     private GridLayout.LayoutParams changeLayoutParamsToTop(int cell, int row){
-
-        Animation animation = new TranslateAnimation(hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getY(), hm.get(emptyCage+sizeGameField).getY() - heightScreen / sizeGameField);
-        animation.setDuration(300);
-
-        hm.get(emptyCage+sizeGameField).setAnimation(animation);
-        Log.i(TAG, "Проверка координат вверх. Старые координаты " + cell + "  " + row + ". Новые координаты " + cell + "  " + String.valueOf(row));
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(cell));
         layoutParams.setMargins(1, 1, 1, 1);
-        layoutParams.layoutAnimationParameters
-        //hm.get(emptyCage+sizeGameField).setLayoutParams(layoutParams);
-        hm.get(emptyCage+sizeGameField).setY(hm.get(emptyCage+sizeGameField).getY() - heightScreen / sizeGameField);
+        hm.get(emptyCage+sizeGameField).setLayoutParams(layoutParams);
+        hm.get(emptyCage+sizeGameField).startAnimation(anim);
         hm.put(emptyCage, hm.get(emptyCage+sizeGameField));
         hm.remove(emptyCage+sizeGameField);
         emptyCage += sizeGameField;
@@ -123,17 +129,11 @@ public class MainForm extends Activity implements View.OnTouchListener {
         return layoutParams;
     }
 
-    private GridLayout.LayoutParams changeLayoutParamsToBottom(int cell, int row){
-
-        Animation animation = new TranslateAnimation(hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getX(), hm.get(emptyCage+sizeGameField).getY(), hm.get(emptyCage+sizeGameField).getY() + heightScreen / sizeGameField - 20);
-        animation.setDuration(100);
-
-        hm.get(emptyCage+sizeGameField).setAnimation(animation);
-        Log.i(TAG, "Проверка координат вниз. Старые координаты " + cell + "  " + row + ". Новые координаты " + cell + "  " + String.valueOf(row));
+    private GridLayout.LayoutParams changeLayoutParamsToBottom(int cell, int row){Log.i(TAG, "Проверка координат вниз. Старые координаты " + cell + "  " + row + ". Новые координаты " + cell + "  " + String.valueOf(row));
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(cell));
         layoutParams.setMargins(1, 1, 1, 1);
-        hm.get(emptyCage+sizeGameField).clearAnimation();
         hm.get(emptyCage-sizeGameField).setLayoutParams(layoutParams);
+        hm.get(emptyCage-sizeGameField).startAnimation(anim);
         hm.put(emptyCage, hm.get(emptyCage-sizeGameField));
         hm.remove(emptyCage-sizeGameField);
         emptyCage -= sizeGameField;
@@ -146,6 +146,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(cell));
         layoutParams.setMargins(1, 1, 1, 1);
         hm.get(emptyCage+1).setLayoutParams(layoutParams);
+        hm.get(emptyCage+1).startAnimation(anim);
         hm.put(emptyCage, hm.get(emptyCage+1));
         hm.remove(emptyCage+1);
         emptyCage++;
@@ -158,6 +159,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(cell));
         layoutParams.setMargins(1, 1, 1, 1);
         hm.get(emptyCage-1).setLayoutParams(layoutParams);
+        hm.get(emptyCage-1).startAnimation(anim);
         hm.put(emptyCage, hm.get(emptyCage-1));
         hm.remove(emptyCage-1);
         emptyCage--;
@@ -182,17 +184,23 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     touchUpY = motionEvent.getY();
                     Log.i(TAG, "Вторая координата" + motionEvent.getX());
 
-                    if (touchDownX == touchUpX & touchDownY == touchUpY){
+                    if ((touchDownX == touchUpX & touchDownY == touchUpY) || editWord){
                         try{
                             btnOk.setEnabled(true);
                             btnNo.setEnabled(true);
 
                             editWord = true;
-                            tv = (TextView) view;
-                            tv.setBackgroundColor(getResources().getColor(R.color.background_select_gate));
+                            tv = convertViewToTextView(view);
 
-                            tvEditedWord.append(tv.getText().toString());
-                            selectedTV.add(countSelectedTV, tv);
+                            if (controlPreSelectedTextView(tv.hashCode())) {
+                                tvEditedWord.setText(tvEditedWord.getText().toString().replace(tv.getText().toString(), ""));
+                            }
+                            else{
+                                tvEditedWord.append(tv.getText().toString());
+                            }
+
+                            changeNotActiveTextView(tv);
+                            //listSelectedTV.add(countSelectedTV, tv);
                             Log.i(TAG, "Буква " + tv.getText().toString());
                             countSelectedTV++;
                         }
@@ -252,14 +260,65 @@ public class MainForm extends Activity implements View.OnTouchListener {
     }
 
     private void dontSelectedTV(){
-        for (TextView tv : selectedTV){
+        for (TextView tv : listCreatedTV){
             tv.setBackgroundColor(getResources().getColor(R.color.background_gate));
+            tv.setScaleX(1.0f);
+            tv.setScaleY(1.0f);
         }
-        selectedTV.clear();
+        listSelectedTV.clear();
         countSelectedTV = 0;
+        hashCodeActiveTextView = "";
     }
 
     private boolean directionMove(float touchDownX, float touchUpX, float touchDownY, float touchUpY){
         return Math.abs(touchDownX - touchUpX) > Math.abs(touchDownY - touchUpY);
+    }
+
+    private Animation createAnimation(){
+        return AnimationUtils.loadAnimation(getBaseContext(), R.anim.textview_anim);
+    }
+
+    private Animation createAnimationForNotSelectTextView(){
+        return AnimationUtils.loadAnimation(getBaseContext(), R.anim.not_selected_textview_anim);
+    }
+
+    private TextView convertViewToTextView(View view){
+        view.setBackgroundColor(getResources().getColor(R.color.background_select_gate));
+        view.setScaleX(1.0f);
+        view.setScaleY(1.0f);
+        return (TextView) view;
+    }
+
+    private void changeNotActiveTextView(TextView activeTV){
+        for (TextView tv : listCreatedTV){
+            if (tv.hashCode() != activeTV.hashCode()){
+                if (!hashCodeActiveTextView.contains(String.valueOf(tv.hashCode())))
+                {
+                    tv.setScaleX(0.8f);
+                    tv.setScaleY(0.8f);
+                    tv.setBackgroundColor(getResources().getColor(R.color.background_not_active_gate));
+                    tv.startAnimation(animNotSelectTextView);
+                }
+            }
+            else
+                if (hashCodeActiveTextView.contains(String.valueOf(tv.hashCode()))){
+                    tv.setScaleX(0.8f);
+                    tv.setScaleY(0.8f);
+                    tv.setBackgroundColor(getResources().getColor(R.color.background_not_active_gate));
+                    tv.startAnimation(animNotSelectTextView);
+                    hashCodeActiveTextView = hashCodeActiveTextView.replace(String.valueOf(activeTV.hashCode()), "");
+                }
+                else
+                    hashCodeActiveTextView += tv.hashCode();
+
+        }
+    }
+
+    private void addHash(int hash){
+        hashCodeActiveTextView += hashCodeActiveTextView + hash;
+    }
+
+    private boolean controlPreSelectedTextView(int hash){
+        return hashCodeActiveTextView.contains(String.valueOf(hash));
     }
 }

@@ -31,7 +31,8 @@
             android:id="@+id/container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:columnCount="5" android:rowCount="5"
-            android:layout_centerHorizontal="true" android:layout_below="@+id/ll" android:layout_marginTop="35dp">
+            android:layout_centerHorizontal="true" android:layout_below="@+id/ll" android:layout_marginTop="35dp"
+            >
     </GridLayout>
 </RelativeLayout>
 

@@ -3,7 +3,9 @@
   <component name="AndroidDesignerProfile">
     <option name="fullProfile">
       <profile>
-        <option name="device" value="[None]" />
+        <option name="device" value="2.7in QVGA" />
+        <option name="deviceConfiguration" value="Portrait" />
+        <option name="targetHashString" value="android-17" />
         <option name="theme" value="Theme" />
       </profile>
     </option>
@@ -21,27 +23,32 @@
       </GlobalState>
     </option>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ru.omdroid.game.ChaosWord.MainForm" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChaosWord.apk" afterPath="$PROJECT_DIR$/ChaosWord.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/.idea/misc.xml" afterPath="$PROJECT_DIR$/../ChainTest/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/color.xml" afterPath="$PROJECT_DIR$/res/values/color.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ChainTest/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400098069494" ignored="false" />
+    <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400129431541" ignored="false" />
     <file path="/fragment.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400070354422" ignored="false" />
-    <file path="/MainForm.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400101648739" ignored="false" />
+    <file path="/MainForm.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400158935905" ignored="false" />
     <file path="/strings.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400071919865" ignored="false" />
     <file path="/GateClickListener.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400062453101" ignored="false" />
-    <file path="/main.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400069278585" ignored="false" />
-    <file path="/color.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400069072775" ignored="false" />
-    <file path="/a.dummy" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400069799122" ignored="false" />
+    <file path="/main.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400152304188" ignored="false" />
+    <file path="/color.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400153116152" ignored="false" />
+    <file path="/a.dummy" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400153701958" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/ru/omdroid/game/ChaosWord/BuildConfig.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400131855964" ignored="false" />
+    <file path="/CustomView.java" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400137425289" ignored="false" />
+    <file path="/grid_animation.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400150910779" ignored="false" />
+    <file path="/textview_anim.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400146534637" ignored="false" />
+    <file path="/scale_anim.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400150772636" ignored="false" />
+    <file path="/cycle_1.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400150703706" ignored="false" />
+    <file path="/not_selected_textview_anim.xml" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400156582786" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +112,24 @@
       <file leaf-file-name="MainForm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="21" selection-start="4501" selection-end="4526" vertical-scroll-proportion="0.4420131">
+            <state line="197" column="33" selection-start="8131" selection-end="8131" vertical-scroll-proportion="0.5769231">
               <folding>
-                <element signature="e#771#790#0" expanded="true" />
-                <element signature="e#844#854#0" expanded="true" />
+                <element signature="e#713#732#0" expanded="true" />
+                <element signature="e#790#800#0" expanded="true" />
+                <element signature="e#857#867#0" expanded="true" />
+                <element signature="method#convertViewToTextView#0;class#MainForm#0" expanded="false" />
+                <element signature="method#addHash#0;class#MainForm#0" expanded="false" />
+                <element signature="method#controlPreSelectedTextView#0;class#MainForm#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="not_selected_textview_anim.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/anim/not_selected_textview_anim.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="31" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,7 +137,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="42" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
+            <state line="37" column="19" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -135,7 +155,7 @@
       <file leaf-file-name="color.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/color.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="12" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+            <state line="3" column="48" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,13 +163,49 @@
       </file>
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="text-editor">
-            <state line="30" column="26" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="42" selection-start="1809" selection-end="1809" vertical-scroll-proportion="-20.52">
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="scale_anim.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/anim/scale_anim.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="32" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cycle_1.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/anim/cycle_1.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="36" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid_animation.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/anim/grid_animation.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="27" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="textview_anim.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/anim/textview_anim.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="63" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -176,10 +232,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/Listener/GateClickListener.java" />
-        <option value="$PROJECT_DIR$/res/values/color.xml" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/СгыещьМшуц.java" />
+        <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/CustomView.java" />
+        <option value="$PROJECT_DIR$/res/anim/textview_anim.xml" />
+        <option value="$PROJECT_DIR$/res/anim/scale_anim.xml" />
+        <option value="$PROJECT_DIR$/res/anim/grid_animation.xml" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/values/color.xml" />
+        <option value="$PROJECT_DIR$/res/anim/cycle_1.xml" />
+        <option value="$PROJECT_DIR$/res/anim/not_selected_textview_anim.xml" />
         <option value="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
       </list>
     </option>
@@ -187,8 +250,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1442" />
-    <option name="height" value="877" />
+    <option name="width" value="1026" />
+    <option name="height" value="577" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -216,7 +279,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,26 +369,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChaosWord" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChaosWord" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable-hdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -340,7 +385,7 @@
     <property name="recentsLimit" value="5" />
     <property name="ExportedModule" value="ChaosWord" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../keysign/keysign" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -387,19 +432,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -425,6 +457,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -513,29 +558,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1442" height="877" extended-state="6" />
+    <frame x="-1" y="24" width="1026" height="577" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67356324" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33231083" sideWeight="0.67356324" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21839081" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51954025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.34458077" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9170068" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9149425" sideWeight="0.65541923" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892396" sideWeight="0.082993194" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32517007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24744377" sideWeight="0.6758621" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32413793" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.67356324" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33231083" sideWeight="0.67356324" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -607,23 +652,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="28" selection-start="10160" selection-end="10160" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#771#790#0" expanded="true" />
-            <element signature="e#844#854#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
@@ -639,21 +667,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state line="8" column="26" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#771#790#0" expanded="true" />
-            <element signature="e#844#854#0" expanded="true" />
+            <element signature="e#713#732#0" expanded="true" />
+            <element signature="e#790#800#0" expanded="true" />
+            <element signature="e#857#867#0" expanded="true" />
+            <element signature="method#convertViewToTextView#0;class#MainForm#0" expanded="false" />
+            <element signature="method#addHash#0;class#MainForm#0" expanded="false" />
+            <element signature="method#controlPreSelectedTextView#0;class#MainForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,32 +701,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#771#790#0" expanded="true" />
-            <element signature="e#844#854#0" expanded="true" />
+            <element signature="e#713#732#0" expanded="true" />
+            <element signature="e#790#800#0" expanded="true" />
+            <element signature="e#857#867#0" expanded="true" />
+            <element signature="method#convertViewToTextView#0;class#MainForm#0" expanded="false" />
+            <element signature="method#addHash#0;class#MainForm#0" expanded="false" />
+            <element signature="method#controlPreSelectedTextView#0;class#MainForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="12" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state line="30" column="26" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="42" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
+        <state line="37" column="19" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -706,12 +725,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/textview_anim.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="63" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/scale_anim.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="32" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="42" selection-start="1809" selection-end="1809" vertical-scroll-proportion="-20.52">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/color.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="48" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/cycle_1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="36" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/grid_animation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="27" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/not_selected_textview_anim.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="31" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="21" selection-start="4501" selection-end="4526" vertical-scroll-proportion="0.4420131">
+        <state line="197" column="33" selection-start="8131" selection-end="8131" vertical-scroll-proportion="0.5769231">
           <folding>
-            <element signature="e#771#790#0" expanded="true" />
-            <element signature="e#844#854#0" expanded="true" />
+            <element signature="e#713#732#0" expanded="true" />
+            <element signature="e#790#800#0" expanded="true" />
+            <element signature="e#857#867#0" expanded="true" />
+            <element signature="method#convertViewToTextView#0;class#MainForm#0" expanded="false" />
+            <element signature="method#addHash#0;class#MainForm#0" expanded="false" />
+            <element signature="method#controlPreSelectedTextView#0;class#MainForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
