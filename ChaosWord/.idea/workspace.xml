@@ -25,13 +25,7 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ru.omdroid.game.ChaosWord.MainForm" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChaosWord.apk" afterPath="$PROJECT_DIR$/ChaosWord.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="" />
     <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400269320698" ignored="false" />
