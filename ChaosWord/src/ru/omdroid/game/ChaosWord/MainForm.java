@@ -144,8 +144,9 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
                             tv = (TextView) view;
 
-                            if (hmActiveTV.containsValue(tv))
+                            if (hmActiveTV.containsValue(tv)){
                                 hmActiveTV = controlDoublePress(tv);
+                            }
                             else{
                                 if (controlCurrentPressedTextView(tv.getX(), tv.getY()) || !editWord){
                                     hmActiveTV.put(countSelectedTV, tv);
@@ -153,13 +154,13 @@ public class MainForm extends Activity implements View.OnTouchListener {
                                     positionYLastSelectedTV = tv.getY();
                                     selectedTExtView(tv);
                                     countSelectedTV++;
-
-                                    editWord = true;
                                     btnOk.setEnabled(true);
                                     btnNo.setEnabled(true);
                                 }
                             }
+                            writeWord(tvEditedWord);
                             changeNotActiveTextView(tv);
+                            editWord = hmActiveTV.size() != 0;
                         }
                         catch (ClassCastException e){
                             Log.e(TAG, "Ошибка класса:  ", e);
@@ -208,14 +209,23 @@ public class MainForm extends Activity implements View.OnTouchListener {
         switch (view.getId())
         {
             case R.id.btnWordNo:
-                dontSelectedTV();
-                tvEditedWord.setText("");
-                editWord = !editWord;
-                positionXLastSelectedTV = 0;
-                positionYLastSelectedTV = 0;
-                btnOk.setEnabled(false);
-                btnNo.setEnabled(false);
+                parametersDefault();
+                break;
+            case R.id.btnWordOk:
+                Animation animation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.apply_word_anim);
+                for (int i = 0; i < hmActiveTV.size(); i++){
+                    hmActiveTV.get(i).setText(getSymbol());
+                    hmActiveTV.get(i).startAnimation(animation);
+                }
+                parametersDefault();
         }
+    }
+
+    private void writeWord(TextView tv){
+        tv.setText("");
+        if (hmActiveTV.size() != 0)
+            for (int i = 0; i < hmActiveTV.size(); i++)
+                tv.append(hmActiveTV.get(i).getText());
     }
 
     private void dontSelectedTV(){
@@ -265,19 +275,17 @@ public class MainForm extends Activity implements View.OnTouchListener {
         positionYLastSelectedTV = 0;
         positionXLastSelectedTV = 0;
         for (int i = 0; i < hmActiveTV.size(); i++){
-            if (tv.hashCode() == hmActiveTV.get(i).hashCode())
+            if (tv.hashCode() == hmActiveTV.get(i).hashCode()){
+                countSelectedTV = hashMap.size();
                 return hashMap;
+            }
             else{
                 positionYLastSelectedTV = hmActiveTV.get(i).getY();
                 positionXLastSelectedTV = hmActiveTV.get(i).getX();
                 hashMap.put(i, hmActiveTV.get(i));
             }
         }
-        return hmActiveTV;
-    }
-
-    private boolean controlPreSelectedTextView(int hash){
-        return hashCodeActiveTextView.contains(String.valueOf(hash));
+        return hashMap;
     }
 
     private boolean controlCurrentPressedTextView(float posX, float posY){
@@ -285,5 +293,16 @@ public class MainForm extends Activity implements View.OnTouchListener {
                (posX == (positionXLastSelectedTV - (heightScreen / ManagerPositionMovement.SIZE_GAME_FIELD - 20 + 2)) & posY == positionYLastSelectedTV) ||
                (posY == (positionYLastSelectedTV + (heightScreen / ManagerPositionMovement.SIZE_GAME_FIELD - 20 + 2)) & posX == positionXLastSelectedTV) ||
                (posY == (positionYLastSelectedTV - (heightScreen / ManagerPositionMovement.SIZE_GAME_FIELD - 20 + 2)) & posX == positionXLastSelectedTV);
+    }
+
+    private void parametersDefault(){
+        dontSelectedTV();
+        tvEditedWord.setText("");
+        editWord = false;
+        hmActiveTV.clear();
+        positionXLastSelectedTV = 0;
+        positionYLastSelectedTV = 0;
+        btnOk.setEnabled(false);
+        btnNo.setEnabled(false);
     }
 }
