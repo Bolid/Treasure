@@ -24,7 +24,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
     GridLayout gridLayout;
     Button btnOk, btnNo;
-    TextView tvEditedWord;
+    TextView tvEditedWord, timerTV;
     ChangeLayoutParams changeLayoutParams;
 
     HashMap<Integer, TextView> hm = new HashMap<Integer, TextView>();
@@ -33,6 +33,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
     ArrayList<TextView> listSelectedTV = new ArrayList<TextView>();
     ArrayList<TextView> listCreatedTV = new ArrayList<TextView>();
     Animation animNotSelectTextView;
+    TimerProgress timerProgress;
 
     int heightScreen = 0, deltaSwipe, countSelectedTV = 0;
     float touchDownX = 0, touchUpX = 0, touchDownY = 0, touchUpY = 0, positionXLastSelectedTV = 0, positionYLastSelectedTV = 0;
@@ -52,6 +53,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
         btnOk = (Button)findViewById(R.id.btnWordOk);
         btnNo = (Button)findViewById(R.id.btnWordNo);
         tvEditedWord = (TextView)findViewById(R.id.tvWord);
+        timerTV = (TextView)findViewById(R.id.timerTV);
 
         gridLayout.setRowCount(ManagerPositionMovement.SIZE_GAME_FIELD);
         gridLayout.setColumnCount(ManagerPositionMovement.SIZE_GAME_FIELD);
@@ -63,7 +65,11 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
         deltaSwipe = heightScreen = getHeightScreen();
         ManagerPositionMovement.EMPTY_GATE = emptyCage();
+        timerProgress = new TimerProgress(timerTV);
+
         addViewInContainer(gridLayout);
+        timerProgress.nextTimer();
+
         changeLayoutParams = new ChangeLayoutParams(getBaseContext(), hm);
     }
 
@@ -218,6 +224,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     hmActiveTV.get(i).startAnimation(animation);
                 }
                 parametersDefault();
+                timerProgress.stopTimer();
+                timerProgress.reStartTimer();
         }
     }
 
