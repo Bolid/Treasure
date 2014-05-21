@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.animation.*;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Random;
 
 public class MainForm extends Activity implements View.OnTouchListener {
@@ -23,8 +23,9 @@ public class MainForm extends Activity implements View.OnTouchListener {
     final String TAG = "ru.omdroid.game.ChaosWord.MainForm";
 
     GridLayout gridLayout;
-    Button btnOk, btnNo;
+    Button btnOk, btnNo, btnEndGame;
     TextView tvEditedWord, timerTV;
+    LinearLayout llEndGame;
     ChangeLayoutParams changeLayoutParams;
 
     HashMap<Integer, TextView> hm = new HashMap<Integer, TextView>();
@@ -52,9 +53,10 @@ public class MainForm extends Activity implements View.OnTouchListener {
         gridLayout = (GridLayout)findViewById(R.id.container);
         btnOk = (Button)findViewById(R.id.btnWordOk);
         btnNo = (Button)findViewById(R.id.btnWordNo);
+        btnEndGame = (Button)findViewById(R.id.btnEndGame);
         tvEditedWord = (TextView)findViewById(R.id.tvWord);
         timerTV = (TextView)findViewById(R.id.timerTV);
-
+        llEndGame = (LinearLayout)findViewById(R.id.layoutEndGame);
         gridLayout.setRowCount(ManagerPositionMovement.SIZE_GAME_FIELD);
         gridLayout.setColumnCount(ManagerPositionMovement.SIZE_GAME_FIELD);
 
@@ -62,13 +64,14 @@ public class MainForm extends Activity implements View.OnTouchListener {
         gridLayout.setLayoutAnimation(glAnimController);
         gridLayout.startLayoutAnimation();
         gridLayout.setOnTouchListener(this);
+        llEndGame.setOnTouchListener(this);
 
         deltaSwipe = heightScreen = getHeightScreen();
         ManagerPositionMovement.EMPTY_GATE = emptyCage();
-        timerProgress = new TimerProgress(timerTV);
+        timerProgress = new TimerProgress(llEndGame, timerTV);
 
         addViewInContainer(gridLayout);
-        timerProgress.nextTimer();
+        //timerProgress.nextTimer();
 
         changeLayoutParams = new ChangeLayoutParams(getBaseContext(), hm);
     }
@@ -125,7 +128,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
     private String getSymbol(){
         Random random = new Random();
-        return getResources().getStringArray(R.array.symbol)[random.nextInt(33)];
+        return getResources().getStringArray(R.array.symbol)[random.nextInt(182)];
     }
 
     @Override
@@ -167,6 +170,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
                             writeWord(tvEditedWord);
                             changeNotActiveTextView(tv);
                             editWord = hmActiveTV.size() != 0;
+                            if (!editWord)
+                                parametersDefault();
                         }
                         catch (ClassCastException e){
                             Log.e(TAG, "Ошибка класса:  ", e);
@@ -223,9 +228,13 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     hmActiveTV.get(i).setText(getSymbol());
                     hmActiveTV.get(i).startAnimation(animation);
                 }
+                timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
                 parametersDefault();
                 timerProgress.stopTimer();
-                timerProgress.reStartTimer();
+                break;
+            case R.id.btnEndGame:
+                timerProgress.restartTimer();
+                break;
         }
     }
 

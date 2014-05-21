@@ -3,4 +3,5 @@
     <color name="background_gate">#fffbf9ff</color>
     <color name="background_not_active_gate">#85fbf9ff</color>
     <color name="background_select_gate">#8516d106</color>
+    <color name="background_layout_end_game">#99fbf9ff</color>
 </resources>

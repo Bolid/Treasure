@@ -50,5 +50,23 @@
 
             android:layout_below="@+id/llTimer">
     </GridLayout>
+    <LinearLayout
+            android:id="@+id/layoutEndGame"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:gravity="center_vertical|center_horizontal"
+            android:background="@color/background_layout_end_game" android:visibility="invisible">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GAME OVER"
+                android:id="@+id/textView" android:paddingBottom="15dp" android:textSize="25sp"
+                android:textStyle="bold"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Новая игра"
+                android:id="@+id/btnEndGame" android:onClick="onClick"/>
+    </LinearLayout>
 </RelativeLayout>
 
