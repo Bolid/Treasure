@@ -27,7 +27,8 @@ public class TimerProgress {
     public TimerProgress(LinearLayout ll, TextView tv){
         this.tv = tv;
         this.ll = ll;
-        createMessageEndGame();
+        tv.setText("00:00");
+        //createMessageEndGame();
     }
 
     private void createMessageEndGame(){
@@ -43,15 +44,15 @@ public class TimerProgress {
         new AsyncTask<Void, String, Boolean>() {
 
             protected void onPreExecute(){
-                tv.setText(String.valueOf(seconds));
+                tv.setText("00:00");
             }
             @Override
             protected Boolean doInBackground(Void... voids) {
-                while (seconds > 0)
+                while (/*seconds > 0*/!stopTimer)
                     try {
                         Log.i(TAG, "Процесс идет");
                         Thread.sleep(1000);
-                        /*format.applyPattern("mm:ss");
+                        format.applyPattern("mm:ss");
                         seconds++;
                         if (seconds == 60){
                             minute++;
@@ -59,9 +60,9 @@ public class TimerProgress {
                         }
                         date.setMinutes(minute);
                         date.setSeconds(seconds);
-                        timer = format.format(date);*/
-                        seconds--;
-                        publishProgress(String.valueOf(seconds));
+                        timer = format.format(date);
+                        //seconds--;
+                        publishProgress(timer);
 
                     } catch (InterruptedException e) {
                         Log.e(TAG, "Ошибка счетчика хода", e);
@@ -78,7 +79,7 @@ public class TimerProgress {
             }
 
             protected void onPostExecute(Boolean bool){
-                ll.setVisibility(View.VISIBLE);
+                //ll.setVisibility(View.VISIBLE);
             }
 
 
@@ -90,13 +91,13 @@ public class TimerProgress {
     }
 
     public void updateTime(int n){
-       /* stopTimer = !stopTimer;
+        stopTimer = !stopTimer;
         minute = 0;
         seconds = 0;
         timer = "";
         tv.setText("00:00");
-        nextTimer();*/
-        seconds += n;
+        nextTimer();
+//        seconds += n;
     }
 
     public void restartTimer(){

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import ru.omdroid.game.ChaosWord.LogicFillingFieldGame.LogicTeamSymbols;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +36,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
     ArrayList<TextView> listCreatedTV = new ArrayList<TextView>();
     Animation animNotSelectTextView;
     TimerProgress timerProgress;
-
+    LogicTeamSymbols logicTeamSymbols;
     int heightScreen = 0, deltaSwipe, countSelectedTV = 0;
     float touchDownX = 0, touchUpX = 0, touchDownY = 0, touchUpY = 0, positionXLastSelectedTV = 0, positionYLastSelectedTV = 0;
     boolean editWord = false;
@@ -64,26 +65,26 @@ public class MainForm extends Activity implements View.OnTouchListener {
         gridLayout.setLayoutAnimation(glAnimController);
         gridLayout.startLayoutAnimation();
         gridLayout.setOnTouchListener(this);
-        llEndGame.setOnTouchListener(this);
 
         deltaSwipe = heightScreen = getHeightScreen();
         ManagerPositionMovement.EMPTY_GATE = emptyCage();
         timerProgress = new TimerProgress(llEndGame, timerTV);
 
         addViewInContainer(gridLayout);
-        //timerProgress.nextTimer();
+        timerProgress.nextTimer();
 
         changeLayoutParams = new ChangeLayoutParams(getBaseContext(), hm);
     }
 
     private void addViewInContainer(GridLayout frameLayout){
+        logicTeamSymbols = new LogicTeamSymbols();
         int countCage = 0;
         int numberTV = 0;
         for (int rows = 0; rows < ManagerPositionMovement.SIZE_GAME_FIELD; rows++)
             for (int cells = 0; cells < ManagerPositionMovement.SIZE_GAME_FIELD; cells++){
                 countCage++;
                 if (countCage != ManagerPositionMovement.EMPTY_GATE){
-                    frameLayout.addView(createTextView(rows, cells, countCage, numberTV));
+                    frameLayout.addView(createTextView(rows, cells, countCage, numberTV, logicTeamSymbols));
                     numberTV++;
                 }
                 else {
@@ -93,14 +94,14 @@ public class MainForm extends Activity implements View.OnTouchListener {
             }
     }
 
-    private TextView createTextView(final int positionInRow, final int positionInCell, final int position, int numberTV){
+    private TextView createTextView(final int positionInRow, final int positionInCell, final int position, int numberTV, LogicTeamSymbols logicTeamSymbols){
         final TextView textView = new TextView(getBaseContext());
         GridLayout.Spec cell = GridLayout.spec(positionInCell);
         GridLayout.Spec row = GridLayout.spec(positionInRow);
         final GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(row, cell);
         layoutParams.setMargins(1, 1, 1, 1);
         textView.setLayoutParams(layoutParams);
-        textView.setText(getSymbol());
+        textView.setText(logicTeamSymbols.getSymbol(""));
         textView.setGravity(Gravity.CENTER);
         textView.setBackgroundColor(getResources().getColor(R.color.background_gate));
         textView.setTextSize(16);
@@ -124,11 +125,6 @@ public class MainForm extends Activity implements View.OnTouchListener {
     private int emptyCage(){
         Random random = new Random();
         return random.nextInt(ManagerPositionMovement.SIZE_GAME_FIELD * ManagerPositionMovement.SIZE_GAME_FIELD) + 1;
-    }
-
-    private String getSymbol(){
-        Random random = new Random();
-        return getResources().getStringArray(R.array.symbol)[random.nextInt(182)];
     }
 
     @Override
@@ -223,14 +219,16 @@ public class MainForm extends Activity implements View.OnTouchListener {
                 parametersDefault();
                 break;
             case R.id.btnWordOk:
+                logicTeamSymbols.reloadSymbolToAlphabet(tvEditedWord.getText().toString());
                 Animation animation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.apply_word_anim);
                 for (int i = 0; i < hmActiveTV.size(); i++){
-                    hmActiveTV.get(i).setText(getSymbol());
+                    hmActiveTV.get(i).setText(logicTeamSymbols.getSymbol(tvEditedWord.getText().toString()));
                     hmActiveTV.get(i).startAnimation(animation);
                 }
                 timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
                 parametersDefault();
                 timerProgress.stopTimer();
+                timerProgress.updateTime(0);
                 break;
             case R.id.btnEndGame:
                 timerProgress.restartTimer();
