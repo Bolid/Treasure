@@ -76,6 +76,12 @@ public class MainForm extends Activity implements View.OnTouchListener {
         changeLayoutParams = new ChangeLayoutParams(getBaseContext(), hm);
     }
 
+    @Override
+    public void onStop(){
+        super.onStop();
+        timerProgress.stopTimer();
+    }
+
     private void addViewInContainer(GridLayout frameLayout){
         logicTeamSymbols = new LogicTeamSymbols();
         int countCage = 0;

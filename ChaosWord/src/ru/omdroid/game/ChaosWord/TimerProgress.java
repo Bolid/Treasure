@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class TimerProgress {
     private final String TAG = "ru.omdroid.game.ChaosWord.TimerProgress";
-    private int minute = 0, seconds = 15;
+    private int minute = 0, seconds = 0;
     private boolean stopTimer = false;
     String timer;
     TextView tv, tvEndGame;
