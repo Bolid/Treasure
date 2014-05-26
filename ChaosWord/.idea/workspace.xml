@@ -24,12 +24,7 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/TimerProgress.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/TimerProgress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="" />
     <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400739471418" ignored="false" />
@@ -577,7 +572,7 @@
       <file leaf-file-name="TimerProgress.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/TimerProgress.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="39" selection-start="512" selection-end="512" vertical-scroll-proportion="0.28">
+            <state line="16" column="17" selection-start="387" selection-end="387" vertical-scroll-proportion="0.2">
               <folding />
             </state>
           </provider>
@@ -960,7 +955,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1026" height="577" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32719836" sideWeight="0.68505746" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.68505746" order="2" side_tool="false" content_ui="tabs" />
@@ -1161,7 +1156,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/TimerProgress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="39" selection-start="512" selection-end="512" vertical-scroll-proportion="0.28">
+        <state line="16" column="17" selection-start="387" selection-end="387" vertical-scroll-proportion="0.2">
           <folding />
         </state>
       </provider>
