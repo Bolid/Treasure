@@ -9,11 +9,10 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.*;
-import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.*;
+import ru.omdroid.game.ChaosWord.ControlWriteWord.ControllerWriteWord;
 import ru.omdroid.game.ChaosWord.LogicFillingFieldGame.LogicTeamSymbols;
+import ru.omdroid.game.ChaosWord.db.InitializationDictionaries;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +33,8 @@ public class MainForm extends Activity implements View.OnTouchListener {
 
     ArrayList<TextView> listSelectedTV = new ArrayList<TextView>();
     ArrayList<TextView> listCreatedTV = new ArrayList<TextView>();
-    Animation animNotSelectTextView;
+    ControllerWriteWord controllerWriteWord;
+    AppAnimation appAnimation;
     TimerProgress timerProgress;
     LogicTeamSymbols logicTeamSymbols;
     int heightScreen = 0, deltaSwipe, countSelectedTV = 0;
@@ -46,9 +46,13 @@ public class MainForm extends Activity implements View.OnTouchListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        ManagerPositionMovement.SIZE_GAME_FIELD = 5;
 
-        animNotSelectTextView = createAnimationForNotSelectTextView();
+        InitializationDictionaries initializationDB = new InitializationDictionaries(getBaseContext());
+        initializationDB.Initialized();
+        initializationDB.close();
+        controllerWriteWord = new ControllerWriteWord();
+        appAnimation = new AppAnimation(getBaseContext());
+        ManagerPositionMovement.SIZE_GAME_FIELD = 5;
 
 
         gridLayout = (GridLayout)findViewById(R.id.container);
@@ -61,8 +65,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
         gridLayout.setRowCount(ManagerPositionMovement.SIZE_GAME_FIELD);
         gridLayout.setColumnCount(ManagerPositionMovement.SIZE_GAME_FIELD);
 
-        LayoutAnimationController glAnimController = AnimationUtils.loadLayoutAnimation(this, R.anim.grid_animation);
-        gridLayout.setLayoutAnimation(glAnimController);
+        gridLayout.setLayoutAnimation(appAnimation.getAnimationController());
         gridLayout.startLayoutAnimation();
         gridLayout.setOnTouchListener(this);
 
@@ -73,7 +76,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
         addViewInContainer(gridLayout);
         timerProgress.nextTimer();
 
-        changeLayoutParams = new ChangeLayoutParams(getBaseContext(), hm);
+        changeLayoutParams = new ChangeLayoutParams(getBaseContext(), hm, appAnimation);
     }
 
     @Override
@@ -225,16 +228,19 @@ public class MainForm extends Activity implements View.OnTouchListener {
                 parametersDefault();
                 break;
             case R.id.btnWordOk:
-                logicTeamSymbols.reloadSymbolToAlphabet(tvEditedWord.getText().toString());
-                Animation animation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.apply_word_anim);
-                for (int i = 0; i < hmActiveTV.size(); i++){
-                    hmActiveTV.get(i).setText(logicTeamSymbols.getSymbol(tvEditedWord.getText().toString()));
-                    hmActiveTV.get(i).startAnimation(animation);
+                if (controlWriteWord(tvEditedWord.getText().toString())){
+                    logicTeamSymbols.reloadSymbolToAlphabet(tvEditedWord.getText().toString());
+                    for (int i = 0; i < hmActiveTV.size(); i++){
+                        hmActiveTV.get(i).setText(logicTeamSymbols.getSymbol(tvEditedWord.getText().toString()));
+                        hmActiveTV.get(i).startAnimation(appAnimation.getAnimationValidWord());
+                    }
+                    timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
+                    parametersDefault();
+                    timerProgress.stopTimer();
+                    timerProgress.updateTime(0);
                 }
-                timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
-                parametersDefault();
-                timerProgress.stopTimer();
-                timerProgress.updateTime(0);
+                else
+                    ignoreSelectWord(tvEditedWord.getText().toString());
                 break;
             case R.id.btnEndGame:
                 timerProgress.restartTimer();
@@ -265,10 +271,6 @@ public class MainForm extends Activity implements View.OnTouchListener {
         return Math.abs(touchDownX - touchUpX) > Math.abs(touchDownY - touchUpY);
     }
 
-    private Animation createAnimationForNotSelectTextView(){
-        return AnimationUtils.loadAnimation(getBaseContext(), R.anim.not_selected_textview_anim);
-    }
-
     private void selectedTExtView(TextView view){
         view.setBackgroundColor(getResources().getColor(R.color.background_select_gate));
         view.setScaleX(1.0f);
@@ -284,7 +286,7 @@ public class MainForm extends Activity implements View.OnTouchListener {
                     tv.setScaleY(0.8f);
                     tv.setBackgroundColor(getResources().getColor(R.color.background_not_active_gate));
                     if (!editWord)
-                        tv.startAnimation(animNotSelectTextView);
+                        tv.startAnimation(appAnimation.getAnimationNotSelectTextView());
                 }
             }
         }
@@ -325,5 +327,22 @@ public class MainForm extends Activity implements View.OnTouchListener {
         positionYLastSelectedTV = 0;
         btnOk.setEnabled(false);
         btnNo.setEnabled(false);
+    }
+
+    private boolean controlWriteWord(String word){
+        return  (controllerWriteWord.controlWordInDictionaries("SELECT " + ControllerWriteWord.F_WORD + " FROM " + ControllerWriteWord.T_WORDS + " WHERE " + ControllerWriteWord.F_WORD + " = '" + word + "'"));
+    }
+
+    private void ignoreSelectWord(String word){
+        for (int i = 0; i < hmActiveTV.size(); i++){
+            hmActiveTV.get(i).setBackgroundColor(getResources().getColor(R.color.background_not_valid_word));
+        }
+        for (int i = 0; i < hmActiveTV.size(); i++){
+            hmActiveTV.get(i).startAnimation(appAnimation.getAnimationNotValidWord());
+        }
+        //Toast.makeText(getBaseContext(), "Слова " + word + " нет в словаре", Toast.LENGTH_LONG).show();
+        for (int i = 0; i < hmActiveTV.size(); i++){
+            selectedTExtView(hmActiveTV.get(i));
+        }
     }
 }
