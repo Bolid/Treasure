@@ -91,7 +91,7 @@ public class TimerProgress {
     }
 
     public void updateTime(int n){
-        stopTimer = !stopTimer;
+        stopTimer = false;
         minute = 0;
         seconds = 0;
         timer = "";

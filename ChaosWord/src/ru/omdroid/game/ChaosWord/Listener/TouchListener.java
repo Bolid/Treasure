@@ -1,15 +1,34 @@
 package ru.omdroid.game.ChaosWord.Listener;
 
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.LogicChangeLayoutParams;
+import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.LogicControlPressedCurrentView;
+import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.LogicSelectedView;
+import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.ParamForChangingFieldGame;
 import ru.omdroid.game.ChaosWord.ManagerPositionMovement;
 
+import java.util.HashMap;
+
 public class TouchListener implements View.OnTouchListener {
+    float touchDownX = 0, touchUpX, touchDownY = 0, touchUpY;
+
+    LogicControlPressedCurrentView controlDoublePress = new LogicControlPressedCurrentView();
+    LogicChangeLayoutParams changeLayoutParams;
+    LogicSelectedView logicSelectedView;
+    HashMap<Integer, TextView> hmActiveTV;
+    ParamForChangingFieldGame paramForChangingFieldGame;
+
+    public TouchListener(HashMap<Integer, TextView> hmActiveTV, ParamForChangingFieldGame paramForChangingFieldGame, LogicSelectedView logicSelectedView, LogicChangeLayoutParams changeLayoutParams){
+        this.hmActiveTV = hmActiveTV;
+        this.paramForChangingFieldGame = paramForChangingFieldGame;
+        this.changeLayoutParams = changeLayoutParams;
+        this.logicSelectedView = logicSelectedView;
+    }
+
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
-        float touchDownX = 0, touchUpX = 0, touchDownY = 0, touchUpY = 0, positionXLastSelectedTV = 0, positionYLastSelectedTV = 0;
         TextView tv;
 
         switch (motionEvent.getAction()) {
@@ -17,68 +36,60 @@ public class TouchListener implements View.OnTouchListener {
             case MotionEvent.ACTION_DOWN:
                 touchDownX = motionEvent.getX();
                 touchDownY = motionEvent.getY();
-                Log.i(TAG, "Первая координата" + motionEvent.getX());
                 break;
             case MotionEvent.ACTION_UP:
                 touchUpX = motionEvent.getX();
                 touchUpY = motionEvent.getY();
-                Log.i(TAG, "Вторая координата" + motionEvent.getX());
 
-                if ((touchDownX == touchUpX & touchDownY == touchUpY) || editWord){
+                if ((touchDownX == touchUpX & touchDownY == touchUpY) || paramForChangingFieldGame.getEditWord()){
                     try{
 
                         tv = (TextView) view;
 
-                        if (hmActiveTV.containsValue(tv)){
-                            hmActiveTV = controlDoublePress(tv);
+                        if (paramForChangingFieldGame.getHmActiveTV().containsValue(tv)){
+                            paramForChangingFieldGame.setHmActiveTV(logicSelectedView.controlDoublePress(tv, paramForChangingFieldGame.getHmActiveTV()));
                         }
                         else{
-                            if (controlCurrentPressedTextView(tv.getX(), tv.getY()) || !editWord){
-                                hmActiveTV.put(countSelectedTV, tv);
-                                positionXLastSelectedTV = tv.getX();
-                                positionYLastSelectedTV = tv.getY();
-                                selectedTExtView(tv);
-                                countSelectedTV++;
-                                btnOk.setEnabled(true);
-                                btnNo.setEnabled(true);
+                            if (controlDoublePress.controlCurrentPressedTextView(tv.getX(), tv.getY(), paramForChangingFieldGame) || !paramForChangingFieldGame.getEditWord()){
+                                paramForChangingFieldGame.putViewToActiveHashMap(paramForChangingFieldGame.getHmActiveTV().size(), tv);
+                                paramForChangingFieldGame.setPositionXLastSelectedTV(tv.getX());
+                                paramForChangingFieldGame.setPositionYLastSelectedTV(tv.getY());
+                                logicSelectedView.selectedView(tv);
+                                paramForChangingFieldGame.setCountSelectedTV(1);
+                                paramForChangingFieldGame.enabledButton(true);
                             }
                         }
-                        writeWord(tvEditedWord);
-                        changeNotActiveTextView(tv);
-                        editWord = hmActiveTV.size() != 0;
-                        if (!editWord)
-                            parametersDefault();
+                        logicSelectedView.writeWord(paramForChangingFieldGame.getHmActiveTV());
+                        //logicSelectedView.changeNotActiveTextView(paramForChangingFieldGame.getListCreateTV(), paramForChangingFieldGame.getHmActiveTV());
+                        paramForChangingFieldGame.setEditWord(paramForChangingFieldGame.getHmActiveTV().size() != 0);
+                        if (!paramForChangingFieldGame.getEditWord())
+                            paramForChangingFieldGame.parametersDefault(logicSelectedView);
                     }
-                    catch (ClassCastException e){
-                        Log.e(TAG, "Ошибка класса:  ", e);
+                    catch (ClassCastException ignored){
                     }
                     return false;
                 }
 
-                if (!editWord){
-                    if (directionMove(touchDownX, touchUpX, touchDownY, touchUpY)){
+                if (!paramForChangingFieldGame.getEditWord()){
+                    if (changeLayoutParams.directionMove(touchDownX, touchUpX, touchDownY, touchUpY)){
                         if ((touchDownX < touchUpX) & (ManagerPositionMovement.CELL_EMPTY_GATE != 0)){
-                            Log.i(TAG, "Движение вправо  " + touchDownX + "   " + touchUpX);
                             changeLayoutParams.changeLayoutParamsToRight();
                             return true;
                         }
                         else
                         if ((touchDownX > touchUpX) & ManagerPositionMovement.CELL_EMPTY_GATE != ManagerPositionMovement.SIZE_GAME_FIELD - 1)
                         {
-                            Log.i(TAG, "Движение влево  " + touchDownX + "   " + touchUpX);
                             changeLayoutParams.changeLayoutParamsToLeft();
                             return true;
                         }
                     }
                     else{
                         if (touchDownY > touchUpY & (ManagerPositionMovement.ROW_EMPTY_GATE != ManagerPositionMovement.SIZE_GAME_FIELD - 1)) {
-                            Log.i(TAG, "Движение вверх  " + touchDownY + "   " + touchUpY);
                             changeLayoutParams.changeLayoutParamsToTop();
                             return true;
                         }
                         else
                         if (touchDownY < touchUpY & ManagerPositionMovement.ROW_EMPTY_GATE != 0){
-                            Log.i(TAG, "Движение вниз  " + touchDownY + "   " + touchUpY);
                             changeLayoutParams.changeLayoutParamsToBottom();
                             return true;
                         }
@@ -88,6 +99,6 @@ public class TouchListener implements View.OnTouchListener {
             default:
                 break;
         }
-        return true;;
+        return true;
     }
 }

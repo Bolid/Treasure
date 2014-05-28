@@ -1,25 +1,29 @@
-package ru.omdroid.game.ChaosWord;
+package ru.omdroid.game.ChaosWord.LogicChangedFieldGame;
 
 import android.content.Context;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.GridLayout;
 import android.widget.TextView;
+import ru.omdroid.game.ChaosWord.AppAnimation;
+import ru.omdroid.game.ChaosWord.ManagerPositionMovement;
 
 import java.util.HashMap;
 
 
-public class ChangeLayoutParams {
+public class LogicChangeLayoutParams {
 
     Context context;
     HashMap<Integer, TextView> hm;
     AppAnimation appAnimation;
 
-    public ChangeLayoutParams(Context context, HashMap<Integer, TextView> hm, AppAnimation appAnimation){
+    public LogicChangeLayoutParams(Context context, AppAnimation appAnimation){
         this.context = context;
-        this.hm = hm;
         this.appAnimation = appAnimation;
     }
+
+    public boolean directionMove(float touchDownX, float touchUpX, float touchDownY, float touchUpY){
+        return Math.abs(touchDownX - touchUpX) > Math.abs(touchDownY - touchUpY);
+    }
+
     public void changeLayoutParamsToTop(){
         GridLayout.LayoutParams  layoutParams = new GridLayout.LayoutParams(GridLayout.spec(ManagerPositionMovement.ROW_EMPTY_GATE), GridLayout.spec(ManagerPositionMovement.CELL_EMPTY_GATE));
         layoutParams.setMargins(1, 1, 1, 1);
@@ -62,5 +66,9 @@ public class ChangeLayoutParams {
         hm.remove(ManagerPositionMovement.EMPTY_GATE -1);
         ManagerPositionMovement.EMPTY_GATE --;
         ManagerPositionMovement.CELL_EMPTY_GATE--;
+    }
+
+    public void setCreateView(HashMap<Integer, TextView> hm){
+        this.hm = hm;
     }
 }

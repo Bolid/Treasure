@@ -16,6 +16,7 @@ public class LogicTeamSymbols {
     int count;
 
     ReplaceNotAllowableSymbol repSymbol = new ReplaceNotAllowableSymbol(alphabet);
+
     public int getCountSymbolToArray(String str){
         pattern = Pattern.compile(str);
         matcher = pattern.matcher(currentStr);
