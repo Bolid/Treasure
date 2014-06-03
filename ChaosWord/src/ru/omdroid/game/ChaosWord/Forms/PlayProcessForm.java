@@ -1,28 +1,29 @@
-package ru.omdroid.game.ChaosWord;
+package ru.omdroid.game.ChaosWord.Forms;
 
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.*;
+import ru.omdroid.game.ChaosWord.*;
+import ru.omdroid.game.ChaosWord.AppDB.AppWordDB;
 import ru.omdroid.game.ChaosWord.ControlWriteWord.ControllerWriteWord;
+import ru.omdroid.game.ChaosWord.Dictionaries.InitializationDictionaries;
 import ru.omdroid.game.ChaosWord.Listener.TouchListener;
 import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.LogicChangeLayoutParams;
 import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.LogicSelectedView;
 import ru.omdroid.game.ChaosWord.LogicChangedFieldGame.ParamForChangingFieldGame;
 import ru.omdroid.game.ChaosWord.LogicFillingFieldGame.LogicTeamSymbols;
-import ru.omdroid.game.ChaosWord.db.InitializationDictionaries;
+import ru.omdroid.game.ChaosWord.Process;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class MainForm extends Activity {
+public class PlayProcessForm extends Activity {
 
     GridLayout gridLayout;
     Button btnOk, btnNo, btnEndGame;
-    TextView tvEditedWord, timerTV;
+    TextView tvEditedWord, tvTimer, tvCountWord, tvScore;
     LinearLayout llEndGame;
 
     LogicTeamSymbols logicTeamSymbols;
@@ -31,22 +32,25 @@ public class MainForm extends Activity {
     ParamForChangingFieldGame paramChangingFieldGame;
     ControllerWriteWord controllerWriteWord;
     CreatedPlayingField createdPlayingField;
-
+    ru.omdroid.game.ChaosWord.Process process;
     HashMap<Integer, TextView> hmActiveTV = new HashMap<Integer, TextView>();
 
     AppAnimation appAnimation;
     TimerProgress timerProgress;
     TouchListener touchListener;
 
+    AppWordDB appWordDB;
+
+    String currentUser;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        currentUser = getIntent().getExtras().getString("CurrentUser");
 
         InitializationDictionaries initializationDB = new InitializationDictionaries(getBaseContext());
         initializationDB.Initialized();
         initializationDB.close();
-
         controllerWriteWord = new ControllerWriteWord();
         appAnimation = new AppAnimation(getBaseContext());
         ManagerPositionMovement.SIZE_GAME_FIELD = 5;
@@ -57,7 +61,9 @@ public class MainForm extends Activity {
         btnNo = (Button)findViewById(R.id.btnWordNo);
         btnEndGame = (Button)findViewById(R.id.btnEndGame);
         tvEditedWord = (TextView)findViewById(R.id.tvWord);
-        timerTV = (TextView)findViewById(R.id.timerTV);
+        tvTimer = (TextView)findViewById(R.id.timerTV);
+        tvCountWord = (TextView)findViewById(R.id.tvCountWord);
+        tvScore = (TextView)findViewById(R.id.tvScore);
         llEndGame = (LinearLayout)findViewById(R.id.layoutEndGame);
         gridLayout.setRowCount(ManagerPositionMovement.SIZE_GAME_FIELD);
         gridLayout.setColumnCount(ManagerPositionMovement.SIZE_GAME_FIELD);
@@ -65,7 +71,7 @@ public class MainForm extends Activity {
         logicTeamSymbols = new LogicTeamSymbols();
         paramChangingFieldGame = new ParamForChangingFieldGame(hmActiveTV, tvEditedWord, btnOk, btnNo);
         logicSelectedView = new LogicSelectedView(getBaseContext(), paramChangingFieldGame, tvEditedWord, appAnimation);
-
+        process = new Process();
         changeLayoutParams = new LogicChangeLayoutParams(getBaseContext(), appAnimation);
         touchListener = new TouchListener(hmActiveTV, paramChangingFieldGame, logicSelectedView, changeLayoutParams);
         createdPlayingField = new CreatedPlayingField(getBaseContext(), paramChangingFieldGame, touchListener);
@@ -76,7 +82,7 @@ public class MainForm extends Activity {
 
         ManagerPositionMovement.HEIGHT_SCREEN = getHeightScreen();
         ManagerPositionMovement.EMPTY_GATE = emptyCage();
-        timerProgress = new TimerProgress(llEndGame, timerTV);
+        timerProgress = new TimerProgress(llEndGame, tvTimer);
         createdPlayingField.addViewInContainer(gridLayout);
 
         changeLayoutParams.setCreateView(createdPlayingField.getHashMapCreatedView());
@@ -87,9 +93,24 @@ public class MainForm extends Activity {
     }
 
     @Override
+    public void onResume(){
+        super.onResume();
+        appWordDB = AppWordDB.getInstance();
+        tvCountWord.setText(process.getCountSelectedWords());
+        tvScore.setText(process.getScoreFromDB(currentUser));
+    }
+
+    @Override
     public void onStop(){
         super.onStop();
         timerProgress.stopTimer();
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        process.deleteProcess();
+        //appWordDB.dbClose();
     }
 
 
@@ -119,6 +140,10 @@ public class MainForm extends Activity {
                         paramChangingFieldGame.getHmActiveTV().get(i).startAnimation(appAnimation.getAnimationValidWord());
                     }
                     timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
+                    process.saveWordToDB(tvEditedWord.getText().toString(), currentUser);
+                    process.updateScore((1 + tvEditedWord.getText().toString().length() - 3) * tvEditedWord.getText().toString().length(), currentUser);
+                    tvCountWord.setText(process.getCountSelectedWords());
+                    tvScore.setText(process.getScoreFromDB(currentUser));
                     paramChangingFieldGame.parametersDefault(logicSelectedView);
                     timerProgress.stopTimer();
                     timerProgress.updateTime(0);
@@ -132,27 +157,14 @@ public class MainForm extends Activity {
         }
     }
 
-    private void selectedTExtView(TextView view){
-        view.setBackgroundColor(getResources().getColor(R.color.background_select_gate));
-        view.setScaleX(1.0f);
-        view.setScaleY(1.0f);
-        view.setTypeface(Typeface.DEFAULT_BOLD);
-    }
-
     private boolean controlWriteWord(String word){
         return  (controllerWriteWord.controlWordInDictionaries("SELECT " + ControllerWriteWord.F_WORD + " FROM " + ControllerWriteWord.T_WORDS + " WHERE " + ControllerWriteWord.F_WORD + " = '" + word + "'"));
     }
 
     private void ignoreSelectWord(String word){
-        /*for (int i = 0; i < hmActiveTV.size(); i++){
-            hmActiveTV.get(i).setBackgroundColor(getResources().getColor(R.color.background_not_valid_word));
-        }*/
         for (int i = 0; i < paramChangingFieldGame.getHmActiveTV().size(); i++){
             paramChangingFieldGame.getHmActiveTV().get(i).startAnimation(appAnimation.getAnimationNotValidWord());
         }
         Toast.makeText(getBaseContext(), "Слова " + word + " нет в словаре", Toast.LENGTH_LONG).show();
-        /*for (int i = 0; i < hmActiveTV.size(); i++){
-            selectedTExtView(hmActiveTV.get(i));
-        }*/
     }
 }
