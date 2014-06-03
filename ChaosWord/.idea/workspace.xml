@@ -24,18 +24,7 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/AppAnimation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/ChangeLayoutParams.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/ChangeLayoutParams.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/ManagerPositionMovement.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/ManagerPositionMovement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/db/WorkDB.java" afterPath="$PROJECT_DIR$/src/ru/omdroid/game/ChaosWord/db/WorkDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/color.xml" afterPath="$PROJECT_DIR$/res/values/color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/anim/cycle_1.xml" afterPath="$PROJECT_DIR$/res/anim/cycle_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="534556cb-6ba0-4b6a-9d9c-8326b580b041" name="Default" comment="" />
     <ignored path="ChaosWord.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="534556cb-6ba0-4b6a-9d9c-8326b580b041" time="1400867065892" ignored="false" />
