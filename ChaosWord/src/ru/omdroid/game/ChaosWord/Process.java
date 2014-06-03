@@ -18,8 +18,8 @@ public class Process {
         appWordDB.insertDataToDataBase("INSERT INTO " + AppDB.T_STATISTIC + " (" + AppDB.F_WORDS_STAT + ", " + AppDB.F_USER_STAT + ") VALUES ('" + str + "', '" + currentUser + "')");
     }
 
-    public String getCountSelectedWords(){
-        return String.valueOf(appWordDB.readDataFromDataBase("SELECT * FROM " + AppDB.T_STATISTIC).getCount());
+    public String getCountSelectedWords(String currentUser){
+        return String.valueOf(appWordDB.readDataFromDataBase("SELECT * FROM " + AppDB.T_STATISTIC + " WHERE " + AppDB.F_USER_STAT + " = '" + currentUser + "'").getCount());
     }
 
     public void deleteProcess(){

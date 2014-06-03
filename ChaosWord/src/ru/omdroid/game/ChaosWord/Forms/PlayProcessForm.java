@@ -96,7 +96,7 @@ public class PlayProcessForm extends Activity {
     public void onResume(){
         super.onResume();
         appWordDB = AppWordDB.getInstance();
-        tvCountWord.setText(process.getCountSelectedWords());
+        tvCountWord.setText(process.getCountSelectedWords(currentUser));
         tvScore.setText(process.getScoreFromDB(currentUser));
     }
 
@@ -106,12 +106,12 @@ public class PlayProcessForm extends Activity {
         timerProgress.stopTimer();
     }
 
-    @Override
+    /*@Override
     public void onDestroy(){
         super.onDestroy();
         process.deleteProcess();
         //appWordDB.dbClose();
-    }
+    }*/
 
 
     private int getHeightScreen(){
@@ -142,7 +142,7 @@ public class PlayProcessForm extends Activity {
                     timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
                     process.saveWordToDB(tvEditedWord.getText().toString(), currentUser);
                     process.updateScore((1 + tvEditedWord.getText().toString().length() - 3) * tvEditedWord.getText().toString().length(), currentUser);
-                    tvCountWord.setText(process.getCountSelectedWords());
+                    tvCountWord.setText(process.getCountSelectedWords(currentUser));
                     tvScore.setText(process.getScoreFromDB(currentUser));
                     paramChangingFieldGame.parametersDefault(logicSelectedView);
                     timerProgress.stopTimer();

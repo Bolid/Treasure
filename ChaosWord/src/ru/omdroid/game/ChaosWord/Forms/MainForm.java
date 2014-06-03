@@ -33,17 +33,7 @@ public class MainForm extends Activity{
         autoCompleteTextView.setOnDismissListener(new AutoCompleteTextView.OnDismissListener() {
             @Override
             public void onDismiss() {
-                if (workContentUser.userCompareToDB(autoCompleteTextView.getText().toString()))
-                {
-                    btnNewGame.setVisibility(View.INVISIBLE);
-                    btnContinueGame.setVisibility(View.VISIBLE);
-                }
-                else
-                {
-                    btnNewGame.setVisibility(View.VISIBLE);
-                    btnContinueGame.setVisibility(View.INVISIBLE);
-                }
-
+                    btnContinueGame.setEnabled(workContentUser.userCompareToDB(autoCompleteTextView.getText().toString()));
             }
         });
     }

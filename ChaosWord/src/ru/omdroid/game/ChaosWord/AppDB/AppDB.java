@@ -7,7 +7,7 @@ import android.os.Environment;
 
 
 public class AppDB extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = Environment.getExternalStorageDirectory() + "/dbChaosWord.db";
+    private static final String DATABASE_NAME = /*Environment.getExternalStorageDirectory() + "/*/"dbChaosWord.db";
 
     /*Таблица сохраненной игры*/
     public static final String T_SAVE_GAME = "t_save_game";
