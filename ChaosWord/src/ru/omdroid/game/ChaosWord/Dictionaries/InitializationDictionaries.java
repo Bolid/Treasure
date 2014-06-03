@@ -1,4 +1,4 @@
-package ru.omdroid.game.ChaosWord.db;
+package ru.omdroid.game.ChaosWord.Dictionaries;
 
 import android.content.Context;
 import android.database.SQLException;
@@ -48,7 +48,7 @@ public class InitializationDictionaries extends SQLiteOpenHelper{
         InputStream iStream;
         OutputStream oStream;
         try{
-            String DB_ASSETS_PATH = "db/" + DB_NAME;
+            String DB_ASSETS_PATH = "AppDB/" + DB_NAME;
             int BUFFER_FOR_COPY = 1024;
             iStream = new BufferedInputStream(context.getAssets().open(DB_ASSETS_PATH), BUFFER_FOR_COPY);
             File mkDir = new File(DB__FOLDER);

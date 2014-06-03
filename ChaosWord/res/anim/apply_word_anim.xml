@@ -11,9 +11,9 @@
             android:pivotY="50%"/>-->
     <scale
             android:fromXScale="0.0"
-            android:toXScale="1.2"
+            android:toXScale="1.1"
             android:fromYScale="0.0"
-            android:toYScale="1.2"
+            android:toYScale="1.1"
             android:duration="300"
             android:pivotX="50%"
             android:pivotY="50%"/>
