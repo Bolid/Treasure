@@ -29,6 +29,7 @@ public class PlayProcessForm extends Activity {
     LogicTeamSymbols logicTeamSymbols;
     LogicChangeLayoutParams changeLayoutParams;
     LogicSelectedView logicSelectedView;
+    ЛогикаЗавершениеИгрыПриОтсутствииОчков логикаЗавершениеИгрыПриОтсутствииОчков;
     ParamForChangingFieldGame paramChangingFieldGame;
     ControllerWriteWord controllerWriteWord;
     CreatedPlayingField createdPlayingField;
@@ -73,7 +74,8 @@ public class PlayProcessForm extends Activity {
         logicSelectedView = new LogicSelectedView(getBaseContext(), paramChangingFieldGame, tvEditedWord, appAnimation);
         process = new Process();
         changeLayoutParams = new LogicChangeLayoutParams(getBaseContext(), appAnimation);
-        touchListener = new TouchListener(hmActiveTV, paramChangingFieldGame, logicSelectedView, changeLayoutParams);
+        логикаЗавершениеИгрыПриОтсутствииОчков = new ЛогикаЗавершениеИгрыПриОтсутствииОчков();
+        touchListener = new TouchListener(hmActiveTV, paramChangingFieldGame, logicSelectedView, changeLayoutParams, логикаЗавершениеИгрыПриОтсутствииОчков);
         createdPlayingField = new CreatedPlayingField(getBaseContext(), paramChangingFieldGame, touchListener);
 
         gridLayout.setLayoutAnimation(appAnimation.getAnimationController());
@@ -124,7 +126,7 @@ public class PlayProcessForm extends Activity {
         Random random = new Random();
         return random.nextInt(ManagerPositionMovement.SIZE_GAME_FIELD * ManagerPositionMovement.SIZE_GAME_FIELD) + 1;
     }
-
+    //TODO Реализовать обработку очков в классе ЛогикаЗавершениеИгрыПриОтсутствииОчков и бделать запись этих данных в БД
     public void onClick(View view)
     {
         switch (view.getId())
@@ -142,6 +144,7 @@ public class PlayProcessForm extends Activity {
                     timerProgress.updateTime(tvEditedWord.getText().toString().length() * 2);
                     process.saveWordToDB(tvEditedWord.getText().toString(), currentUser);
                     process.updateScore((1 + tvEditedWord.getText().toString().length() - 3) * tvEditedWord.getText().toString().length(), currentUser);
+                    логикаЗавершениеИгрыПриОтсутствииОчков.увеличитьОчкиПослеСженияСлова((1 + tvEditedWord.getText().toString().length() - 3) * tvEditedWord.getText().toString().length());
                     tvCountWord.setText(process.getCountSelectedWords(currentUser));
                     tvScore.setText(process.getScoreFromDB(currentUser));
                     paramChangingFieldGame.parametersDefault(logicSelectedView);
