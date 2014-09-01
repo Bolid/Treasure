@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Calc_v1.1/Calc_v1.1.iml" filepath="$PROJECT_DIR$/Calc_v1.1/Calc_v1.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditCalc/CreditCalc.iml" filepath="$PROJECT_DIR$/CreditCalc/CreditCalc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DebtCalc/DebtCalc.iml" filepath="$PROJECT_DIR$/DebtCalc/DebtCalc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RemindMe/RemindMe.iml" filepath="$PROJECT_DIR$/RemindMe/RemindMe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WallPapperYaPhoto/WallPapperYaPhoto.iml" filepath="$PROJECT_DIR$/WallPapperYaPhoto/WallPapperYaPhoto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Yandex photo/Yandex photo.iml" filepath="$PROJECT_DIR$/Yandex photo/Yandex photo.iml" />
+    </modules>
+  </component>
+</project>
+
