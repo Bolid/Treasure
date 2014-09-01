@@ -12,9 +12,7 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int[] masTemp = createRandomTemp();
-
         setContentView(new Histogram(this, masTemp));
-        Log.i("HEX", Integer.toHexString(344));
     }
 
     private int[] createRandomTemp(){
