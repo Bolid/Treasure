@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="colorRED"><item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>104</item>
+        <item>200</item>
+        <item>32</item>
+        <item>16</item>
+        <item>103</item>
+        <item>86</item>
+    </integer-array>
+
+    <integer-array name="colorGREEN">
+        <item>0</item>
+        <item>120</item>
+        <item>211</item>
+        <item>217</item>
+        <item>240</item>
+        <item>197</item>
+        <item>69</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <integer-array name="colorBLUE">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>16</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>249</item>
+        <item>175</item>
+    </integer-array>
+</resources>

@@ -10,9 +10,13 @@ import android.view.View;
 import android.widget.OverScroller;
 import android.support.v4.view.ViewCompat;
 
+import java.math.BigDecimal;
+
 public class Histogram extends View {
 
     private final String TAG = "TESTING_PROGRAM";
+
+    private Context context;
 
     private OverScroller scroller;
 
@@ -36,6 +40,7 @@ public class Histogram extends View {
     public Histogram(Context context, int[] masTemp) {
         super(context);
         init(context);
+        this.context = context;
         this.masTemp = masTemp;
     }
 
@@ -73,13 +78,13 @@ public class Histogram extends View {
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
 
-        if (scroller.computeScrollOffset())
+        testColor(canvas);
+        /*if (scroller.computeScrollOffset())
             xOffset = scroller.getCurrX();
         calculateSizeScreen(canvas);
         getWidthForBar();
         getStepBar();
         calculateZero();
-        //central(canvas);
         posElem.setStartXBar(-xOffset);
         posElem.setStartYBar(heightScreen / 2 - ((masTemp[0] - posZero) * stepBar));
 
@@ -90,13 +95,13 @@ public class Histogram extends View {
                 paintBar(canvas, "-" + masTemp[i]);
             else if (masTemp[i] == 0)
                 paintBar(canvas, "0");
-            if (i != 24/*masTemp.length */- 1){
+            if (i != 24*//*masTemp.length *//*- 1){
                 paintBorder(canvas, masTemp[i], masTemp[i + 1]);
             }
         }
         canvas.save();
         canvas.translate(-xOffset, 0);
-        canvas.restore();
+        canvas.restore();*/
     }
 
     private void paintBar(Canvas canvas, String temp){
@@ -119,6 +124,7 @@ public class Histogram extends View {
     private void paintBorder(Canvas canvas, int temp1, int temp2){
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(2);
+
         paint.setShader(new LinearGradient(posElem.getStartXBorder(), posElem.getStartYBorder(), posElem.getStartXBorder(), posElem.getStartYBorder() + (temp1 - temp2) * stepBar, Color.RED, Color.GREEN, Shader.TileMode.CLAMP));
         //paint.setColor(Color.GREEN);
         canvas.drawLine(posElem.getStartXBorder(), posElem.getStartYBorder(), posElem.getStartXBorder(), posElem.getStartYBorder() + (temp1 - temp2) * stepBar, paint);
@@ -204,5 +210,47 @@ public class Histogram extends View {
             scroller.fling((int) xOffset, 0, (int) -velocityX, 0, 0, (int) (24 * widthBar - getMeasuredWidth()), 0, 0);
             return true;
         }
+    }
+
+    private void testColor(Canvas canvas){
+        //new Color((int)(r1*(1-x)+r2*x),(int)(g1*(1-x)+g2*x),(int)(b1*(1-x)+b2*x));
+        int[] masRED = context.getResources().getIntArray(R.array.colorRED);
+        int[] masGREEN = context.getResources().getIntArray(R.array.colorGREEN);
+        int[] masBLUE = context.getResources().getIntArray(R.array.colorBLUE);
+
+        int[][] masGradient = new int[masRED.length][masRED.length];
+
+        int[] colorRed = new int[masRED.length];
+        int[] colorGreen = new int[masRED.length];
+        int[] colorBlue = new int[masRED.length];
+
+        float koef;
+        int posX = 20;
+        int posY = 20;
+        for (int i = 0; i < masRED.length; i++){
+            if (i == masRED.length - 1)
+                return;
+            for(int j = 0; j < masRED.length; j++){
+                koef = Float.valueOf(String.valueOf(new BigDecimal(j).divide(BigDecimal.valueOf(10))));
+                colorRed[j] = (int) (masRED[i] * (1-koef)+masRED[i+1]*koef);
+                colorGreen[j] = (int)(masGREEN[i]*(1-koef)+masGREEN[i+1]*koef);
+                colorBlue[j] = (int)(masBLUE[i]*(1-koef)+masBLUE[i+1]*koef);
+            }
+            for (int k = 0; k < colorRed.length; k++){
+                paintPoint(colorRed[k], colorGreen[k], colorBlue[k], canvas, posX, posY);
+                posY += 30;
+            }
+            posY = 20;
+            posX += 30;
+        }
+
+    }
+
+    private void paintPoint(int RED, int GREEN, int BLUE, Canvas canvas, int posX, int posY){
+        Log.i(TAG,  "Цвета: " + RED + " " + GREEN + " " + BLUE);
+        paint.setARGB(100, RED, GREEN, BLUE);
+        paint.setStrokeWidth(20);
+        canvas.drawPoint(posX, posY, paint);
+        canvas.restore();
     }
 }

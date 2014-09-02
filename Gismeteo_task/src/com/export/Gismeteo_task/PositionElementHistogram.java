@@ -1,12 +1,6 @@
 package com.export.Gismeteo_task;
 
-/**
- * Created with IntelliJ IDEA.
- * User: dima
- * Date: 9/1/14
- * Time: 9:46 AM
- * To change this template use File | Settings | File Templates.
- */
+
 public class PositionElementHistogram {
 
     private float startXBorder;

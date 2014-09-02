@@ -1,47 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidDesignerProfile">
-    <option name="fullProfile">
-      <profile>
-        <option name="device" value="2.7in QVGA" />
-        <option name="deviceConfiguration" value="Portrait" />
-        <option name="targetHashString" value="android-17" />
-        <option name="theme" value="Theme" />
-      </profile>
-    </option>
-    <option name="selection" value="[Full]" />
-  </component>
-  <component name="AndroidLayoutPreviewToolWindow">
-    <option name="state">
-      <GlobalState>
-        <option name="device" value="2.7in QVGA" />
-        <option name="dockMode" value="" />
-        <option name="nightMode" value="notnight" />
-        <option name="targetHashString" value="android-17" />
-        <option name="theme" value="Theme" />
-        <option name="visible" value="false" />
-      </GlobalState>
-    </option>
-  </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="GESTURE_DETECTOR" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="цвета" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" name="Default" comment="" />
+    <list default="true" id="c09c2061-9515-41f1-badc-321e2bd11b8f" name="Default" comment="" />
     <ignored path="Gismeteo_task.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Histogram.java" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409661042485" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/misc.xml" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409509733660" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409518140507" ignored="false" />
-    <file path="/MyActivity.java" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409594022019" ignored="false" />
-    <file path="/strings.xml" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409511513165" ignored="false" />
-    <file path="/a.dummy" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409660847676" ignored="false" />
-    <file path="/PositionElementHistogram.java" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409550993463" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/export/Gismeteo_task/BuildConfig.java" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409551972360" ignored="false" />
-    <file path="/color.xml" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409573492219" ignored="false" />
-    <file path="/MyDetectorListener.java" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409594647343" ignored="false" />
-    <file path="/main.xml" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409593567505" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Import/custom_view_keyboard-master/src/com/evilduck/piano/views/instrument/PianoView.java" changelist="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" time="1409604330694" ignored="false" />
+    <file path="/fragment.java" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409677723553" ignored="false" />
+    <file path="/Histogram.java" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409691394137" ignored="false" />
+    <file path="/color.xml" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409683628751" ignored="false" />
+    <file path="/strings.xml" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409686445596" ignored="false" />
+    <file path="/array.xml" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409686566059" ignored="false" />
+    <file path="/HistogramBar.java" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409691922272" ignored="false" />
+    <file path="/HistogramColor.java" changelist="c09c2061-9515-41f1-badc-321e2bd11b8f" time="1409691663051" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +28,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -92,8 +64,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -103,39 +73,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Histogram.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Histogram.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/Histogram.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="192" column="29" selection-start="6138" selection-end="6138" vertical-scroll-proportion="0.54741377">
-              <folding />
-=======
-            <state line="136" column="17" selection-start="4328" selection-end="4328" vertical-scroll-proportion="1.8289787">
+            <state line="220" column="51" selection-start="6924" selection-end="6924" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
->>>>>>> dc1b815135c0f3aae177d165e84ee00ab991623c
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="text-editor">
-            <state line="6" column="25" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="color.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/color.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="23" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -143,8 +87,29 @@
       <file leaf-file-name="PositionElementHistogram.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/PositionElementHistogram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="7" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistogramBar.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/HistogramBar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="4" selection-start="209" selection-end="209" vertical-scroll-proportion="0.23982558">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistogramColor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/HistogramColor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="30" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#setColor#0;class#HistogramColor#0" expanded="false" />
+                <element signature="method#getColorRGB#0;class#HistogramColor#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,16 +117,34 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+            <state line="2" column="50" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/MyActivity.java">
+      <file leaf-file-name="array.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/array.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="43" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+            <state line="30" column="17" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Color.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Developer/sdk/platforms/android-17/android.jar!/android/graphics/Color.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="color.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/color.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="52" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -177,20 +160,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/PositionElementHistogram.java" />
         <option value="$PROJECT_DIR$/res/values/color.xml" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/MyActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/MyDetectorListener.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/values/array.xml" />
         <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/Histogram.java" />
+        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/HistoBar.java" />
+        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/HistogramColor.java" />
+        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/PositionElementHistogram.java" />
+        <option value="$PROJECT_DIR$/src/com/export/Gismeteo_task/HistogramBar.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1024" />
-    <option name="height" value="576" />
+    <option name="width" value="1442" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -206,7 +191,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -217,28 +202,96 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gismeteo_task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propGUI" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Developing/Android/sdk/extras/android/support/v4/android-support-v4.jar!/" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Developer/sdk/extras/android/support/v4/android-support-v4.jar!/" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RunManager" selected="Android Application.Gismeteo_task">
+  <component name="RunManager" selected="Android Application.Gis">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -361,10 +414,10 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Gismeteo_task" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="false" name="Gis" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="Gismeteo_task" />
-      <option name="ACTIVITY_CLASS" value="com.export.Gismeteo_task.MyActivity" />
-      <option name="MODE" value="specific_activity" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
       <option name="PREFERRED_AVD" value="" />
@@ -380,7 +433,7 @@
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Android Application.Gismeteo_task" />
+      <item index="0" class="java.lang.String" itemvalue="Android Application.Gis" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -390,46 +443,37 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7a8a13ea-6e3b-4af9-b373-e0e9631bc2a4" name="Default" comment="" />
-      <created>1409509630441</created>
-      <updated>1409509630441</updated>
+      <changelist id="c09c2061-9515-41f1-badc-321e2bd11b8f" name="Default" comment="" />
+      <created>1409677702590</created>
+      <updated>1409677702590</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1024" height="576" extended-state="6" />
+    <frame x="-1" y="24" width="1442" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.57701147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.78390807" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.78390807" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.877551" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7306122" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892396" sideWeight="0.21496598" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789117" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.6707483" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24846625" sideWeight="0.21496598" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
->>>>>>> dc1b815135c0f3aae177d165e84ee00ab991623c
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -497,125 +541,78 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+    <entry file="jar://$USER_HOME$/Developer/sdk/platforms/android-17/android.jar!/android/graphics/LinearGradient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+        <state line="9" column="11" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/PositionElementHistogram.java">
+    <entry file="jar://$USER_HOME$/Developer/sdk/platforms/android-17/android.jar!/android/graphics/Shader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="7" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+        <state line="7" column="11" selection-start="179" selection-end="179" vertical-scroll-proportion="0.12693936">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/MyActivity.java">
+    <entry file="jar://$USER_HOME$/Developer/sdk/platforms/android-17/android.jar!/android/graphics/Color.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="43" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/PositionElementHistogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="29" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+        <state line="6" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="24" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/Histogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="45" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+        <state line="2" column="50" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/color.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="23" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0">
+        <state line="12" column="52" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state line="6" column="25" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/MyActivity.java">
+    <entry file="file://$PROJECT_DIR$/res/values/array.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="43" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+        <state line="30" column="17" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/HistogramColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="30" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#setColor#0;class#HistogramColor#0" expanded="false" />
+            <element signature="method#getColorRGB#0;class#HistogramColor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/Histogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="220" column="51" selection-start="6924" selection-end="6924" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/PositionElementHistogram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="7" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Developing/Android/sdk/platforms/android-17/android.jar!/android/view/GestureDetector.class">
+    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/HistogramBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="24" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/export/Gismeteo_task/Histogram.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="192" column="29" selection-start="6138" selection-end="6138" vertical-scroll-proportion="0.54741377">
+        <state line="11" column="4" selection-start="209" selection-end="209" vertical-scroll-proportion="0.23982558">
           <folding />
-=======
-        <state line="136" column="17" selection-start="4328" selection-end="4328" vertical-scroll-proportion="1.8289787">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
->>>>>>> dc1b815135c0f3aae177d165e84ee00ab991623c
         </state>
       </provider>
     </entry>
@@ -659,7 +656,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -672,18 +669,6 @@
       <state key="ModuleStructureConfigurable.UI">
         <settings>
           <last-edited>Gismeteo_task</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
