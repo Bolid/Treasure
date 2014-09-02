@@ -7,25 +7,32 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Scroller;
+import android.widget.OverScroller;
+import android.support.v4.view.ViewCompat;
 
 public class Histogram extends View {
-    float offset = 0;
-    String TAG = "TESTING_PROGRAM";
-    Paint paint = new Paint();
-    Paint paintForBar = new Paint();
-    int[] masTemp;
-    int heightScreen;
-    int widthScreen;
-    float widthBar;
-    float stepBar;
-    float posZero;
-    Canvas canvas;
-    int scrollX, scrollY;
-    boolean createHist = false;
-    PositionElementHistogram posElem = new PositionElementHistogram();
-    GestureDetector gDetector;
-    String orientationScreen = "";
+
+    private final String TAG = "TESTING_PROGRAM";
+
+    private OverScroller scroller;
+
+    private GestureDetector gDetector;
+
+    private Paint paint = new Paint();
+
+    private Paint paintForBar = new Paint();
+
+
+    private int heightScreen, widthScreen;
+
+    private int[] masTemp;
+
+    private float widthBar, stepBar, posZero, xOffset = 0;
+
+    private PositionElementHistogram posElem = new PositionElementHistogram();
+
+    private String orientationScreen = "";
+
     public Histogram(Context context, int[] masTemp) {
         super(context);
         init(context);
@@ -34,54 +41,61 @@ public class Histogram extends View {
 
     private void init(Context context){
         gDetector = new GestureDetector(context, new MyDetectorListener());
-        //scroller = new Scroller(context);
+        scroller = new OverScroller(context);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
-
         if (gDetector.onTouchEvent(event)) return true;
         return true;
     }
 
     @Override
-    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        scrollX = l;
-        scrollY = t;
+    public void computeScroll() {
+        super.computeScroll();
+        boolean needsInvalidate = false;
+        if (scroller.computeScrollOffset()) {
+            xOffset = scroller.getCurrX();
+        }
+
+        if (!scroller.isFinished()) {
+            needsInvalidate = true;
+        }
+
+        if (needsInvalidate) {
+            ViewCompat.postInvalidateOnAnimation(this);
+        }
     }
 
     @Override
 
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        this.canvas = canvas;
-        Log.i(TAG, "Перерисовыеваем канву");
-        /*if (!createHist) */{
-            calculateSizeScreen(canvas);
-            getWidthForBar();
-            getStepBar();
-            calculateZero();
-            //central(canvas);
-            canvas.translate(-offset, 0 );
-            posElem.setStartXBar(0);
-            posElem.setStartYBar(heightScreen / 2 - ((masTemp[0] - posZero) * stepBar));
 
-            for (int i = 0; i < 20; i++){
-                if (masTemp[i] > 0)
-                    paintBar(canvas, "+" + masTemp[i]);
-                else if (masTemp[i] < 0)
-                    paintBar(canvas, "-" + masTemp[i]);
-                else if (masTemp[i] == 0)
-                    paintBar(canvas, "0");
-                if (i != masTemp.length - 1){
-                    paintBorder(canvas, masTemp[i], masTemp[i + 1]);
-                }
+        if (scroller.computeScrollOffset())
+            xOffset = scroller.getCurrX();
+        calculateSizeScreen(canvas);
+        getWidthForBar();
+        getStepBar();
+        calculateZero();
+        //central(canvas);
+        posElem.setStartXBar(-xOffset);
+        posElem.setStartYBar(heightScreen / 2 - ((masTemp[0] - posZero) * stepBar));
+
+        for (int i = 0; i < 24; i++){
+            if (masTemp[i] > 0)
+                paintBar(canvas, "+" + masTemp[i]);
+            else if (masTemp[i] < 0)
+                paintBar(canvas, "-" + masTemp[i]);
+            else if (masTemp[i] == 0)
+                paintBar(canvas, "0");
+            if (i != 24/*masTemp.length */- 1){
+                paintBorder(canvas, masTemp[i], masTemp[i + 1]);
             }
-            createHist = !createHist;
         }
-        /*canvas.save();
-        canvas.translate(-offset, 0);*/
+        canvas.save();
+        canvas.translate(-xOffset, 0);
         canvas.restore();
     }
 
@@ -156,62 +170,39 @@ public class Histogram extends View {
 
     }
 
-    private void getStartPosition(){
-
-    }
-
     private void calculateZero(){
         float temp = 0;
         for (int aMasTemp : masTemp){
             temp = temp + aMasTemp;
         }
         posZero =  temp / masTemp.length;
-
-        Log.i(TAG, "Среднее значение = " + posZero);
-    }
-
-    private void central(Canvas canvas){
-        paint.setStrokeWidth(1);
-        paint.setColor(Color.YELLOW);
-        canvas.drawLine(0, heightScreen / 2, widthScreen, heightScreen / 2, paint);
     }
 
 
     public class MyDetectorListener extends GestureDetector.SimpleOnGestureListener {
-        String TAG = "GESTURE_DETECTOR";
 
-        @Override
-        public boolean onSingleTapUp(MotionEvent e) {
-            int rawx = (int) e.getX() + scrollX;
-            int rawy = (int) e.getY() + scrollY;
-            postInvalidate();           // для других жестов так сделать
+        public boolean onDown(MotionEvent e) {
+            scroller.forceFinished(true);
+            invalidate();
+
             return true;
         }
 
         @Override
-        public boolean onScroll(MotionEvent event1, MotionEvent event2, float distanceX, float distanseY) {
-
-            offset += distanceX;
-            if (offset < 0) {
-                offset = 0;
-            }
-            /*if (offset > 20 - getMeasuredWidth()) {
-                offset = 20 - getMeasuredWidth();
-            }*/
-            offset++;
-            posElem.setStartXBar(0 - 1);
-            posElem.setStartYBar(0 - 1);
-            posElem.setStartXBorder(0 - 1);
-            posElem.setStartYBorder(0 - 1);
+        public boolean onScroll(MotionEvent event1, MotionEvent event2, float distanceX, float distanceY) {
+            xOffset += distanceX;
+            if (xOffset < 0)
+                xOffset = 0;
+            if (Math.abs(xOffset) > 24 * widthBar - getMeasuredWidth())
+                xOffset = 24 * widthBar - getMeasuredWidth();
             invalidate();
-            Log.i(TAG, "Перерисовка");
             return true;
         }
 
         @Override
         public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
-
-            return true;  //To change body of implemented methods use File | Settings | File Templates.
+            scroller.fling((int) xOffset, 0, (int) -velocityX, 0, 0, (int) (24 * widthBar - getMeasuredWidth()), 0, 0);
+            return true;
         }
     }
 }
