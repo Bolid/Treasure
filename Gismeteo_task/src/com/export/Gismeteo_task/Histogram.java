@@ -16,13 +16,17 @@ public class Histogram extends View {
 
     private final String TAG = "TESTING_PROGRAM";
 
+    private HistogramBar[] histogramBars;
+
+    private HistogramBorder[] histogramBorders;
+
     private Context context;
 
     private OverScroller scroller;
 
     private GestureDetector gDetector;
 
-    private Paint paint = new Paint();
+    private Paint paintForBorder = new Paint();
 
     private Paint paintForBar = new Paint();
 
@@ -37,16 +41,34 @@ public class Histogram extends View {
 
     private String orientationScreen = "";
 
+    private boolean startInit  = false;
+
     public Histogram(Context context, int[] masTemp) {
         super(context);
-        init(context);
         this.context = context;
         this.masTemp = masTemp;
-    }
-
-    private void init(Context context){
         gDetector = new GestureDetector(context, new MyDetectorListener());
         scroller = new OverScroller(context);
+        histogramBars = new HistogramBar[24];
+        histogramBorders = new HistogramBorder[24];
+    }
+
+    private void init(Canvas canvas){
+
+        calculateSizeScreen(canvas);
+        getWidthForBar();
+        getStepBar();
+        calculateZero();
+        int posX = 0;
+
+        for (int i = 0; i < 24; i++){
+            histogramBars[i] = new HistogramBar(posX, (heightScreen / 2 - ((masTemp[i] - posZero) * stepBar)), String.valueOf(masTemp[i]), widthBar, calculateColor(masTemp[i]));
+            posX += widthBar;
+            if (i != 24 - 1)
+                histogramBorders[i] = new HistogramBorder(posX, (heightScreen / 2 - ((masTemp[i] - posZero) * stepBar)), stepBar, masTemp[i] - masTemp[i + 1], calculateColor(masTemp[i]), calculateColor(masTemp[i + 1]));
+        }
+        return;
+
     }
 
     @Override
@@ -74,34 +96,41 @@ public class Histogram extends View {
     }
 
     @Override
-
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
 
-        testColor(canvas);
-        /*if (scroller.computeScrollOffset())
+        if (!startInit){
+            init(canvas);
+            startInit = true;
+        }
+
+       // testColor(canvas);
+        if (scroller.computeScrollOffset())
             xOffset = scroller.getCurrX();
-        calculateSizeScreen(canvas);
-        getWidthForBar();
-        getStepBar();
-        calculateZero();
         posElem.setStartXBar(-xOffset);
         posElem.setStartYBar(heightScreen / 2 - ((masTemp[0] - posZero) * stepBar));
 
-        for (int i = 0; i < 24; i++){
+        /*for (int i = 0; i < 24; i++){
             if (masTemp[i] > 0)
                 paintBar(canvas, "+" + masTemp[i]);
             else if (masTemp[i] < 0)
                 paintBar(canvas, "-" + masTemp[i]);
             else if (masTemp[i] == 0)
                 paintBar(canvas, "0");
-            if (i != 24*//*masTemp.length *//*- 1){
+            if (i != 24 *//*masTemp.length*//* - 1){
                 paintBorder(canvas, masTemp[i], masTemp[i + 1]);
             }
+        }*/
+
+        for (int i = 0; i < histogramBars.length; i++){
+            histogramBars[i].drawBar(canvas, paintForBar);
+            if (i != 24 - 1)
+                histogramBorders[i].drawBorder(canvas, paintForBorder);
+            canvas.restore();
         }
         canvas.save();
         canvas.translate(-xOffset, 0);
-        canvas.restore();*/
+        canvas.restore();
     }
 
     private void paintBar(Canvas canvas, String temp){
@@ -122,12 +151,12 @@ public class Histogram extends View {
     }
 
     private void paintBorder(Canvas canvas, int temp1, int temp2){
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(2);
+        paintForBorder.setStyle(Paint.Style.STROKE);
+        paintForBorder.setStrokeWidth(2);
 
-        paint.setShader(new LinearGradient(posElem.getStartXBorder(), posElem.getStartYBorder(), posElem.getStartXBorder(), posElem.getStartYBorder() + (temp1 - temp2) * stepBar, Color.RED, Color.GREEN, Shader.TileMode.CLAMP));
-        //paint.setColor(Color.GREEN);
-        canvas.drawLine(posElem.getStartXBorder(), posElem.getStartYBorder(), posElem.getStartXBorder(), posElem.getStartYBorder() + (temp1 - temp2) * stepBar, paint);
+        paintForBorder.setShader(new LinearGradient(posElem.getStartXBorder(), posElem.getStartYBorder(), posElem.getStartXBorder(), posElem.getStartYBorder() + (temp1 - temp2) * stepBar, Color.RED, Color.GREEN, Shader.TileMode.CLAMP));
+        //paintForBorder.setColor(Color.GREEN);
+        canvas.drawLine(posElem.getStartXBorder(), posElem.getStartYBorder(), posElem.getStartXBorder(), posElem.getStartYBorder() + (temp1 - temp2) * stepBar, paintForBorder);
 
         canvas.restore();
 
@@ -136,8 +165,11 @@ public class Histogram extends View {
     }
 
     private void calculateSizeScreen(Canvas canvas){
+
         heightScreen = canvas.getHeight();
         widthScreen = canvas.getWidth();
+
+        Log.i(TAG, "Размеры экрана: " + heightScreen + "  " + widthScreen);
     }
 
     private void getOrientation(){
@@ -157,7 +189,7 @@ public class Histogram extends View {
 
     private void getStepBar(){
         int[] masMinAndMaxTemp = getMaxAndMinTemp();
-        stepBar = heightScreen / 2 / (masMinAndMaxTemp[0] - masMinAndMaxTemp[1] / masTemp.length);
+        stepBar = Math.abs(heightScreen / 2 / (masMinAndMaxTemp[0] - masMinAndMaxTemp[1] / masTemp.length));
         Log.i(TAG, "Шаг границы = " + stepBar);
 
     }
@@ -213,12 +245,9 @@ public class Histogram extends View {
     }
 
     private void testColor(Canvas canvas){
-        //new Color((int)(r1*(1-x)+r2*x),(int)(g1*(1-x)+g2*x),(int)(b1*(1-x)+b2*x));
-        int[] masRED = context.getResources().getIntArray(R.array.colorRED);
-        int[] masGREEN = context.getResources().getIntArray(R.array.colorGREEN);
-        int[] masBLUE = context.getResources().getIntArray(R.array.colorBLUE);
-
-        int[][] masGradient = new int[masRED.length][masRED.length];
+        int[] masRED = context.getResources().getIntArray(R.array.colorRED_HOT);
+        int[] masGREEN = context.getResources().getIntArray(R.array.colorGREEN_HOT);
+        int[] masBLUE = context.getResources().getIntArray(R.array.colorBLUE_HOT);
 
         int[] colorRed = new int[masRED.length];
         int[] colorGreen = new int[masRED.length];
@@ -248,9 +277,34 @@ public class Histogram extends View {
 
     private void paintPoint(int RED, int GREEN, int BLUE, Canvas canvas, int posX, int posY){
         Log.i(TAG,  "Цвета: " + RED + " " + GREEN + " " + BLUE);
-        paint.setARGB(100, RED, GREEN, BLUE);
-        paint.setStrokeWidth(20);
-        canvas.drawPoint(posX, posY, paint);
+        paintForBorder.setARGB(100, RED, GREEN, BLUE);
+        paintForBorder.setStrokeWidth(20);
+        canvas.drawPoint(posX, posY, paintForBorder);
         canvas.restore();
+    }
+
+    private HistogramColor calculateColor(int temp){
+        if (temp == 19)
+            Log.i(TAG, "STOP");
+        HistogramColor histogramColor = new HistogramColor();
+        int[] masRED, masGREEN, masBLUE;
+        if (temp > 0){
+            masRED = context.getResources().getIntArray(R.array.colorRED_HOT);
+            masGREEN = context.getResources().getIntArray(R.array.colorGREEN_HOT);
+            masBLUE = context.getResources().getIntArray(R.array.colorBLUE_HOT);
+        }
+        else{
+            masRED = context.getResources().getIntArray(R.array.colorRED_COOL);
+            masGREEN = context.getResources().getIntArray(R.array.colorGREEN_COOL);
+            masBLUE = context.getResources().getIntArray(R.array.colorBLUE_COOL);
+        }
+        float koef = Math.abs(Float.valueOf(String.valueOf(new BigDecimal(temp % 10).divide(BigDecimal.valueOf(10)))));
+        int indexColor = (int) Math.abs(Math.floor(temp / 10));
+
+        histogramColor.RED = (int) (masRED[indexColor] * (1-koef)+masRED[indexColor+1]*koef);
+        histogramColor.GREEN = (int)(masGREEN[indexColor]*(1-koef)+masGREEN[indexColor+1]*koef);
+        histogramColor.BLUE = (int)(masBLUE[indexColor]*(1-koef)+masBLUE[indexColor+1]*koef);
+
+        return histogramColor;
     }
 }
